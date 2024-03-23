@@ -1,7 +1,7 @@
 <footer class="sticky-footer bg-white">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
-			<span>&copy; <?= date('Y') ?> Bus Ticket Booking System - Developed by Bahyu Sanciko </span>
+			<span>&copy; <?= date('Y') ?> Anadolu EXPRESS</span>
 		</div>
 	</div>
 </footer>

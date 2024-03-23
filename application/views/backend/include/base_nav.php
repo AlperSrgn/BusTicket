@@ -9,7 +9,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-bus"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">BTBS CI</div>
+        <div class="sidebar-brand-text mx-3">Anadolu EXPRESS</div>
       </a>
 
       <!-- Divider -->
@@ -19,42 +19,42 @@
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>backend/home">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard </span></a>
+          <span>Panel </span></a>
           <a class="nav-link" href="<?= base_url() ?>backend/bus">
             <i class="fas fa fa-bus"></i>
-            <span>Manage Bus</span></a>
+            <span>Otobüs Yönetimi</span></a>
             <a class="nav-link" href="<?= base_url() ?>backend/rute">
               <i class="fas fa fa-compass"></i>
-              <span>Manage Terminal</span></a>
+              <span>Otogar Yönetimi</span></a>
               <a class="nav-link" href="<?= base_url() ?>backend/jadwal">
                 <i class="fas fa fa-clipboard-list"></i>
-                <span>Manage Schedule</span></a>
+                <span>Seferleri Yönet</span></a>
         <a class="nav-link" href="<?= base_url() ?>backend/order">
           <i class="fas fa-bookmark"></i>
-          <span>List Bookings</span></a>
+          <span>Rezervasyonları Listele</span></a>
         <a class="nav-link" href="<?= base_url() ?>backend/tiket">
           <i class="fas fa-ticket-alt"></i>
-          <span>Tickets</span></a>
+          <span>Biletler</span></a>
         <a class="nav-link" href="<?= base_url() ?>backend/konfirmasi">
           <i class="fa fa-dollar-sign"></i>
-          <span>Payments List</span></a>
+          <span>Ödeme Listesi</span></a>
         <?php if ($this->session->userdata('level') == '1') { ?>
            <a class="nav-link" href="<?= base_url() ?>backend/bank">
           <i class="fas fa fa-piggy-bank"></i>
-          <span>Bank List</span></a>
+          <span>Banka Listesi</span></a>
         <a class="nav-link" href="<?= base_url() ?>backend/laporan">
           <i class="fa fa fa-file"></i>
-          <span>Report</span></a>
+          <span>Şikayet Et</span></a>
              <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <i class="fas fa-fw fa-users"></i>
-              <span>User Management</span>
+              <span>Kullanıcı Yönetimi</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= base_url('backend/pelanggan') ?>">Customer List</a>
-                <a class="collapse-item" href="<?= base_url() ?>backend/admin">Administrator</a>
+                <a class="collapse-item" href="<?= base_url('backend/pelanggan') ?>">Müşteri Listesi</a>
+                <a class="collapse-item" href="<?= base_url() ?>backend/admin">Yönetici</a>
               </div>
             </div>
           </li>
@@ -89,7 +89,7 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="<?= base_url('backend/order/vieworder') ?>" method="GET">
             <div class="input-group">
-              <input type="text" name="order" class="form-control bg-light border-0 small" placeholder="Search Order" aria-label="Search" aria-describedby="basic-addon2">
+              <input type="text" name="order" class="form-control bg-light border-0 small" placeholder="Arama" aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-info" >
                   <i class="fas fa-search fa-sm"></i>
@@ -134,12 +134,12 @@
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
                   <i class="fas fa-info-circle fa-sm fa-fw mr-2 text-gray-400"></i>
-                  About
+                  Hakkında
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Çıkış
                 </a>
               </div>
             </li>

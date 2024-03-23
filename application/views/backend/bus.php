@@ -21,7 +21,7 @@
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#ModalTujuan">
-          Add Bus
+          Otobüs Ekle
           </button>
         </div>
         <div class="card-body">
