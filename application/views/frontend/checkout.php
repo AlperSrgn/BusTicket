@@ -30,9 +30,9 @@
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-7">
 						<!-- Default Card Example -->
-						<div class="card">
-					  <div class="card-header">
-					   <i class="fas fa-info-circle"></i> Rezervasyon Başarılı, Ödemeye Devam Et
+						<div class="card box_main_1" style="height: auto;" >
+					  <div class="card-header" style="color: black; background-color: white">
+					   <i class="fas fa-info-circle fa-lg"></i> Rezervasyon Başarılı, Ödemeye Devam Et
 					  </div>
 					  <div class="card-body" align="center">
 					  	<p class="card-text">Bilet Rezervasyon Kodunuz:</p>
