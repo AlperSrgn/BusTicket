@@ -22,6 +22,7 @@
 <script src="<?php echo base_url() ?>assets/datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <?php echo "<script>".$this->session->flashdata('message')."</script>"?>
 
+<script type="text/javascript">
 	$(document).ready(function () {
 		$(".preloader").fadeOut();
 	})
