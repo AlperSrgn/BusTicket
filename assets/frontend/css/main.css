@@ -2323,13 +2323,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .box_main_2 {
 	font-size: 18px;
-    width: 75%;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
-    height: 800px;
-    border-radius: 30px;
-    padding: 20px;
-    margin: 10px auto; /* Diğer kenarlara eşit boşluk bırakarak otomatik olarak ortalamak için */
+	width: 75%;
+	border: 1px solid #ffffff;
+	background-color: #ffffff;
+	height: 800px;
+	border-radius: 30px;
+	padding: 20px;
+	margin: 10px auto;
 	text-align: center;
 }
 

@@ -60,7 +60,6 @@
 								<div class="card-header">
 									<i class="fas fa-bus"></i> Koltuk Seçimi
 								</div>
-								<center class="">
 								<table class="">
 									<tr>
 										<td class='btn-group' width='139'>
@@ -73,9 +72,9 @@
 												<input name='kursi[]' value='2' id='2' onclick='cer(this)' autocomplete='off' type='checkbox'<?php if (in_array(array('no_kursi_order' => '2'), $kursi)) { echo "disabled checked";} ?>>&nbsp;2  <i class="fa-solid fa-couch"></i>
 											</label>
 										</td>
-										<td class='btn-group' width='139'>
+										<td class='btn-group' width='130'>
 											
-											<label class='btn btn-primary'>
+											<label class='btn btn-primary' style="margin-left: 50px;">
 												<a value='' autocomplete='off' disabled='disabled'> <i class="fa-regular fa-user fa-lg"></i>  Şoför</a>
 											</label>
 										</td>
@@ -195,26 +194,20 @@
 																</td>
 															</tr>
 													</table>
-													</center>
+													
+													<div class="alert alert-success" role="alert" style="background-color: white; border-color: white">
+														<div class='btn-group' style="background-color: white;">
+															<a href="<?php echo base_url('tiket/cekjadwal/'.$tanggal.'/'.$asal['kd_tujuan'].'/'.$jadwal['kota_tujuan']) ?>" class='btn btn-danger' style="margin-right: 100px; width:100px">Geri Dön</a>
+															<input class="btn btn-info pull-right" disabled="disabled" type="submit" value="Sonraki" style="width:100px"">
+														</div>
+													</div>
+													<form>
+													
 												</div>
 											</div>
 											
 											<div class="col-lg-4">
 												
-												<div class="card mb-5">
-													<div class="card-header">
-														<i class="fas fa-bookmark"></i> Rezervasyon Onayı
-													</div>
-													<div class="alert alert-success" role="alert">
-														<p>Bir koltuk seçtikten sonra devam etmek için 'İleri' düğmesine tıklayınız.</p>
-														<div class='btn-group'>
-															<a href="<?php echo base_url('tiket/cekjadwal/'.$tanggal.'/'.$asal['kd_tujuan'].'/'.$jadwal['kota_tujuan']) ?>" class='btn btn-default'>Geri Dön</a>
-															<input class="btn btn-info pull-right" disabled="disabled" type="submit" value="Sonraki">
-															
-														</div>
-													</div>
-													<form>
-													</div>
 												</div>
 											</section>
 											

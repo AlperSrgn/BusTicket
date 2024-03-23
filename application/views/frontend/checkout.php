@@ -39,9 +39,7 @@
 					    <h1 class="card-title"><b><?php echo $tiket; ?></b></h1>
 					    <p><img src="<?php echo base_url('assets/frontend/upload/qrcode/'.$tiket) ?>.png"></p>
 					    	<a href="<?php echo base_url('assets/frontend/upload/qrcode/'.$tiket) ?>.png" class="btn btn-danger" download>Qr Kodu İndir</a> 
-					    	<a href="<?php echo base_url('tiket/payment/'.$tiket) ?>" class="btn btn-success">Ödeme Kontrolü</a>
 					    <br>
-					    <p class="card-text">Lütfen rezervasyon kodunuzu ve QR kodunuzu ödeme işlemine devam etmek için kaydedin.</p>
 					  </div>
 					</div>
 					</div>

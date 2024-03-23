@@ -66,7 +66,7 @@
 									</select>
 								</div>
 								<a href="<?php echo base_url() ?>tiket" class="btn btn-danger pull-left">Sıfırla </a>
-								<button type="submit" class="btn btn-primary pull-right">Ara </button>
+								<button type="submit" class="btn btn-primary pull-right" style="background-color: #40e0d0; border-color: #40e0d0">Sefer bul </button>
 							</form>
 						</div>
 					</div>

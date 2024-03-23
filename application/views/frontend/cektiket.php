@@ -39,14 +39,7 @@
 				Teknolojiyi yakından takip ederek, online bilet satış sistemimiz ve mobil uygulamamız aracılığıyla kolay ve hızlı rezervasyon imkanı sunuyoruz. Müşteri hizmetleri ekibimiz, her türlü soru ve öneriniz için 7/24 hizmetinizdedir. 
 				Anadolu Express ile seyahat etmek, sadece bir A noktasından B noktasına gitmek değil, aynı zamanda keyifli ve unutulmaz anılar biriktirmektir. 
 				Biz, her bir yolculuğunuzun özel olduğuna inanıyor ve bu yüzden size özel hizmetler sunuyoruz. Anadolu Express'i tercih ettiğiniz için teşekkür eder, iyi yolculuklar dileriz.
-			 </b>
-			
-			
-			
-			
-			</p>
-
-
+			 </b></p>
 
 			</div>
 		

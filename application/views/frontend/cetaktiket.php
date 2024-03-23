@@ -133,30 +133,6 @@
     </tfoot>
   </table>
   <div id="container">
-    <h1>Terms and Conditions</h1>
-
-    <div id="body">
-        <ol type="1">
-          <li>BTBS * ONLY bus ticket agents. It does not operate the bus service itself. In order to provide a comprehensive choice of bus operators, departure times and prices for customers, it has tied up with many bus operators.
-          BTBS advice to customers is to choose a bus operator they know from and whose service they are comfortable with.</li>
-          <li>The departure time stated on the ticket is only a tentative time. However, the bus will not leave the source before the time stated on the ticket. Passengers are required to provide the following when boarding the bus:
-             (1) Copy of ticket (Print ticket or print ticket email).
-             (2) Valid proof of identity Failing to do so, they may not be allowed to board the bus.</li>
-           <li>BTBS responsibilities include:
-           (1) Issue a valid ticket (ticket to be accepted by the bus operator) for its bus operator network
-           (2) Provide refund and support in case of cancellation
-           (3) Provide customer support and information in case of delays / hassles
-           Change bus: If the bus operator changes the bus type for some reason, BTBS will refund the differential amount to the customer after being intimidated by the customer within 24 hours of travel.</li>
-        <li>BTBS's liability does NOT include:
-        (1) Bus operator bus does not leave/reach on time
-        (2) The seat of the bus operator etc does not fit the customer
-        hope
-        (3) Customer's baggage lost/stolen/damaged
-        (4) The bus operator changes the boarding point and/or uses the pick-up
-        If someone needs a refund to be credited back to their bank account, please
-        write your cash coupon details to support@btbs.web</li>
-        </ol>  
-    </div>
 </div>
 
 </body>
