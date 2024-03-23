@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 	<head>
-		<!-- Mobile Specific Meta -->
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
+		
 		<link rel="shortcut icon" href="img/elemefav.png">
 		<meta name="author" content="colorlib">
-		<!-- Meta Description -->		<!-- Author Meta -->
+		
 
 		<meta name="description" content="">
-		<!-- Meta Keyword -->
+		
 		<meta name="keywords" content="">
-		<!-- meta character set -->
+		
 		<meta charset="UTF-8">
-		<!-- Log on to codeastro.com for more projects -->
-		<!-- Site Title -->
+		
 		<title>Rezervasyon</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--CSS-->
@@ -22,14 +21,14 @@
 		<?php $this->load->view('frontend/include/base_css'); ?>
 	</head>
 	<body>
-		<!-- navbar -->
+		
 		<?php $this->load->view('frontend/include/base_nav'); ?>
 		<section class="service-area section-gap relative">
 			<div class="overlay overlay-bg"></div>
 			<div class="container">
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-7">
-						<!-- Default Card Example -->
+						
 						<div class="card box_main_1" style="height: auto;" >
 					  <div class="card-header" style="color: black; background-color: white">
 					   <i class="fas fa-info-circle fa-lg"></i> Rezervasyon Başarılı, Ödemeye Devam Et
@@ -45,8 +44,7 @@
 					</div>
 					</div>
 			</section>
-			<!-- End banner Area -->
-			<!-- start footer Area -->
+			
 			<?php $this->load->view('frontend/include/base_footer'); ?>
 			<!-- js -->
 			<?php $this->load->view('frontend/include/base_js'); ?>
