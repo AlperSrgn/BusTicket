@@ -2,12 +2,7 @@
  <div class="footer_section layout_padding">
       <div class="container-fluid">
          <div class="row">
-            <!--<div class="col-lg-8 col-sm-12 padding_0">
-               <div class="map_main">
-                  <div class="map-responsive">
-                    <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
-                  </div>
-               </div>-->
+            
             </div>
             <div class="col-lg-4 col-md-4 col-sm-10 margin_bottom_0" style="float: left;">
                <div class="call_text"><span class="padding_left_0 footer_titles">Popüler Seyahat Bağlantıları</span></div>
@@ -48,4 +43,4 @@
          </div>
       </div>
    </div>
-   <!-- footer section end -->
+

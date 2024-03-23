@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 	<head>
-		<!-- Mobile Specific Meta -->
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
+		
 		<link rel="shortcut icon" href="img/elements/fav.png">
-		<!-- Author Meta -->
+		
 		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
+		
 		<meta name="description" content="">
-		<!-- Meta Keyword -->
+		
 		<meta name="keywords" content="">
-		<!-- meta character set -->
+		
 		<meta charset="UTF-8">
-		<!-- Log on to codeastro.com for more projects -->
-		<!-- Site Title -->
+		
 		<title>BUS TICKET BOOKING</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -23,14 +22,14 @@
 		<?php $this->load->view('frontend/include/base_css'); ?>
 	</head>
 	<body>
-		<!-- navbar -->
+		
 		<?php $this->load->view('frontend/include/base_nav'); ?>
 		<section class="service-area section-gap relative">
 			<div class="overlay overlay-bg"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4">
-						<!-- Default Card Example -->
+						
 						<div class="card mb-5">
 							<div class="card-header">
 								<i class="fas fa-info-circle"></i> Bilet Bilgileri

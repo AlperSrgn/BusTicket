@@ -22,7 +22,7 @@
  					  <li><a href="<?php echo base_url() ?>login">GİRİŞ YAP</a></li>
 				  	  <?php } ?>
 			        </ul>
-			      </nav><!-- #nav-menu-container -->		    		
+			      </nav>   		
 		    	</div>
 		    </div>
-		  </header><!-- #header -->	
+		  </header>
