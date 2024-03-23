@@ -32,18 +32,18 @@
 						<!-- Default Card Example -->
 						<div class="card mb-5">
 							<div class="card-header" align="center">
-								<b><i class="fas fa-ticket-alt"></i> BOOKING CODE <?= $tiket[0]['kd_order']; ?></b>
+								<b><i class="fas fa-ticket-alt"></i> Rezervasyon No <?= $tiket[0]['kd_order']; ?></b>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered">
 										<thead>
 											<tr>
-												<th scope="col">Ticket</th>
-												<th scope="col">Schedule No. [Bus Code]</th>
-												<th scope="col">Departure</th>
-												<th scope="col">Seat No.</th>
-												<th scope="col">Price</th>
+												<th scope="col">Bilet</th>
+												<th scope="col">Seyehat No [Otobüs No]</th>
+												<th scope="col">Kalkış</th>
+												<th scope="col">Koltuk No.</th>
+												<th scope="col">Ücret</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -57,7 +57,7 @@
 												<td>$<?= $row['harga_jadwal']; ?></td>
 											</tr>
 											<?php } ?>
-											<td colspan="5"> <b class="pull-right">Total $<?php $total = $count * $tiket[0]['harga_jadwal'] ; echo $total ?></b></td>
+											<td colspan="5"> <b class="pull-right">Toplam $<?php $total = $count * $tiket[0]['harga_jadwal'] ; echo $total ?></b></td>
 										</tbody>
 									</table>
 								</div>
@@ -69,16 +69,16 @@
 						<!-- Default Card Example -->
 						<div class="card">
 							<div class="card-header" align="center">
-								<i class="fas fa-ticket-alt"></i> Payment Process
+								<i class="fas fa-ticket-alt"></i> Ödeme Süreci
 							</div>
 							<div class="card-body" align="center">
-								<h4>Please Complete Your Payment Immediately!</h4><br>
-								<h6>Your payment deadline will end on</h6>
+								<h4>Lütfen Ödemenizi Tamamlayın!</h4><br>
+								<h6>Ödemeniz için kalan süre</h6>
 								<h1><p id="expired"></p></h1>
 								<p>(Before <?php $expired = hari_indo(date('N',strtotime($tiket[0]['expired_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$tiket[0]['expired_order'].''))).', '.date('H:i',strtotime($tiket[0]['expired_order'])); echo $expired;?>)</p>
 								<hr>
 								<div class="medium-title col-12 mb-20">
-									<h4><p>Please transfer payment to the following account number</p></h4>
+									<h4><p>Lütfen ödemeyi aşağıdaki hesap numarasına transfer edin.</p></h4>
 								</div>
 								<div class="offset-lg-1 col-lg-10 offset-sm-0 col-sm-12">
 									<div class="row">
@@ -94,7 +94,7 @@
 									</div>
 								</div>
 								<div class="col-12 medium-title regular-text mt-20">
-									<h4><b> <p>a Total Sum of</p></b></h4>
+									<h4><b> <p> Toplam Tutar:</p></b></h4>
 								</div>
 								<div class="col-12 bigger-title text-orange">
 									<h3 ><p>$<?= number_format($total,0,',','.') ;?></p></h3>
@@ -104,22 +104,22 @@
 									<div class="col-md-8 mt-sm-30">
 										<h3 class="mb-20">PAYMENT GUIDE</h3>
 										<div class="">
-											<ol class="ordered-list" align="left">
-												<li>Insert Your <?= $tiket[0]['nama_bank']; ?> ATM Card</li>
-												<li>Enter your ATM PIN</li>
-												<li>Select Other Transaction Menu</li>
-												<li>Select the Transfer menu and To Account <?= $tiket[0]['nama_bank']; ?></li>
-												<li>Enter account number <?= $tiket[0]['nama_bank']; ?> which is aimed</li>
-												<li>Enter the nominal amount of money to be transferred</li>
-												<li>The ATM screen will display your transaction data,</li>
-												<li>If the data is correct select "YES" (OK)</li>
-												<li>Done (receipt will come out from ATM machine)</li>
-												<li>Take your ATM Card</li>
+											<ol class="ordered-list" align="left">		
+                                            <li><?= $tiket[0]['nama_bank']; ?> ATM Kartınızı Takın</li>
+                                            <li>ATM Şifrenizi Girin</li>
+                                            <li>Diğer İşlem Menüsünü Seçin</li>
+                                            <li>Transfer menüsünü ve <?= $tiket[0]['nama_bank']; ?> Hesabına Seçin</li>
+                                            <li>Yapılacak Hesap numarasını girin <?= $tiket[0]['nama_bank']; ?></li>
+                                            <li>Transfer edilecek para miktarını girin</li>
+                                            <li>ATM ekranı işlem verilerinizi gösterecektir,</li>
+                                            <li>Veriler doğruysa "EVET" (Tamam) seçin</li>
+                                            <li>Tamamlandı (Fiş ATM makinesinden çıkacaktır)</li>
+                                            <li>ATM Kartınızı Alın</li>
 											</ol>
 										</div>
 									</div>
 								</div>
-								<a href="<?= base_url('tiket/konfirmasi/'.$tiket[0]['kd_order'].'/'.$total) ?>" class="btn btn-primary pull-center">Submit for Payment Confirmation </a>
+								<a href="<?= base_url('tiket/konfirmasi/'.$tiket[0]['kd_order'].'/'.$total) ?>" class="btn btn-primary pull-center">Ödeme onayı için gönder </a>
 							</div>
 						</div>
 					</div>
@@ -153,8 +153,8 @@
 				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 				// Output the result in an element with id="demo"
-				document.getElementById("expired").innerHTML = hours + " Hour : "
-				+ minutes + " Minute : " + seconds + " Seconds ";
+				document.getElementById("expired").innerHTML = hours + " Saat : "
+				+ minutes + " Dakika : " + seconds + " Saniye ";
 				// If the count down is over, write some text
 				if (distance < 0) {
 				clearInterval(x);

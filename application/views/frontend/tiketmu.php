@@ -25,7 +25,7 @@
 		<?php $this->load->view('frontend/include/base_nav'); ?>
 		<div class="generic-banner">
 			<br>
-			<h2 class="" align="center">My Ticket </h2>
+			<h2 class="" align="center">Biletiniz</h2>
 			<div class="container ">
 				<div class="row d-flex justify-content-center">
 					<?php foreach ($tiket as $row) { ?>
@@ -35,28 +35,28 @@
 							<img class="card-img-top" src="<?php echo base_url($row['qrcode_order']) ?>" alt="Card image cap" >
 							<div class="card-body" align="left">
 								<?php if ($row['status_order'] == '3'){ ?>
-									<a href="#" class="card-link">Cancelled by Administrator</a>
+									<a href="#" class="card-link">Yönetici Tarafından İptal Edildi</a>
 								<?php }else {?>
-								<a href="<?php echo base_url().$row['qrcode_order'] ?>" class="card-link" download>Download QrCode</a><?php }?>
-								<h5 class="card-title">Booking Code : <?php echo $row['kd_order']; ?></h5>
-								<p>Name : <?php echo $row['nama_order']; ?>
-								 <br>Booking Date : <?php echo $row['tgl_beli_order']; ?></br>
-								 Payment status : <?php if ($row['status_order'] == '1') { ?>
-									<i class='btn-danger'>Unpaid</i>
+								<a href="<?php echo base_url().$row['qrcode_order'] ?>" class="card-link" download>Qr Kodu İndir</a><?php }?>
+								<h5 class="card-title">Rezervasyon Kodu : <?php echo $row['kd_order']; ?></h5>
+								<p>İsim : <?php echo $row['nama_order']; ?>
+								 <br>Rezervasyon Tarihi : <?php echo $row['tgl_beli_order']; ?></br>
+								 Ödeme Durumu : <?php if ($row['status_order'] == '1') { ?>
+									<i class='btn-danger'>Ödenmedi</i>
 									<?php }else if ($row['status_order'] == '3'){ ?>
-										<i class='btn-warning'>Cancelled</i>
+										<i class='btn-warning'>İptal Edildi</i>
 									<?php }else{?>
 									
-									<i class='btn-success'>Paid</i>
+									<i class='btn-success'>Ödendi</i>
 									<?php } ?>
 									<hr>
 									<?php if ($row['status_order'] == '1') { ?>
-									<a href="<?php echo base_url('tiket/payment/'.$row['kd_order']) ?>" class="btn btn-primary">Check Payment</a>
+									<a href="<?php echo base_url('tiket/payment/'.$row['kd_order']) ?>" class="btn btn-primary">Ödeme Kontrolü</a>
 									<?php }else if ($row['status_order'] == '3'){ ?>
-										<a href="<?php echo base_url('tiket/') ?>" class="btn btn-warning pull-right">Book Another</a>
+										<a href="<?php echo base_url('tiket/') ?>" class="btn btn-warning pull-right">Başka Rezervasyon</a>
 									<?php }else {?>
 									<!-- <a href="<?php echo base_url('backend/home/refund') ?>" class="btn btn-danger" >Batal Tiket</a> -->
-									<a href="<?php echo base_url('assets/backend/upload/etiket/'.$row['kd_order'].'.pdf') ?>" class="btn btn-success pull-right" download>Print Ticket</a>
+									<a href="<?php echo base_url('assets/backend/upload/etiket/'.$row['kd_order'].'.pdf') ?>" class="btn btn-success pull-right" download>Bilet yazdır</a>
 									<?php } ?>
 								</div>
 							</div>

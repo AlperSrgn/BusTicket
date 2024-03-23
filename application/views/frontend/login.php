@@ -28,36 +28,36 @@
 		<section class="generic-banner">
 			<div class="container">
 				<div class="row height align-items-center justify-content-center">
-					<div class="col-lg-5">
+					<div class="box_main_1">
 						<div class="card card-login mx-auto mt-10">
-							<div class="card-header">Customer Login Panel</div>
+							<div class="card-header">Müşteri Giriş Paneli</div>
 							<div class="card-body" align="left">
 								<?php echo $this->session->flashdata('pesan'); ?>
 								<form action="<?php echo base_url() ?>login/cekuser" method="post">
 									<div class="form-group">
 										<div class="form-label-group">
-											<input type="text" id="username" name="username" class="form-control" placeholder="Username/Email" required="required">
+											<input type="text" id="username" name="username" class="form-control" placeholder="Kullanıcı Adı/Email" required="required">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="form-label-group">
-											<input type="password" name="password" class="form-control" placeholder="Password" required="required">
+											<input type="password" name="password" class="form-control" placeholder="Şifre" required="required">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="checkbox">
 											<label>
 												<input type="checkbox" value="remember-me">
-												Remember Password
+												Parolayı Hatırla
 											</label>
 										</div>
 									</div>
-									<button class="btn btn-success btn-block">Login as Customer</button>
+									<button class="btn btn-success btn-block">Giriş Yap</button>
 								</form>
 								<div class="text-center">
-									<p><a class="d-block mt-3" href="<?php echo base_url() ?>login/daftar">Register Now</a>
+									<p><a class="d-block mt-3" href="<?php echo base_url() ?>login/daftar">Şimdi Kayıt Olun </a>
 									<hr>
-									<b><a class="d-block mt-3" style="font-size:15px;" href="<?php echo base_url() ?>backend/login">Login as Admin</a></b>
+									<b><a class="d-block mt-3" style="font-size:15px;" href="<?php echo base_url() ?>backend/login">Admin Girişi</a></b>
 									<!-- <a class="d-block small" href="<?php echo base_url() ?>login/lupapassword">Forgot Password</a> -->
 								</p>
 									

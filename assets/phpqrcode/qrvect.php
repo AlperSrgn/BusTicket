@@ -27,26 +27,26 @@
     class QRvect {
     
         //----------------------------------------------------------------------
-        public static function eps($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 4,$saveandprint=FALSE, $back_color = 0xFFFFFF, $fore_color = 0x000000, $cmyk = false) 
-        {
-            $vect = self::vectEPS($frame, $pixelPerPoint, $outerFrame, $back_color, $fore_color, $cmyk);
-            
-            if ($filename === false) {
-                header("Content-Type: application/postscript");
-                header('Content-Disposition: filename="qrcode.eps"');
-                echo $vect;
-            } else {
-                if($saveandprint===TRUE){
-                    QRtools::save($vect, $filename);
-                    header("Content-Type: application/postscript");
-                    header('Content-Disposition: filename="qrcode.eps"');
-                    echo $vect;
-                }else{
-                    QRtools::save($vect, $filename);
-                }
-            }
+        public static function eps($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 4, $saveandprint = FALSE, $back_color = 0xFFFFFF, $fore_color = 0x000000, $cmyk = false) 
+{
+    $vect = self::vectEPS($frame, $pixelPerPoint, $outerFrame, $back_color, $fore_color, $cmyk);
+    
+    if ($filename === false) {
+        header("Content-Type: application/postscript");
+        header('Content-Disposition: filename="qrcode.eps"');
+        echo $vect;
+    } else {
+        if ($saveandprint === TRUE) {
+            QRtools::save($vect, $filename);
+            header("Content-Type: application/postscript");
+            header('Content-Disposition: filename="qrcode.eps"');
+            echo $vect;
+        } else {
+            QRtools::save($vect, $filename);
         }
-        
+    }
+}
+
     
         //----------------------------------------------------------------------
         private static function vectEPS($frame, $pixelPerPoint = 4, $outerFrame = 4, $back_color = 0xFFFFFF, $fore_color = 0x000000, $cmyk = false) 
@@ -137,25 +137,23 @@
         }
         
         //----------------------------------------------------------------------
-        public static function svg($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 4,$saveandprint=FALSE, $back_color, $fore_color) 
-        {
-            $vect = self::vectSVG($frame, $pixelPerPoint, $outerFrame, $back_color, $fore_color);
-            
-            if ($filename === false) {
-                header("Content-Type: image/svg+xml");
-                //header('Content-Disposition: attachment, filename="qrcode.svg"');
-                echo $vect;
-            } else {
-                if($saveandprint===TRUE){
-                    QRtools::save($vect, $filename);
-                    header("Content-Type: image/svg+xml");
-                    //header('Content-Disposition: filename="'.$filename.'"');
-                    echo $vect;
-                }else{
-                    QRtools::save($vect, $filename);
-                }
-            }
+        public static function svg($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 4, $saveandprint = FALSE, $back_color = 0xFFFFFF, $fore_color = 0x000000) 
+{
+    $vect = self::vectSVG($frame, $pixelPerPoint, $outerFrame, $back_color, $fore_color);
+    
+    if ($filename === false) {
+        header("Content-Type: image/svg+xml");
+        echo $vect;
+    } else {
+        if ($saveandprint === TRUE) {
+            QRtools::save($vect, $filename);
+            header("Content-Type: image/svg+xml");
+            echo $vect;
+        } else {
+            QRtools::save($vect, $filename);
         }
+    }
+}
         
     
         //----------------------------------------------------------------------

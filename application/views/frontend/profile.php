@@ -37,33 +37,33 @@
 		<section class="generic-banner relative">
 			<div class="container">
 				<div class="section-top-border">
-					<h3 class="mb-30" align="center">My Profile</h3>
+					<h3 class="mb-30" align="center">Profilim</h3>
 					<div class="row d-flex justify-content-center">
-						<div class="col-lg-6">
+						<div class="box_main_1">
 							<!-- Default Card Example -->
 							<div class="card" align="left">
 								<div class="card-header">
-									<i class="fas fa-user"></i> Account Data
+									<i class="fas fa-user"></i> Hesap Bilgileri
 								</div>
 								<div class="card-body" align="left">
 									<div class="row">
 										<div class="col-sm-8">
-											<h5 class="card-title">ID card number</h5>
+											
 											<p class="card-text"><?php echo $profile['no_ktp_pelanggan'] ?></p>
-											<h5 class="card-title">Name</h5>
+											<h5 class="card-title">İsim</h5>
 											<p class="card-text"><?php echo $profile['nama_pelanggan'] ?></p>
 											<h5 class="card-title">Email</h5>
 											<p class="card-text"><?php echo $profile['email_pelanggan']?></p>
-											<h5 class="card-title">Mobile number</h5>
+											<h5 class="card-title">Telefon Numarası</h5>
 											<p class="card-text"><?php echo $profile['telpon_pelanggan'] ?></p>
 										</div>
 										<div class="col-sm-14">
-											<h5 class="card-title">Address</h5>
+											<h5 class="card-title">Adres</h5>
 											<p class="card-text"><?php echo $profile['alamat_pelanggan']?></p>
-											<h5 class="card-title">Photo Profile</h5>
+											<h5 class="card-title">Profil Fotoğrafı</h5>
 											<p><img src="<?php echo base_url($profile['img_pelanggan'])?>" height="50" width="50" ></p>
-											<p><a href="<?php echo base_url('profile/changepassword/'.$profile['kd_pelanggan']) ?>" class="btn btn-primary">Change Password</a></p>
-											<p><button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Edit Account</button></p>
+											<p><a href="<?php echo base_url('profile/changepassword/'.$profile['kd_pelanggan']) ?>" class="btn btn-primary">Şifreyi Değiştir</a></p>
+											<p><button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Hesabı Düzenle</button></p>
 										</div>
 									</div>
 								</div>
@@ -76,7 +76,7 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+								<h5 class="modal-title" id="exampleModalLabel">Profili Düzenle</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 								</button>
@@ -86,13 +86,9 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-sm-14">
+												
 												<div class="row form-group">
-													<label for="nama" class="control-label">ID card number</label>
-													<input type="text" class="form-control" name="ktp" value="<?php echo $profile['no_ktp_pelanggan']?>" >
-													<input type="hidden" name="kode" value="<?php echo $profile['kd_pelanggan']?>">
-												</div>
-												<div class="row form-group">
-													<label for="nama" class="control-label">Name</label>
+													<label for="nama" class="control-label">İsim/label>
 													<input type="text" class="form-control" name="nama" value="<?php echo $profile['nama_pelanggan']?>" >
 												</div>
 												<div class="row form-group">
@@ -100,23 +96,23 @@
 													<input type="email" class="form-control" name="email" value="<?php echo $profile['email_pelanggan']?>" >
 												</div>
 												<div class="row form-group">
-													<label for="nama" class="control-label">Mobilenumber</label>
+													<label for="nama" class="control-label">Cep Telefonu</label>
 													<input type="text" class="form-control" name="hp" value="<?php echo $profile['telpon_pelanggan']?>" >
 												</div>
 												<div class="row form-group">
-													<label for="nama" class="control-label">Address</label>
+													<label for="nama" class="control-label">Adres</label>
 													<input type="text" class="form-control" name="alamat" value="<?php echo $profile['alamat_pelanggan']?>" >
 												</div>
 												<div class="row form-group">
-													<label for="" class="control-label">Photo Profile</label>
+													<label for="" class="control-label">Profil Fotoğrafı</label>
 													<img src="<?php echo base_url($profile['img_pelanggan'])?>" alt="<?php echo $this->session->userdata('ktp') ?>" style="width:150px;height:150px"><input type="file" class="form-control" value="<?php echo base_url($this->session->userdata('nama_lengkap')) ?>" name="img"  >
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-									<button class="btn btn-danger" data-dismiss="modal">Close</button>
-									<button type="submit" class="btn btn-primary" >Save Changes</button>
+									<button class="btn btn-danger" data-dismiss="modal">Kapat</button>
+									<button type="submit" class="btn btn-primary" >Değişiklikleri Kaydet</button>
 							</form>
 						</div>
 					</div>

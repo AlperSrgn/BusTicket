@@ -2321,6 +2321,28 @@ body.mobile-nav-active #mobile-nav-toggle {
 	color: #000;
 }
 
+.box_main_2 {
+	font-size: 18px;
+    width: 75%;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    height: 800px;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 10px auto; /* Diğer kenarlara eşit boşluk bırakarak otomatik olarak ortalamak için */
+	text-align: center;
+}
+
+.box_main_2:hover {
+	box-shadow: 0px 1px 9px 1px #fff;
+}
+.box_main_2:hover {
+	box-shadow: 0px 1px 9px 1px #fff;
+}
+.box_main_2:hover .post_text {
+	color: #000;
+}
+
 .overlay {
 	position: absolute;
 	left: 0;

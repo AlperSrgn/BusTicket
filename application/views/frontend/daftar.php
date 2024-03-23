@@ -25,21 +25,21 @@
 		<!-- navbar -->
 		<?php $this->load->view('frontend/include/base_nav'); ?>
 		<section class="service-area section-gap relative">
-			<div class="overlay overlay-bg"></div>
-			<div class="container">
-				<div class="row d-flex justify-content-center">
-					<div class="col-lg-8">
+			<div></div>
+			<div>
+				<div style="width: 1000px;  margin: 0 auto;">
+					<div style= "height:700px" ; class="box_main_1">
 						<!-- Default Card Example -->
 						<div class="card ">
 							<div class="card-header">
-								<i class="fas fa-user"></i> Customer Registration
+								<i class="fas fa-user"></i> Kayıt Ol
 							</div>
 							<div class="card-body">
 								<form action="<?php echo base_url() ?>login/daftar" method="post">
 									<div class="form-group">
 										<div class="form-group">
 											<div class="form-label-group">
-												<input type="text" name="name" class="form-control" required="" placeholder="Full Name" value="<?php echo set_value('name') ?>">
+												<input type="text" name="name" class="form-control" required="" placeholder="İsim" value="<?php echo set_value('name') ?>">
 												<?php echo form_error('name'),'<small class="text-danger pl-3">','</small>'; ?>
 											</div>
 										</div>
@@ -54,14 +54,14 @@
 											</div>
 											<div class="col-md-6">
 												<div class="form-label-group">
-													<input type="number" id="nomor" name="nomor" class="form-control" required="" placeholder="Contact Number" value="<?php echo set_value('nomor') ?>">
+													<input type="number" id="nomor" name="nomor" class="form-control" required="" placeholder="Telefon No" value="<?php echo set_value('nomor') ?>">
 													<?php echo form_error('nomor'),'<small class="text-danger pl-3">','</small>'; ?>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="username">Address</label>
+										<label for="username">Adres</label>
 										<div class="form-label-group">
 											<textarea class="form-control" name="alamat"><?php echo set_value('alamat') ?></textarea>
 											<?php echo form_error('alamat'),'<p class="text-danger pl-3">','</p>'; ?>
@@ -69,24 +69,24 @@
 									</div>
 									<div class="form-group">
 										<div class="form-label-group">
-											<input type="text" id="username" name="username" class="form-control" required="" placeholder="Username" >
+											<input type="text" id="username" name="username" class="form-control" required="" placeholder="Kullanıcı Adı" >
 											<?php echo form_error('username'),'<small class="text-danger pl-3">','</small>'; ?>
 										</div>
 									</div>
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="password" class="form-control form-control-user" name="password1" placeholder="Password">
+											<input type="password" class="form-control form-control-user" name="password1" placeholder="Şifre">
 										</div>
 										<div class="col-sm-6">
-											<input type="password" class="form-control form-control-user" name="password2" placeholder="Repeat Password">
+											<input type="password" class="form-control form-control-user" name="password2" placeholder=" Şifrenizi Tekrar Giriniz">
 										</div>
 									</div>
 									<?php echo form_error('password1'),'<small class="text-danger pl-3">','</small>'; ?>
-									<button class="btn btn-info btn-block">Register</button>
+									<button class="btn btn-info btn-block">Kayıt Ol</button>
 								</form>
 								<hr>
 								<div class="text-center">
-									<p>Already Registered? <a class="" href="<?php echo base_url() ?>login">Login Now</a></p>
+									<p>Önceden Kayıtlı mısınız? <a class="" href="<?php echo base_url() ?>login">Giriş Yap</a></p>
 								</div>
 							</div>
 						</div>

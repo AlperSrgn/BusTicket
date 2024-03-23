@@ -15,7 +15,7 @@
 		<meta charset="UTF-8">
 		<!-- Log on to codeastro.com for more projects -->
 		<!-- Site Title -->
-		<title>BUS TICKET BOOKING</title>
+		<title>Anadolu EXPRESS</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--
 		CSS
@@ -83,7 +83,7 @@
         				<img class="img-fluid img-oval" src="<?php echo base_url() ?>assets/frontend/img/bus1.jpg" width="250" height="250" alt="">
         				<div class="padding_15">
            				 	<h2 class="speed_text">SON TEKNOLOJİ ARAÇLAR</h2>
-            				<p class="long_text">YENİ ARAÇ FİLOMUZLA YOLCULUĞUNUZUN KEYFİNİ ÇIKARIN</p>
+            				<p class="long_text">Yeni Araç Filomuzla Yolculuğunuzun Keyfini Çıkarın</p>
         				</div>
     				</div>
 </div>

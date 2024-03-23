@@ -32,16 +32,16 @@
 						<!-- Default Card Example -->
 						<div class="card">
 					  <div class="card-header">
-					   <i class="fas fa-info-circle"></i> Bookings Done, Continue Payment
+					   <i class="fas fa-info-circle"></i> Rezervasyon Başarılı, Ödemeye Devam Et
 					  </div>
 					  <div class="card-body" align="center">
-					  	<p class="card-text">Ticket Booking Code:</p>
+					  	<p class="card-text">Bilet Rezervasyon Kodunuz:</p>
 					    <h1 class="card-title"><b><?php echo $tiket; ?></b></h1>
 					    <p><img src="<?php echo base_url('assets/frontend/upload/qrcode/'.$tiket) ?>.png"></p>
-					    	<a href="<?php echo base_url('assets/frontend/upload/qrcode/'.$tiket) ?>.png" class="btn btn-danger" download>Download Qr Code</a> 
-					    	<a href="<?php echo base_url('tiket/payment/'.$tiket) ?>" class="btn btn-success">Check Payment</a>
+					    	<a href="<?php echo base_url('assets/frontend/upload/qrcode/'.$tiket) ?>.png" class="btn btn-danger" download>Qr Kodu İndir</a> 
+					    	<a href="<?php echo base_url('tiket/payment/'.$tiket) ?>" class="btn btn-success">Ödeme Kontrolü</a>
 					    <br>
-					    <p class="card-text">Please Save Your Booking Code And QrCode To Continue The Payment Process.</p>
+					    <p class="card-text">Lütfen rezervasyon kodunuzu ve QR kodunuzu ödeme işlemine devam etmek için kaydedin.</p>
 					  </div>
 					</div>
 					</div>

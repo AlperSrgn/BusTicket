@@ -32,18 +32,18 @@
 						<!-- Default Card Example -->
 						<div class="card wobble animated">
 					  <div class="card-header">
-					  Payment Confirmation
+					  Ödeme Doğrulama
 					  </div>
 					  <div class="card-body">
 					    <form action="<?= base_url() ?>tiket/insertkonfirmasi" method="post" enctype="multipart/form-data">
 									<div class="form-group">
-										<label for="exampleInputEmail1">Booking Code</label>
+										<label for="exampleInputEmail1">Rezervasyon Kodu</label>
 										<input type="text" id="" class="form-control" id="" name="kd_order" value="<?= $id ?>" placeholder="Ticket Code">
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">Your BANK</label>
+										<label for="exampleInputEmail1">Bankan</label>
 										<select class="form-control" name="bank_km">
-											<option value="" selected disabled="">Select Bank</option>
+											<option value="" selected disabled="">Banka Seç</option>
 											<option value="New Leaf Bank" >New Leaf Bank</option>
 											<option value="Zenith Bank">Zenith Bank</option>
 											<option value="WestView Bank">WestView Bank</option>
@@ -59,22 +59,22 @@
 										</select> -->
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">Account number</label>
-										<input type="number" class="form-control" name="nomrek" value="" placeholder="Account number">
+										<label for="exampleInputEmail1">Hesap Numarası</label>
+										<input type="number" class="form-control" name="nomrek" value="" placeholder="Hesap Numarası">
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">Name of the sender</label>
-										<input type="text" class="form-control" name="nama" value="" placeholder="Name of the sender">
+										<label for="exampleInputEmail1">Gönderenin Adı</label>
+										<input type="text" class="form-control" name="nama" value="" placeholder="Gönderenin Adı">
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">Payment Amount</label>
+										<label for="exampleInputEmail1">Ödeme Miktarı</label>
 										<input type="number" class="form-control" name="total" value="<?= $total ?>" placeholder="Total price" readonly>
 									</div>
 									<div class="form-group">
-										<label for="exampleInputEmail1">Upload Transaction Photo</label>
+										<label for="exampleInputEmail1">İşlem Fotoğrafı yükle</label>
 										<input type="file" class="form-control" name="userfile" required="">
 									</div>
-									<button type="submit" class="btn btn-success pull-right">Submit </button>
+									<button type="submit" class="btn btn-success pull-right">Gönder </button>
 								</form>
 					  </div>
 					</div>

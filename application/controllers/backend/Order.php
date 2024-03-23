@@ -95,8 +95,8 @@ class Order extends CI_Controller {
                'charset'   => 'utf-8',
                'protocol'  => 'smtp',
                'smtp_host' => 'ssl://smtp.gmail.com',
-               'smtp_user' => 'demo@email.com',    // Ganti dengan email gmail kamu
-               'smtp_pass' => 'P@$$\/\/0RD',      // Password gmail kamu
+			   'smtp_user' => 'akbabameytican@gmail.com',    // Ganti dengan email gmail kamu
+               'smtp_pass' => 'hzuv jmpk ytbd iavw',       // Password gmail kamu
                'smtp_port' => 465,
                'crlf'      => "rn",
                'newline'   => "rn"

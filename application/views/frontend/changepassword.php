@@ -37,37 +37,37 @@
 		<section class="generic-banner relative">
 			<div class="container">
 				<div class="section-top-border">
-					<h3 class="mb-30" align="center">Change Password</h3>
+					<h3 class="mb-30" align="center">Şifre Değiştir</h3>
 					<div class="row d-flex justify-content-center">
 						<div class="col-lg-6">
 							<!-- Default Card Example -->
 							<div class="card" align="left">
 								<div class="card-header">
-									<i class="fas fa-key"></i> Password
+									<i class="fas fa-key"></i> Şifre Ayarlama
 								</div>
 								<div class="card-body">
 									<form ction="<?php echo base_url('profile/changepassword') ?>" method="post">
 									 <?php echo $this->session->flashdata('gagal'); ?>
 									  <div class="form-group">
 									  	<div class="form-label-group">
-									    <input type="password" class="form-control"  name="currentpassword" placeholder="Previous Password">
+									    <input type="password" class="form-control"  name="currentpassword" placeholder="Önceki Şifre">
 									     <?php echo form_error('currentpassword'),'<small class="text-danger pl-3">','</small>'; ?>
 										</div>
 									   
 									  </div>
 									  <div class="form-group">
 									  	<div class="form-label md-5">
-									    <input type="password" class="form-control" required="" name="new_password1" placeholder="New Password"><?php echo form_error('new_password1'),'<small class="text-danger pl-3">','</small>'; ?>
+									    <input type="password" class="form-control" required="" name="new_password1" placeholder="Yeni Şifre"><?php echo form_error('new_password1'),'<small class="text-danger pl-3">','</small>'; ?>
 										</div>
 									    
 									  </div>
 									  <div class="form-group">
 									  	<div class="form-label md-5">
-									    <input type="password" class="form-control" required="" name="new_password2" placeholder="Repeat Password">
+									    <input type="password" class="form-control" required="" name="new_password2" placeholder="Yeni Şifrenizi Tekrar Giriniz">
 										</div>
 									  </div>
-									<a class="btn btn-danger" href="<?php echo base_url() ?>profile/profilesaya/<?php echo $this->session->userdata('kd_pelanggan') ?>">Go Back</a>
-									<button type="submit" class="btn btn-primary pull-right" >Change Password</button>
+									<a class="btn btn-danger" href="<?php echo base_url() ?>profile/profilesaya/<?php echo $this->session->userdata('kd_pelanggan') ?>"> Geri Dön</a>
+									<button type="submit" class="btn btn-primary pull-right" >Şifreni Değiştir</button>
 									</form>
 								</div>
 							</div>
