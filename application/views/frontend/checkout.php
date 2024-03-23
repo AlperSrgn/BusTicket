@@ -15,7 +15,7 @@
 		<meta charset="UTF-8">
 		<!-- Log on to codeastro.com for more projects -->
 		<!-- Site Title -->
-		<title>Get Tickets</title>
+		<title>Rezervasyon</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--CSS-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/frontend/datepicker/dcalendar.picker.css">
@@ -39,7 +39,8 @@
 					    <h1 class="card-title"><b><?php echo $tiket; ?></b></h1>
 					    <p><img src="<?php echo base_url('assets/frontend/upload/qrcode/'.$tiket) ?>.png"></p>
 					    	<a href="<?php echo base_url('assets/frontend/upload/qrcode/'.$tiket) ?>.png" class="btn btn-danger" download>Qr Kodu İndir</a> 
-					    <br>
+					    	<a href="<?php echo base_url('tiket/payment/'.$tiket) ?>" class="btn btn-success" style="background-color: #40e0d0; border-color: #40e0d0">Ödemeye Geç</a>
+							<br>
 					  </div>
 					</div>
 					</div>
