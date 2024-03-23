@@ -15,7 +15,7 @@
     <?php $this->load->view('backend/include/base_nav'); ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
-      <h1 class="h5 text-gray-800">Bus Management</h1>
+      <h1 class="h5 text-gray-800">Otobüs Yönetimi</h1>
       <!-- DataTales Example -->
       <!-- Log on to codeastro.com for more projects -->
       <div class="card shadow mb-4">
@@ -30,12 +30,12 @@
             <thead class="thead-dark">
                 <tr>
                   <th>#</th>
-                  <th>Bus Code</th>
-                  <th>Bus Name</th>
-                  <th>Bus Plate</th>
-                  <th>Seat Capacity</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th>Otobüs Kodu</th>
+                  <th>Otobüs Adı</th>
+                  <th>Otobüs Plakası</th>
+                  <th>Koltuk Kapasitesi</th>
+                  <th>Durum</th>
+                  <th>Bilgi</th>
                 </tr>
               </thead>
               <tbody>
@@ -47,11 +47,11 @@
                   <td><?= strtoupper($row['plat_bus']); ?></td>
                   <td><?= $row['kapasitas_bus'] ?></td>
                   <?php if ($row['status_bus'] == '1') { ?>
-                    <td class="btn-success"> Active</td> 
+                    <td class="btn-success"> Aktif</td> 
                     <?php } else { ?>
-                    <td class="btn-danger">InActive</td>
+                    <td class="btn-danger">Aktif Değil</td>
                   <?php } ?>
-                  <td align="center"><a href="<?= base_url('backend/bus/viewbus/'.$row['kd_bus'])?>" class="btn btn btn-info">View</a></a>
+                  <td align="center"><a href="<?= base_url('backend/bus/viewbus/'.$row['kd_bus'])?>" class="btn btn btn-info">Görüntüle</a></a>
                 </td>
               </tr>
               <?php } ?>
