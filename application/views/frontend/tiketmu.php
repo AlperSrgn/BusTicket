@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 	<head>
-		<!-- Mobile Specific Meta -->
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
+		
 		<link rel="shortcut icon" href="img/elements/fav.png">
-		<!-- Author Meta -->
+		
 		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
+		
 		<meta name="description" content="">
-		<!-- Meta Keyword -->
+		
 		<meta name="keywords" content="">
-		<!-- meta character set -->
+		
 		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<!-- Log on to codeastro.com for more projects -->
+		
 		<title>BUS TICKET BOOKING</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--CSS-->
 		<?php $this->load->view('frontend/include/base_css'); ?>
 	</head>
 	<body>
-		<!-- navbar -->
+		
 		<?php $this->load->view('frontend/include/base_nav'); ?>
 		<div class="generic-banner">
 			<br>
@@ -67,10 +66,7 @@
 				</div>
 				<br><br>
 				</div>
-				<!-- Log on to codeastro.com for more projects -->
-				<!-- End banner Area -->
-				<!-- End Generic Start -->
-				<!-- start footer Area -->
+				
 				<?php $this->load->view('frontend/include/base_footer'); ?>
 				<!-- js -->
 				<?php $this->load->view('frontend/include/base_js'); ?>

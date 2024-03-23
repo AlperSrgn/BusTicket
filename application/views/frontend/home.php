@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 	<head>
-		<!-- Mobile Specific Meta -->
+	
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
+	
 		<link rel="shortcut icon" href="img/elements/fav.png">
-		<!-- Author Meta -->
+		
 		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
+		
 		<meta name="description" content="">
-		<!-- Meta Keyword -->
+		
 		<meta name="keywords" content="">
-		<!-- meta character set -->
+		
 		<meta charset="UTF-8">
-		<!-- Log on to codeastro.com for more projects -->
-		<!-- Site Title -->
+		
 		<title>Anadolu EXPRESS</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--
@@ -33,7 +32,7 @@
 		}
 		.border-black{
 		  color: blue;
-		  /*border white with light shadow*/
+		
 		  text-shadow: 
 		     2px   0  0   #000, 
 		    -2px   0  0   #000, 
@@ -49,14 +48,14 @@
 		<?php $this->load->view('frontend/include/base_css'); ?>
 	</head>
 	<body>
-		<!-- navbar -->
+		
 		<?php $this->load->view('frontend/include/base_nav'); ?>
-		<!-- banner section start -->
+		
 		<section class="relative section-gap" id="home" style="margin-bottom: 150px;">
 			<div class="container">
 				<div class="row fullscreen d-flex align-items-center justify-content-center">
 					<div class="banner-content col-lg-7 col-md-12">
-						<!-- <h4  class="combined">Official Ticket Guarantee</h4> -->
+						
 							<h2 class="text-black" >
 							Anadolu EXPRESS' e Hoşgeldiniz 		
 							</h2>
@@ -79,7 +78,7 @@
 				</div>
 				<div class="row">
 				<div class="col-sm-4">
-    				<div class="box_main_1 text-center"> <!-- text-center sınıfını ekledik -->
+    				<div class="box_main_1 text-center"> 
         				<img class="img-fluid img-oval" src="<?php echo base_url() ?>assets/frontend/img/bus1.jpg" width="250" height="250" alt="">
         				<div class="padding_15">
            				 	<h2 class="speed_text">SON TEKNOLOJİ ARAÇLAR</h2>
@@ -107,11 +106,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- End service Area -->
-		<!-- End feature Area -->
-		<!-- Log on to codeastro.com for more projects -->
-		<!-- End Generic Start -->
-		<!-- footer section end -->
+		
 		<?php $this->load->view('frontend/include/base_footer'); ?>
 		<!-- js -->
 		<?php $this->load->view('frontend/include/base_js'); ?>
