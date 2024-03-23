@@ -155,38 +155,10 @@ class Tiket extends CI_Controller {
 		$data['tiket'] = $sqlcek;
 		$this->load->view('frontend/payment',$data);
 	}
-	public function checkout($value=''){
+	public function checkout($value='') {
 		$this->getsecurity();
 		$data['tiket'] = $value;
-		$send['sendmail'] = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_jadwal on tbl_order.kd_jadwal = tbl_jadwal.kd_jadwal LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan LEFT JOIN tbl_bank on tbl_order.kd_bank = tbl_bank.kd_bank WHERE kd_order ='$value'")->row_array();
-		$send['count'] = count($send['sendmail']);
-		//email
-		$subject = 'BTBS';
-		$message = $this->load->view('frontend/sendmail',$send, TRUE);
-		$to 	 = $this->session->userdata('email');
-        $config = [
-               'mailtype'  => 'html',
-               'charset'   => 'utf-8',
-               'protocol'  => 'smtp',
-               'smtp_host' => 'ssl://smtp.gmail.com',
-               'smtp_user' => 'akbabameytican@gmail.com',    // Ganti dengan email gmail kamu
-               'smtp_pass' => 'hzuv jmpk ytbd iavw',      // Password gmail kamu
-               'smtp_port' => 465,
-		   ];
-        $this->load->library('email', $config);
-        $this->email->set_newline("\r\n");
-        $this->email->from('BTBS');
-        $this->email->to($to);
-        $this->email->subject($subject);
-        $this->email->message($message);
-        if ($this->email->send()) {
-			$this->session->set_flashdata('message', 'swal("Success", "Please proceed towards payment confirmation!", "success");');
-            $this->load->view('frontend/checkout', $data);
-        } else {
-		//    echo 'Error! Send an error email';
-		$this->session->set_flashdata('message', 'swal("Success", "Please proceed towards payment confirmation!", "success");');
-            $this->load->view('frontend/checkout', $data);
-        }
+		$this->load->view('frontend/checkout', $data);
 	}
 	/* Log on to codeastro.com for more projects */
 	public function caritiket(){

@@ -38,27 +38,23 @@
 							<div class="col-lg-11">
 								<div class="p-5">
 									<div class="text-center">
-										<h1 class="h4 text-gray-900 mb-4"><i class="fas fa-bus"></i> Admin Login Panel</h1>
+										<h1 class="h4 text-gray-900 mb-4"><i class="fas fa-bus"></i> Admin Giriş Paneli</h1>
 									</div>
 									<form class="user" method="post" action="<?= base_url('backend/login/cekuser') ?>">
 										<div class="form-group">
 											<input required="" type="text" class="form-control form-control-user" name="username"
-												aria-describedby="emailHelp" placeholder="Username">
+												aria-describedby="emailHelp" placeholder="Kullanıcı Adı">
 										</div>
 										<div class="form-group">
 											<input required="" type="password" class="form-control form-control-user" name="password"
-												placeholder="Password">
+												placeholder="Şifre">
 										</div>
 										<button type="submit" class="btn btn-success btn-block">
-											Login
+											Giriş Yap
 										</button>
-										<!--  <hr>
-                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
-                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a> -->
+										</div>
+    										<a href="<?php echo base_url() ?>" class="btn btn-success btn-block" style="background-color:#40e0d0; border-color:#40e0d0; width: 305px; margin: 0 auto">Anasayfa</a>
+										
 									</form>
 									<hr>
 									<!-- <p align="center" class="login-box-msg">Your IP : <?= $ipaddres; ?></p> -->

@@ -1233,7 +1233,6 @@ h6 {
 }
 
 .ordered-list li {
-	list-style-type: decimal-leading-zero;
 	/* color: #8490ff; */
 	font-weight: 500;
 	line-height: 1.82em !important;
@@ -1241,7 +1240,7 @@ h6 {
 
 .ordered-list li span {
 	font-weight: 300;
-	color: #777;
+	color: #000000;
 }
 
 .ordered-list-alpha li {

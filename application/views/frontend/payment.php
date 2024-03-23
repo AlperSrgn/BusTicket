@@ -29,9 +29,9 @@
 				<div class="row d-flex justify-content-center">
 					<div class="col-lg-10">
 						
-						<div class="card mb-5">
+						<div class="box_main_1" style="height:auto; width:auto">
 							<div class="card-header" align="center">
-								<b><i class="fas fa-ticket-alt"></i> Rezervasyon No <?= $tiket[0]['kd_order']; ?></b>
+								<b><i class="fas fa-ticket fa-lg" style="color:#000000"></i> Rezervasyon No <?= $tiket[0]['kd_order']; ?></b>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
@@ -65,9 +65,9 @@
 					</div>
 					<div class="col-lg-10">
 						
-						<div class="card">
-							<div class="card-header" align="center">
-								<i class="fas fa-ticket-alt"></i> Ödeme Süreci
+						<div class="box_main_1" style="height:auto">
+							<div class="card-header" align="center" style="color:#000000">
+								<i class="fas fa-ticket fa-lg"></i> Süreci
 							</div>
 							<div class="card-body" align="center">
 								<h4>Lütfen Ödemenizi Tamamlayın!</h4><br>
@@ -87,7 +87,7 @@
 											<p ><input type="hidden" name="" id="myInput" value="<?= $tiket[0]['nomrek_bank']; ?> of <?= $tiket[0]['nama_bank'] ?>"><h4 id="myInput"><?= number_format((float)($tiket[0]['nomrek_bank']),0,"-","-"); ?> of <?= $tiket[0]['nama_bank'] ?></h4></p>
 										</div>
 										<div class="col-md-3 copy-link">
-											<button onclick="myFunction()" class="btn btn-outline-primary"><i class="fas fa-copy"></i> Copy Account No</button>
+											<button onclick="myFunction()" class="btn btn-outline-primary"><i class="fas fa-copy"></i> Hesap No Kopyala</button>
 										</div>
 									</div>
 								</div>
@@ -100,24 +100,25 @@
 								<div class="col-14 mt-15 mb-15">
 									<hr>
 									<div class="col-md-8 mt-sm-30">
-										<h3 class="mb-20">PAYMENT GUIDE</h3>
-										<div class="">
-											<ol class="ordered-list" align="left">		
-                                            <li><?= $tiket[0]['nama_bank']; ?> ATM Kartınızı Takın</li>
-                                            <li>ATM Şifrenizi Girin</li>
-                                            <li>Diğer İşlem Menüsünü Seçin</li>
-                                            <li>Transfer menüsünü ve <?= $tiket[0]['nama_bank']; ?> Hesabına Seçin</li>
-                                            <li>Yapılacak Hesap numarasını girin <?= $tiket[0]['nama_bank']; ?></li>
-                                            <li>Transfer edilecek para miktarını girin</li>
-                                            <li>ATM ekranı işlem verilerinizi gösterecektir,</li>
-                                            <li>Veriler doğruysa "EVET" (Tamam) seçin</li>
-                                            <li>Tamamlandı (Fiş ATM makinesinden çıkacaktır)</li>
-                                            <li>ATM Kartınızı Alın</li>
-											</ol>
+										<h3 class="mb-20">ÖDEME REHBERİ</h3>
+										<div class="" style="color:#000000">
+    										<ul class="ordered-list" align="left" style="list-style-type: disc; margin-left: 20px;">
+        										<li><?= $tiket[0]['nama_bank']; ?> ATM Kartınızı Takın</li>
+        										<li>ATM Şifrenizi Girin</li>
+        										<li>Diğer İşlem Menüsünü Seçin</li>
+        										<li>Transfer menüsünü ve <?= $tiket[0]['nama_bank']; ?> Hesabına Seçin</li>
+        										<li>Yapılacak Hesap numarasını girin <?= $tiket[0]['nama_bank']; ?></li>
+        										<li>Transfer edilecek para miktarını girin</li>
+        										<li>ATM ekranı işlem verilerinizi gösterecektir,</li>
+        										<li>Veriler doğruysa "EVET" (Tamam) seçin</li>
+        										<li>Tamamlandı (Fiş ATM makinesinden çıkacaktır)</li>
+        										<li>ATM Kartınızı Alın</li>
+    										</ul>
 										</div>
+
 									</div>
 								</div>
-								<a href="<?= base_url('tiket/konfirmasi/'.$tiket[0]['kd_order'].'/'.$total) ?>" class="btn btn-primary pull-center">Ödeme onayı için gönder </a>
+								<a href="<?= base_url('tiket/konfirmasi/'.$tiket[0]['kd_order'].'/'.$total) ?>" class="btn btn-primary pull-center" style="background-color:#40e0d0; border-color:#40e0d0">Ödeme onayı için gönder </a>
 							</div>
 						</div>
 					</div>
