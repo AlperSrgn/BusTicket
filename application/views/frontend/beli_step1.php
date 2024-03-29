@@ -60,7 +60,12 @@
 								</div>
 								<table class="" style="color: black;">
 									<tr>
-										<td class='btn-group' width='150'>
+									<td class='btn-group' style="float: left;">
+											<label class='btn btn-primary' style="margin: 10px 100px 20px 20px; background-color:grey; border-color:black;">
+												<a value='' autocomplete='off' disabled='disabled'> <i class="fa-regular fa-user fa-lg"></i>  Şoför</a>
+											</label>
+									</td>
+										<td class='btn-group' width='200'>
 											
 											<label class='btn btn-default'>
 												<input name='kursi[]' value='1' id='1' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '1'), $kursi)) { echo "disabled checked";} ?>>&nbsp;1  <i class="fa-solid fa-couch"></i>
@@ -72,14 +77,12 @@
 										</td>
 										<td class='btn-group' width='130'>
 											
-											<label class='btn btn-primary' style="margin-left: 50px; background-color:grey">
-												<a value='' autocomplete='off' disabled='disabled'> <i class="fa-regular fa-user fa-lg"></i>  Şoför</a>
-											</label>
+											
 										</td>
 									</tr>
 									<tr>
 									
-										<td class='btn-group' width='150'>
+										<td class='btn-group' width='200'>
 											
 											<label class='btn btn-default'>
 												<input name='kursi[]' value='3' id='3' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '3'), $kursi)) { echo "disabled checked";} ?>>&nbsp;3  <i class="fa-solid fa-couch"></i>
@@ -88,7 +91,7 @@
 													<input name='kursi[]' value='4' id='4' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '4'), $kursi)) { echo "disabled checked";} ?>>&nbsp;4  <i class="fa-solid fa-couch"></i>
 												</label>
 											</td>
-											<td class='btn-group' width='150'>
+											<td class='btn-group' width=''>
 												
 												<label class='btn btn-default'>
 													<input name='kursi[]' value='5' id='5' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '5'), $kursi)) { echo "disabled checked";} ?> >&nbsp;5  <i class="fa-solid fa-couch"></i>
@@ -105,7 +108,7 @@
 														<input name='kursi[]' value='7' id='7' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '7'), $kursi)) { echo "disabled checked";} ?>>&nbsp;7  <i class="fa-solid fa-couch"></i>
 													</label>
 												</td>
-												<td class='btn-group' width='150'>
+												<td class='btn-group' width='200' >
 													
 													<label class='btn btn-default'>
 														<input name='kursi[]' value='8' id='8' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '8'), $kursi)) { echo "disabled checked";} ?>>&nbsp;8  <i class="fa-solid fa-couch"></i>
@@ -125,7 +128,7 @@
 															<input name='kursi[]' value='11' id='11' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '11'), $kursi)) { echo "disabled checked";} ?>>&nbsp;11  <i class="fa-solid fa-couch"></i>
 														</label>
 													</td>
-													<td class='btn-group' width='150'>
+													<td class='btn-group' width='150' style="float: right;" >
 														
 														<label class='btn btn-default'>
 															<input name='kursi[]' value='12' id='12' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '12'), $kursi)) { echo "disabled checked";} ?>>&nbsp;12  <i class="fa-solid fa-couch"></i>
@@ -133,7 +136,7 @@
 													</td>
 												</tr>
 												<tr>
-													<td class='btn-group' width='150'>
+													<td class='btn-group' width='150' >
 														
 														<label class='btn btn-default'>
 															<input name='kursi[]' value='13' id='13' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '13'), $kursi)) { echo "disabled checked";} ?>>&nbsp;13  <i class="fa-solid fa-couch"></i>
@@ -142,7 +145,7 @@
 																<input name='kursi[]' value='14' id='14' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '14'), $kursi)) { echo "disabled checked";} ?>>&nbsp;14  <i class="fa-solid fa-couch"></i>   
 															</label>
 														</td>
-														<td class='btn-group' width='150'>
+														<td class='btn-group' width='150' style="float: right;">
 															
 															<label class='btn btn-default'>
 																<input name='kursi[]' value='15' id='15' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '15'), $kursi)) { echo "disabled checked";} ?>>&nbsp;15  <i class="fa-solid fa-couch"></i>
@@ -150,7 +153,7 @@
 														</td>
 													</tr>
 													<tr>
-														<td class='btn-group' width='150'>
+														<td class='btn-group' width='200'>
 															
 															<label class='btn btn-default'>
 																<input name='kursi[]' value='16' id='16' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '16'), $kursi)) { echo "disabled checked";} ?>>&nbsp;16  <i class="fa-solid fa-couch"></i>
@@ -181,7 +184,7 @@
 																		<input name='kursi[]' value='21' id='21' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '21'), $kursi)) { echo "disabled checked";} ?>>&nbsp;21  <i class="fa-solid fa-couch"></i>
 																	</label>
 																</td>
-																<td class='btn-group' width='150'>
+																<td class='btn-group' width='200' >
 																	
 																	<label class='btn btn-default'>
 																		<input name='kursi[]' value='22' id='22' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '22'), $kursi)) { echo "disabled checked";} ?>>&nbsp;22  <i class="fa-solid fa-couch"></i>  

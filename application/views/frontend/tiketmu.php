@@ -14,7 +14,7 @@
 		
 		<meta charset="UTF-8">
 		
-		<title>BUS TICKET BOOKING</title>
+		<title>Biletlerim</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--CSS-->
 		<?php $this->load->view('frontend/include/base_css'); ?>
@@ -24,7 +24,7 @@
 		<?php $this->load->view('frontend/include/base_nav'); ?>
 		<div class="generic-banner">
 			<br>
-			<h2 class="" align="center">Biletiniz</h2>
+			<h2 class="" align="center">Biletlerim</h2>
 			<div class="container ">
 				<div class="row d-flex justify-content-center">
 					<?php foreach ($tiket as $row) { ?>
