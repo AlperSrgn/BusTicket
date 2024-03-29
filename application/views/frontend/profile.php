@@ -40,8 +40,8 @@
 					<div class="row d-flex justify-content-center">
 						<div class="box_main_1">
 							
-							<div class="card" align="center" style="color: black;">
-								<div class="card-header">
+							<div class="card" align="center" style="color: black; border-color:white;">
+								<div class="card-header" style="border-color: grey; background-color: white; margin-bottom:50px">
 									<i class="fas fa-user fa-lg"></i> Hesap Bilgileri
 								</div>
 								<div class="card-body" align="left">
