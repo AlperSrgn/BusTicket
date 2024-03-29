@@ -28,11 +28,11 @@
         <div>
             <div style="width: 1000px; margin: 0 auto;">
                
-                <div class="box_main_1">
+                <div class="box_main_1" style="height: 100%; margin-bottom:50px;">
                    
-                    <div class="card mb-5">
-                        <div class="card-header">
-                            <i class="fas fa-list"></i> Seyahat Bilgileri
+                    <div class="card mb-5" style="border-color: white;">
+                        <div class="card-header" style="border-color: white; background-color:white; color:black;">
+                        <i class="fa-solid fa-route fa-lg"></i> SEYAHAT BİLGİLERİ
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -40,11 +40,11 @@
                                     <thead class="thead-dark">
                                         <tr>
                                             <th scope="col">Rota [Seyehat Kodu]</th>
-                                            <th>Varış Otogarı</th>
+                                            <th>Varış Yeri</th>
                                             <th scope="col">Tarih - Saat</th>
                                             <th scope="col">Koltuklar</th>
                                             <th>Ücret</th>
-                                            <th scope="col">Etkileşim</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,13 +55,13 @@
                                             <td><?php echo hari_indo(date('N',strtotime($tanggal))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$tanggal.''))).', '.date('H:i',strtotime($jadwal[$i]['jam_berangkat_jadwal'])); ?></td>
                                             <td><?php echo $jadwal[$i]['kapasitas_bus']-$kursi[$i][0]['count(no_kursi_order)'] ?></td>
                                             <td>$<?php echo number_format((float)($jadwal[$i]['harga_jadwal']),0,",","."); ?></td>
-                                            <td><a href="<?php echo base_url('tiket/beforebeli/').$jadwal[$i]['kd_jadwal'].'/'.$asal['kd_tujuan'].'/'.$tanggal ?>" class=" btn btn-outline-success">Seçin</a></td>
+                                            <td><a href="<?php echo base_url('tiket/beforebeli/').$jadwal[$i]['kd_jadwal'].'/'.$asal['kd_tujuan'].'/'.$tanggal ?>" class=" btn btn-outline-success">Bilet al</a></td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
-                            <a href="<?php echo base_url('tiket') ?>" class="btn btn-danger pull-left">Geri Dön</a>
+                            <a style="background-color: #f44a40;" href="<?php echo base_url('tiket') ?>" class="btn btn-danger pull-left">Geri Dön</a>
                         </div>
                     </div>
                 </div>

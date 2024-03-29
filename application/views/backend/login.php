@@ -26,14 +26,13 @@
 
 	<div class="container">
 
-		<!-- Outer Row -->
 		<div class="row justify-content-center">
 
 			<div class="col-xl-5 col-lg-12 col-md-9">
 
 				<div class="card o-hidden border-0 shadow-lg my-5">
 					<div class="card-body p-0">
-						<!-- Nested Row within Card Body -->
+
 						<div class="row justify-content-center">
 							<div class="col-lg-11">
 								<div class="p-5">
@@ -43,7 +42,7 @@
 									<form class="user" method="post" action="<?= base_url('backend/login/cekuser') ?>">
 										<div class="form-group">
 											<input required="" type="text" class="form-control form-control-user" name="username"
-												aria-describedby="emailHelp" placeholder="Kullanıcı Adı">
+												aria-describedby="emailHelp" placeholder="Kullanıcı adı">
 										</div>
 										<div class="form-group">
 											<input required="" type="password" class="form-control form-control-user" name="password"

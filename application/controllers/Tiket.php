@@ -37,7 +37,7 @@ class Tiket extends CI_Controller {
 		$data['jadwal'] = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_bus on tbl_jadwal.kd_bus = tbl_bus.kd_bus LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE tbl_jadwal.wilayah_jadwal ='$tujuan' AND tbl_jadwal.kd_asal = '$asal'")->result_array();
 		if (!empty($data['jadwal'])) {
 			if ($tujuan == $data['asal']['kota_tujuan']) {
-				$this->session->set_flashdata('message', 'swal("Cek", "Tujuan dan Asal tidak boleh sama", "error");');
+				//$this->session->set_flashdata('message', 'swal("Cek", "Tujuan dan Asal tidak boleh sama", "error");');
     			redirect('tiket');
 			}else{
 				for ($i=0; $i < count($data['jadwal']); $i++) { 
@@ -46,7 +46,7 @@ class Tiket extends CI_Controller {
 				$this->load->view('frontend/cekjadwal',$data);
 			}
 		}else{
-			$this->session->set_flashdata('message', 'swal("Empty", "No Schedule", "error");');
+			//$this->session->set_flashdata('message', 'swal("Empty", "No Schedule", "error");');
     		redirect('tiket');
 		}
 	}
@@ -80,7 +80,7 @@ class Tiket extends CI_Controller {
 		if ($data['kursi']) {
 			$this->load->view('frontend/beli_step2', $data);
 		}else{
-			$this->session->set_flashdata('message', 'swal("Empty", "Choose Your Seat", "error");');
+			//$this->session->set_flashdata('message', 'swal("Empty", "Choose Your Seat", "error");');
 			redirect('tiket/beforebeli/'.$data['asal'].'/'.$data['kd_jadwal']);
 		}
 	}

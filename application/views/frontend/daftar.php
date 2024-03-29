@@ -26,12 +26,12 @@
 		<section class="service-area section-gap relative">
 			<div></div>
 			<div>
-				<div style="width: 1000px;  margin: 0 auto;">
-					<div style= "height:700px" ; class="box_main_1">
+				<div style="width: 1000px;  margin: 0 auto;" >
+					<div style= "height:700px;" class="box_main_1">
 						
-						<div class="card ">
-							<div class="card-header">
-								<i class="fas fa-user"></i> Kayıt Ol
+						<div class="card" style="color: black; background-color: white; border-color: white;">
+							<div class="card-header" style="background-color: white; color:black; text-align:center">
+								<i class="fas fa-user fa-lg"></i> <b> KAYIT OL</b>
 							</div>
 							<div class="card-body">
 								<form action="<?php echo base_url() ?>login/daftar" method="post">

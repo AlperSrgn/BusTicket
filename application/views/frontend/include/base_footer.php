@@ -1,5 +1,5 @@
  <!-- footer section start -->
- <div class="footer_section layout_padding">
+ <div class="footer_section layout_padding" style="color: black;">
       <div class="container-fluid">
          <div class="row">
             
@@ -11,6 +11,7 @@
                <div class="call_text"><a href="#"><span class="padding_left_0 animated-underline">İstanbul - İzmir</span></a></div>
                <div class="call_text"><a href="#"><span class="padding_left_0 animated-underline">Ankara - İzmir</span></a></div>
                <div class="call_text"><a href="#"><span class="padding_left_0 animated-underline">Eskişehir - Bursa</span></a></div>
+               <div class="call_text"><a href="#"><span class="padding_left_0 animated-underline">İzmir - Antalya</span></a></div>
 
             </div>
 
@@ -36,7 +37,7 @@
                      <li><a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
                   </ul>
                </div>
-               <img src="assets\frontend\img\payment_methods.png" alt="" width="80%"></img>
+               <img src="assets/frontend/img/payment_methods.png" alt="" width="80%"></img>
                <input type="text" class="email_text" placeholder="E-posta" name="Enter Your Email">
                <div class="subscribe_bt"><a href="#">BİZE KATIL</a></div>
             </div>

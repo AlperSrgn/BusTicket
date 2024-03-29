@@ -113,7 +113,7 @@ class Login extends CI_Controller {
 			$this->db->insert('tbl_pelanggan', $data);
 			$this->db->insert('tbl_token_pelanggan', $data1);
 			$this->_sendmail($token,'verify');
-			$this->session->set_flashdata('message', 'swal("Success", "Successfully Registered. Welcome to BTBS!", "success");');
+			//$this->session->set_flashdata('message', 'swal("Success", "Successfully Registered. Welcome to BTBS!", "success");');
     		redirect('login');
 		}
 

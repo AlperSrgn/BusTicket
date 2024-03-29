@@ -961,25 +961,25 @@ h6 {
 
 .genric-btn.success {
 	color: #fff;
-	background: #4cd3e3;
+	background: #40e0d0;
 	border: 1px solid transparent;
 }
 
 .genric-btn.success:hover {
-	color: #4cd3e3;
-	border: 1px solid #4cd3e3;
+	color: #40e0d0;
+	border: 1px solid #40e0d0;
 	background: #fff;
 }
 
 .genric-btn.success-border {
-	color: #4cd3e3;
-	border: 1px solid #4cd3e3;
+	color: #40e0d0;
+	border: 1px solid #40e0d0;
 	background: #fff;
 }
 
 .genric-btn.success-border:hover {
 	color: #fff;
-	background: #4cd3e3;
+	background: #40e0d0;
 	border: 1px solid transparent;
 }
 
@@ -1548,7 +1548,7 @@ h6 {
 }
 
 .confirm-switch input:checked + label:before {
-	background: #4cd3e3;
+	background: #40e0d0;
 }
 
 .primary-checkbox {
@@ -2584,7 +2584,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .service-area {
-	/* background: url(../img/service-bg.jpg) center; */
 	background-size: cover;
 }
 
@@ -2602,8 +2601,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .service-area .overlay-bg {
-	/* background-color: rgba(0, 0, 0, 0.7); */
-	background-color: rgb(177 177 177);
+	background-color: rgb(236, 236, 236);
 }
 
 .single-service {

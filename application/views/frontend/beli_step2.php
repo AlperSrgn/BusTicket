@@ -87,7 +87,7 @@
 														<input name='email' required="" maxlength='64' class='form-control' placeholder='Email' type='text' value="<?php echo $this->session->userdata('email')?>"></div>
 												</div>
 											</div>
-												      <div style="margin: 50px 50px 20px 50px; color: white;"><a href='javascript:history.back()' class='btn btn-danger pull-left'>Geri Dön</a></div>  
+												      <div style="margin: 50px 50px 20px 50px; color: white;"><a href='javascript:history.back()' class='btn btn-danger pull-left' style="background-color: #f44a40;">Geri Dön</a></div>  
 													  <button class="btn btn-success pull-right" style="background-color: #40e0d0; border-color: #40e0d0; margin: 0 50px 20px 50px;">Bileti Al</button>
 												</div>
 								</div>

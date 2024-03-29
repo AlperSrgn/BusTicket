@@ -14,7 +14,7 @@
 		
 		<meta charset="UTF-8">
 		
-		<title>My Profile</title>
+		<title>Profilim</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<!--CSS-->
 		<style type="text/css">
@@ -33,16 +33,16 @@
 	<body>
 		<!-- navbar -->
 		<?php $this->load->view('frontend/include/base_nav'); ?>
-		<section class="generic-banner relative">
+		<section class=" relative">
 			<div class="container">
 				<div class="section-top-border">
-					<h3 class="mb-30" align="center">Profilim</h3>
+					<h3 class="mb-30" align="center">PROFİL BİLGİLERİM</h3>
 					<div class="row d-flex justify-content-center">
 						<div class="box_main_1">
 							
-							<div class="card" align="left">
+							<div class="card" align="center" style="color: black;">
 								<div class="card-header">
-									<i class="fas fa-user"></i> Hesap Bilgileri
+									<i class="fas fa-user fa-lg"></i> Hesap Bilgileri
 								</div>
 								<div class="card-body" align="left">
 									<div class="row">
@@ -59,10 +59,7 @@
 										<div class="col-sm-14">
 											<h5 class="card-title">Adres</h5>
 											<p class="card-text"><?php echo $profile['alamat_pelanggan']?></p>
-											<h5 class="card-title">Profil Fotoğrafı</h5>
-											<p><img src="<?php echo base_url($profile['img_pelanggan'])?>" height="50" width="50" ></p>
-											<p><a href="<?php echo base_url('profile/changepassword/'.$profile['kd_pelanggan']) ?>" class="btn btn-primary">Şifreyi Değiştir</a></p>
-											<p><button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Hesabı Düzenle</button></p>
+											<p class="btn btn-primary" style="background-color: #fde910; border-color: black; color:black;">Hesabı Düzenle</button></p>
 										</div>
 									</div>
 								</div>

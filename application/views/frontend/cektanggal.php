@@ -28,14 +28,14 @@
 	
 	<?php $this->load->view('frontend/include/base_nav'); ?>
 	<section class="service-area section-gap relative">
-		<div class="overlay overlay-bg"></div>
+		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-6" style="color: black;">
 					
 					<div class="box_main_1">
-						<div class="card-header">
-							<i class="fas fa-search"></i> Bilet Arama
+						<div class="card-header" style="border-color: white;">
+							<i class="fas fa-search fa-lg"></i> Sefer ara
 						</div>
 						<div class="card-body">
 							<form action="<?php echo base_url() ?>tiket/cekjadwal?>" method="get">
@@ -65,16 +65,16 @@
 										<?php } ?>
 									</select>
 								</div>
-								<a href="<?php echo base_url() ?>tiket" class="btn btn-danger pull-left">Sıfırla </a>
+								<a style="background-color: #f44a40;" href="<?php echo base_url() ?>tiket" class="btn btn-danger pull-left">Sıfırla </a>
 								<button type="submit" class="btn btn-primary pull-right" style="background-color: #40e0d0; border-color: #40e0d0">Sefer bul </button>
 							</form>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-6" style="color: black;">
 					<div class="box_main_1" style="height: 800px">
-						<div class="card-header">
-							<i class="fas fa-info"></i> Otogar Bilgileri
+						<div class="card-header" style="border-color: white;">
+							<i class="fas fa-info fa-lg"></i> Otogar Bilgileri
 						</div>
 						<div class="card-body">
 							<table class="table table-bordered table-condensed" style="font-size:12px;" id="mydata">

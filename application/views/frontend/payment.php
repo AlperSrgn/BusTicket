@@ -67,7 +67,7 @@
 						
 						<div class="box_main_1" style="height:auto">
 							<div class="card-header" align="center" style="color:#000000">
-								<i class="fas fa-ticket fa-lg"></i> Süreci
+								<i class="fas fa-ticket fa-lg"></i> Ödeme Adımı
 							</div>
 							<div class="card-body" align="center">
 								<h4>Lütfen Ödemenizi Tamamlayın!</h4><br>

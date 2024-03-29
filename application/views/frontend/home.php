@@ -60,8 +60,9 @@
 							Anadolu EXPRESS' e Hoşgeldiniz 		
 							</h2>
 						<p class="text-black" >
-						<strong style="float: left; margin-bottom: 50px">Türkiye'nin dört bir yanını birbirine bağlayan, güvenli ve konforlu yolculukların adresi olan Anadolu EXPRESS, siz değerli yolcularımıza hizmet vermekten gurur duyar. Yılların tecrübesiyle, modern filomuz ve alanında uzman personelimizle, her seyahatinizi keyifli bir deneyime dönüştürmeyi amaçlıyoruz. Yolculuğunuz boyunca ihtiyacınız olan her türlü konfor düşünülmüştür. Geniş koltuklar, ücretsiz Wi-Fi, ve zengin ikram seçenekleriyle kendinizi evinizde hissedeceksiniz. Güvenliğiniz bizim için her şeyden önemli; bu yüzden en son teknoloji güvenlik sistemleriyle donatılmış otobüslerimiz ve profesyonel şoför kadromuzla, sizleri gideceğiniz yere sağ salim ulaştırmak bizim en büyük önceliğimiz. Anadolu EXPRESS olarak, seyahatlerinizde yanınızda olmaktan mutluluk duyarız.</strong></p>
-						<a href="<?php echo base_url() ?>tiket" class="btn btn-danger buy_bt">BİLET AL</a>
+						<strong style="float: left; margin-bottom: 50px">Türkiye'nin dört bir yanını birbirine bağlayan, güvenli ve konforlu yolculukların adresi olan Anadolu EXPRESS, siz değerli yolcularımıza hizmet vermekten gurur duyar. 
+						Yılların tecrübesiyle, modern filomuz ve alanında uzman personelimizle, her seyahatinizi keyifli bir deneyime dönüştürmeyi amaçlıyoruz. Yolculuğunuz boyunca ihtiyacınız olan her türlü konfor düşünülmüştür. Geniş koltuklar, ücretsiz Wi-Fi, ve zengin ikram seçenekleriyle kendinizi evinizde hissedeceksiniz. Güvenliğiniz bizim için her şeyden önemli; bu yüzden en son teknoloji güvenlik sistemleriyle donatılmış otobüslerimiz ve profesyonel şoför kadromuzla, sizleri gideceğiniz yere sağ salim ulaştırmak bizim en büyük önceliğimiz. Anadolu EXPRESS olarak, seyahatlerinizde yanınızda olmaktan mutluluk duyarız.</strong></p>
+						<a style="border-radius: 100px; background-color: #40e0d0; border-color: black; width:100%; color: black; font-size: 20px" href="<?php echo base_url() ?>tiket" class="btn btn-danger buy_bt">Bilet al   <i class="fa-solid fa-arrow-right"></i></a>
 						
 					</div>
 					<img src="assets\frontend\img\bus.jpg" alt="" style="margin-bottom: 100px ;">
@@ -72,8 +73,8 @@
 			<div class="overlay overlay-bg"></div>
 			<div class="container">
 				<div class="row d-flex justify-content-center">
-					<div class="col-md-8 pb-40 header-text">
-						<h1>Anadolu EXPRESS Ayrıcalıkları</h1>
+					<div class="col-md-8 pb-40 header-text" >
+						<h1 style="color: black;">Anadolu EXPRESS Ayrıcalıkları</h1>
 					</div>
 				</div>
 				<div class="row">
