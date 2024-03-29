@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- Log on to codeastro.com for more projects -->
+
 <title>E-Ticket(<?php echo $cetak[0]['kd_order'];?>)</title>
 
 <style type="text/css">

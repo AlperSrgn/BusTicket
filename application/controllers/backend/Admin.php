@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
 			$this->load->view('backend/daftar',$data);
 		} else {
 			// die(print_r($_POST));
-			/* Log on to codeastro.com for more projects */
+			/*  */
 			$kode = $this->getkod_model->get_kodadm();
 			$data = array(
 				'kd_admin' => $kode,

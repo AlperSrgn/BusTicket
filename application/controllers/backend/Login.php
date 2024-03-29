@@ -18,7 +18,7 @@ class Login extends CI_Controller {
 			redirect('backend/login');
 		}
     }
-    /* Log on to codeastro.com for more projects */
+    
 	function getUserIP()
     {
         $client  = @$_SERVER['HTTP_CLIENT_IP'];
@@ -50,7 +50,7 @@ class Login extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect(base_url('backend/login'));
 	}
-    /* Log on to codeastro.com for more projects */
+    
 	public function cekuser(){
     $username = strtolower($this->input->post('username'));
     $getUser = $this->db->query('select * from tbl_admin where username_admin = "'.$username.'"')->row();
@@ -83,5 +83,5 @@ class Login extends CI_Controller {
 }
 
 /* End of file Login.php */
-/* Log on to codeastro.com for more projects */
+
 /* Location: ./application/controllers/backend/Login.php */

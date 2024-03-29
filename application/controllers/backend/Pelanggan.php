@@ -24,7 +24,3 @@ class Pelanggan extends CI_Controller {
 	}
 
 }
-
-/* End of file Pelanggan.php */
-/* Log on to codeastro.com for more projects */
-/* Location: ./application/controllers/backend/Pelanggan.php */

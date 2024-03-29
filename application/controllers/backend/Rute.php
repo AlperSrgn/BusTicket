@@ -22,7 +22,7 @@ class Rute extends CI_Controller {
 		// die(print_r($data));
 		$this->load->view('backend/tujuan', $data);
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function viewrute($id=''){
 		$data['title'] = "Destination/Terminal List";
 		$data['rute'] = $this->db->query("SELECT * FROM tbl_seferler WHERE hedef_kod = '".$id."' ")->row_array();
@@ -44,5 +44,5 @@ class Rute extends CI_Controller {
 }
 
 /* End of file Rute.php */
-/* Log on to codeastro.com for more projects */
+
 /* Location: ./application/controllers/backend/Rute.php */

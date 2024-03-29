@@ -148,7 +148,7 @@ class Login extends CI_Controller {
             echo 'Error! email cant be sent.';
         }
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function verify($value=''){
 		$email = $this->input->get('email');
 		$token = $this->input->get('token');
@@ -186,7 +186,7 @@ class Login extends CI_Controller {
 	    redirect('login');
 		}
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function lupapassword($value=''){
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email',array(
 			'required' => 'Email Required.',
@@ -238,7 +238,7 @@ class Login extends CI_Controller {
 	    redirect('login');
 		}
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function changepassword($value=''){
 		if ($this->session->userdata('resetemail') == NULL) {
 			redirect('login/daftar');
@@ -269,5 +269,5 @@ class Login extends CI_Controller {
 }
 
 /* End of file Login.php */
-/* Log on to codeastro.com for more projects */
+
 /* Location: ./application/controllers/Login.php */

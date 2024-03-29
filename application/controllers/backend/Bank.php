@@ -16,7 +16,7 @@ class Bank extends CI_Controller {
 			redirect('backend/login');
 		}
 	}
-	/* Log on to codeastro.com for more projects */
+	/*  */
 	public function index(){
 		$data['title'] = "Bank Management";
 		$data['bank'] = $this->db->query("SELECT * FROM tbl_bank ")->result_array();

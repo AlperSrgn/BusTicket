@@ -11,7 +11,7 @@
     <?php $this->load->view('backend/include/base_css'); ?>
   </head>
   <body id="page-top">
-    <!-- navbar --><!-- Log on to codeastro.com for more projects -->
+    <!-- navbar -->
     <?php $this->load->view('backend/include/base_nav'); ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -51,7 +51,7 @@
         </div>
       </div>
       <!-- /.container-fluid -->
-    </div><!-- Log on to codeastro.com for more projects -->
+    </div>
     <!-- /.container-fluid -->
   </div>
   <!-- End of Main Content -->

@@ -16,7 +16,7 @@ class Laporan extends CI_Controller {
 			redirect('backend/login');
 		}
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function index(){
 		$data['title'] = 'Report';
 		$data['bulan'] = $this->db->query("SELECT DISTINCT DATE_FORMAT(bilet_olstrm_tarih,'%M %Y') AS bulan FROM tbl_bilet")->result_array();
@@ -45,5 +45,5 @@ class Laporan extends CI_Controller {
 }
 
 /* End of file Laporan.php */
-/* Log on to codeastro.com for more projects */
+
 /* Location: ./application/controllers/backend/Laporan.php */

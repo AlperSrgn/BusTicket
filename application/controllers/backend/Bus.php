@@ -33,7 +33,3 @@ class Bus extends CI_Controller {
 	}
 
 }
-
-/* End of file Bus.php */
-/* Log on to codeastro.com for more projects */
-/* Location: ./application/controllers/backend/Bus.php */

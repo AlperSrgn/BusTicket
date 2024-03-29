@@ -17,7 +17,7 @@ class Konfirmasi extends CI_Controller {
 			redirect('backend/login');
 		}
 	}
-	/* Log on to codeastro.com for more projects */
+	
 
 	public function index(){
 		$data['title'] = "Confirmation List";
@@ -40,5 +40,5 @@ class Konfirmasi extends CI_Controller {
 }
 
 /* End of file Konfirmasi.php */
-/* Log on to codeastro.com for more projects */
+
 /* Location: ./application/controllers/backend/Konfirmasi.php */

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-/* Log on to codeastro.com for more projects */
+
 class Home extends CI_Controller {
 	function __construct()
     {

@@ -21,7 +21,7 @@ class Order extends CI_Controller {
 		// die(print_r($data));
 		$this->load->view('backend/order', $data);
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function vieworder($id=''){
 		// die(print_r($_GET));
 		$cek = $this->input->get('order').$id;
@@ -78,7 +78,7 @@ class Order extends CI_Controller {
 
 		
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function kirimemail($id=''){
 		$data['cetak'] = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_sefer on tbl_order.sefer_kodu = tbl_sefer.sefer_kodu LEFT JOIN tbl_seferler on tbl_sefer.hedef_kod = tbl_seferler.hedef_kod WHERE kd_order ='".$id."'")->result_array();
 		$asal = $data['cetak'][0]['cikis_kodu'];
@@ -121,5 +121,5 @@ class Order extends CI_Controller {
 }
 
 /* End of file Order.php */
-/* Log on to codeastro.com for more projects */
+
 /* Location: ./application/controllers/backend/Order.php */

@@ -16,7 +16,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
       <!-- Page Heading -->
-      <!-- Log on to codeastro.com for more projects -->
+      
       <!-- Basic Card Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -138,7 +138,7 @@
 <!-- End of Content Wrapper -->
 </div>
 <!-- End of Page Wrapper -->
-<!-- Log on to codeastro.com for more projects -->
+
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
 <i class="fas fa-angle-up"></i>

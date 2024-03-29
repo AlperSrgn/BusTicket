@@ -18,7 +18,7 @@
 
 <body id="page-top">
 
-  <!-- navbar --><!-- Log on to codeastro.com for more projects -->
+  <!-- navbar -->
   <?php $this->load->view('backend/include/base_nav'); ?>
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -105,7 +105,7 @@
                   </div>
                 </div>
               </div>
-            </div><!-- Log on to codeastro.com for more projects -->
+            </div>
 
             <div class="col-xl-4 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
@@ -159,7 +159,7 @@
 
   </div>
   <!-- End of Page Wrapper -->
-  <!-- Log on to codeastro.com for more projects -->
+  
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>

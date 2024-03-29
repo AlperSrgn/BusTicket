@@ -20,7 +20,7 @@
 	<!-- Begin Page Content -->
 	<div class="container-fluid">
 		<!-- Page Heading -->
-		<!-- Log on to codeastro.com for more projects -->
+		
 		<!-- Basic Card Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
@@ -75,7 +75,7 @@
 		</div>
 		<!-- End of Main Content -->
 		<!-- The Modal -->
-		<!-- Footer --><!-- Log on to codeastro.com for more projects -->
+		<!-- Footer -->
 		<?php $this->load->view('backend/include/base_footer'); ?>
 		<!-- End of Footer -->
 		<!-- js -->

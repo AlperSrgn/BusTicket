@@ -17,7 +17,7 @@
     <div class="container-fluid">
       <h1 class="h5 text-gray-800">Schedule Management</h1>
       <!-- DataTales Example -->
-      <!-- Log on to codeastro.com for more projects -->
+      
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <a href="<?= base_url('backend/jadwal/tambahjadwal') ?>" class="btn btn-success pull-right" >
@@ -64,7 +64,7 @@
   <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
-<!-- Footer --><!-- Log on to codeastro.com for more projects -->
+<!-- Footer -->
 <?php $this->load->view('backend/include/base_footer'); ?>
 <!-- End of Footer -->
 <!-- js -->

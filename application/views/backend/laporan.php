@@ -16,7 +16,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <!-- Page Heading -->
-            <!-- Log on to codeastro.com for more projects -->
+            
             <h1 class="h5 mb-4 text-gray-800">Report Section</h1>
             <table class="table table-bordered table-condensed"  id="mydata">
             <thead class="thead-dark">
@@ -86,7 +86,7 @@
             </div>
         </div>
     </div>
-    <!-- Log on to codeastro.com for more projects -->
+    
     <!-- ============ MODAL ADD =============== -->
     <div class="modal fade" id="lap_jual_perbulan" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -125,7 +125,7 @@
 <!-- End of Content Wrapper -->
 </div>
 <!-- End of Page Wrapper -->
-<!-- Log on to codeastro.com for more projects -->
+
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
 <i class="fas fa-angle-up"></i>

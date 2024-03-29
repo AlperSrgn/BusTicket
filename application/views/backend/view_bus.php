@@ -106,7 +106,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <div class="container-fluid">
       <!-- Page Heading -->
       <!-- Basic Card Example -->
-      <!-- Log on to codeastro.com for more projects -->
+      
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">Bus Code [<?= $bus['bus_id']; ?>]  </h6>
@@ -137,7 +137,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
   </div>
   <!-- End of Main Content -->
-  <!-- Log on to codeastro.com for more projects -->
+  
   <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>

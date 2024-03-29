@@ -21,7 +21,7 @@ class Tiket extends CI_Controller {
 	$data['tiket'] = $this->db->query("SELECT * FROM tbl_bilet WHERE bilet_durum = 2 ")->result_array();
 	$this->load->view('backend/tiket', $data);	
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function viewtiket($tiket){
 		$data['title'] = "Ticket List";
 		$data['tiket'] = $this->db->query("SELECT * FROM tbl_bilet WHERE kd_bilet = '".$tiket."' ")->row_array();

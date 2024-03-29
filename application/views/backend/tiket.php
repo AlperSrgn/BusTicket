@@ -14,7 +14,7 @@
     <!-- navbar -->
     <?php $this->load->view('backend/include/base_nav'); ?>
     <!-- Begin Page Content -->
-    <!-- Log on to codeastro.com for more projects -->
+    
     <div class="container-fluid">
       
       <!-- DataTales Example -->
@@ -59,7 +59,7 @@
 <!-- Footer -->
 <?php $this->load->view('backend/include/base_footer'); ?>
 <!-- End of Footer -->
-</div><!-- Log on to codeastro.com for more projects -->
+</div>
 <!-- End of Content Wrapper -->
 </div>
 <!-- End of Page Wrapper -->

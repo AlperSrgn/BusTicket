@@ -22,7 +22,7 @@ class Tiket extends CI_Controller {
 		$data['list'] = $this->db->query("SELECT * FROM `tbl_seferler` ORDER BY yolculuk_sehir ASC ")->result_array();
 		$this->load->view('frontend/cektanggal',$data);
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function cektiket($value=''){
 		$this->load->view('frontend/cektiket');
 	}
@@ -50,7 +50,7 @@ class Tiket extends CI_Controller {
     		redirect('tiket');
 		}
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function beforebeli($jadwal="",$asal='',$tanggal=''){
 		$array = array(
 			'jadwal' => $jadwal,
@@ -84,7 +84,7 @@ class Tiket extends CI_Controller {
 			redirect('tiket/beforebeli/'.$data['asal'].'/'.$data['sefer_kodu']);
 		}
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function gettiket($value=''){
 	    include 'assets/phpqrcode/qrlib.php';
 	    $asal =  $this->db->query("SELECT * FROM tbl_seferler
@@ -135,7 +135,7 @@ class Tiket extends CI_Controller {
 		}
 		redirect('tiket/checkout/'.$getkode);
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function cekorder($id=''){
 		$id = $this->input->post('kodetiket');
 		$sqlcek = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_sefer on tbl_order.sefer_kodu = tbl_sefer.sefer_kodu LEFT JOIN tbl_bus on tbl_sefer.bus_id = tbl_bus.bus_id LEFT JOIN tbl_bank on tbl_order.kd_bank = tbl_bank.kd_bank WHERE kd_order ='$id' AND status_order != 3 AND status_order != 2")->result_array();
@@ -160,7 +160,7 @@ class Tiket extends CI_Controller {
 		$data['tiket'] = $value;
 		$this->load->view('frontend/checkout', $data);
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function caritiket(){
 		$id = $this->input->post('kodetiket');
 		$sqlcek = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_bus on tbl_order.bus_id = tbl_bus.bus_id LEFT JOIN tbl_sefer on tbl_order.sefer_kodu = tbl_sefer.sefer_kodu WHERE kd_order ='".$id."'")->result_array();

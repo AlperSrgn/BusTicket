@@ -17,7 +17,7 @@
     <div class="container-fluid">
       
       <!-- DataTales Example -->
-      <!-- Log on to codeastro.com for more projects -->
+      
       <div class="card shadow mb-4">
         <div class="card-header py-3">
         <h1 class="h5 text-gray-800">Booking List</h1>
@@ -75,7 +75,7 @@
 <!-- End of Footer -->
 </div>
 <!-- End of Content Wrapper -->
-</div><!-- Log on to codeastro.com for more projects -->
+</div>
 <!-- End of Page Wrapper -->
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">

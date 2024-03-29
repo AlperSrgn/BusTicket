@@ -1,5 +1,5 @@
 <html lang="en" moznomarginboxes mozdisallowselectionprint>
-<head><!-- Log on to codeastro.com for more projects -->
+<head>
     <title>Ticket Sales Report</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/laporan.css')?>"/>

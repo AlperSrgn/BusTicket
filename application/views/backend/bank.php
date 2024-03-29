@@ -19,7 +19,7 @@
 	<div class="container-fluid">
 		<h1 class="h5 text-gray-800">Bank List</h1>
 		<!-- DataTales Example -->
-		<!-- Log on to codeastro.com for more projects -->
+		
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
 				<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#ModalTujuan">
@@ -62,7 +62,7 @@
 	<!-- /.container-fluid -->
 	</div>
 	<!-- End of Main Content -->
-	<!-- Footer --><!-- Log on to codeastro.com for more projects -->
+	<!-- Footer -->
 	<?php $this->load->view('backend/include/base_footer'); ?>
 	<!-- Modal -->
 	<div class="modal fade" id="ModalTujuan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

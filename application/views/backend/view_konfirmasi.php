@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Log on to codeastro.com for more projects -->
+    
     <title><?= $title ?></title>
     <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -106,7 +106,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <!-- Begin Page Content -->
     <div class="container-fluid">
       <!-- Page Heading -->
-      <!-- Log on to codeastro.com for more projects -->
+      
       <!-- Basic Card Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -167,7 +167,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
   </div>
   <!-- End of Main Content -->
-  <!-- Log on to codeastro.com for more projects -->
+  
   <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>

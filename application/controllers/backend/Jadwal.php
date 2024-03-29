@@ -28,7 +28,7 @@ class Jadwal extends CI_Controller {
 		$data['tujuan'] = $this->db->query("SELECT * FROM tbl_seferler ORDER BY yolculuk_sehir asc")->result_array();
 		$this->load->view('backend/tambahjadwal', $data);
 	}
-	/* Log on to codeastro.com for more projects */
+	
 	public function tambahjadwal(){
 		$this->form_validation->set_rules('tujuan', 'Tujuan', 'trim|required|min_length[5]|max_length[12]');
 		if ($this->form_validation->run() ==  FALSE) {
@@ -81,5 +81,5 @@ class Jadwal extends CI_Controller {
 }
 
 /* End of file Jadwal.php */
-/* Log on to codeastro.com for more projects */
+
 /* Location: ./application/controllers/backend/Jadwal.php */

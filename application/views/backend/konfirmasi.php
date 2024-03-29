@@ -15,7 +15,7 @@
     <?php $this->load->view('backend/include/base_nav'); ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
-      <!-- Log on to codeastro.com for more projects -->
+      
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -64,7 +64,7 @@
 <!-- End of Footer -->
 </div>
 <!-- End of Content Wrapper -->
-</div><!-- Log on to codeastro.com for more projects -->
+</div>
 <!-- End of Page Wrapper -->
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
