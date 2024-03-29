@@ -48,15 +48,15 @@
 										<tbody>
 											<?php $i = 1; foreach ($tiket as $row) { ?>
 											<tr>
-												<?php $now = hari_indo(date('N',strtotime($row['tgl_berangkat_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$row['tgl_berangkat_order'].''))).', '.date('H:i',strtotime($row['jam_berangkat_jadwal']));?>
-												<th scope="row"><?= $row['kd_tiket']; ?></th>
-												<td><?= $row['kd_jadwal']." [".$row['kd_bus'].']' ?></td>
+												<?php $now = hari_indo(date('N',strtotime($row['hareket_tarihi']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$row['hareket_tarihi'].''))).', '.date('H:i',strtotime($row['kalkis_saat']));?>
+												<th scope="row"><?= $row['kd_bilet']; ?></th>
+												<td><?= $row['sefer_kodu']." [".$row['bus_id'].']' ?></td>
 												<td><?= $now?></td>
-												<td><?= $row['no_kursi_order']; ?></td>
-												<td>$<?= $row['harga_jadwal']; ?></td>
+												<td><?= $row['koltuk_no']; ?></td>
+												<td>$<?= $row['ucret']; ?></td>
 											</tr>
 											<?php } ?>
-											<td colspan="5"> <b class="pull-right">Toplam $<?php $total = $count * $tiket[0]['harga_jadwal'] ; echo $total ?></b></td>
+											<td colspan="5"> <b class="pull-right">Toplam $<?php $total = $count * $tiket[0]['ucret'] ; echo $total ?></b></td>
 										</tbody>
 									</table>
 								</div>
@@ -73,7 +73,7 @@
 								<h4>Lütfen Ödemenizi Tamamlayın!</h4><br>
 								<h6>Ödemeniz için kalan süre</h6>
 								<h1><p id="expired"></p></h1>
-								<p>(Before <?php $expired = hari_indo(date('N',strtotime($tiket[0]['expired_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$tiket[0]['expired_order'].''))).', '.date('H:i',strtotime($tiket[0]['expired_order'])); echo $expired;?>)</p>
+								<p>(Before <?php $expired = hari_indo(date('N',strtotime($tiket[0]['gecerlilik_sure']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$tiket[0]['gecerlilik_sure'].''))).', '.date('H:i',strtotime($tiket[0]['gecerlilik_sure'])); echo $expired;?>)</p>
 								<hr>
 								<div class="medium-title col-12 mb-20">
 									<h4><p>Lütfen ödemeyi aşağıdaki hesap numarasına transfer edin.</p></h4>
@@ -126,7 +126,7 @@
 				
 				<?php $this->load->view('frontend/include/base_footer'); ?>
 				<!-- js -->
-				<?php $expired1 = tanggal_ing(date('Y-m-d',strtotime($tiket[0]['expired_order']))).', '.date('Y',strtotime($tiket[0]['expired_order'])).' '.date('H:i',strtotime($tiket[0]['expired_order']))?>
+				<?php $expired1 = tanggal_ing(date('Y-m-d',strtotime($tiket[0]['gecerlilik_sure']))).', '.date('Y',strtotime($tiket[0]['gecerlilik_sure'])).' '.date('H:i',strtotime($tiket[0]['gecerlilik_sure']))?>
 				<script>
 				function myFunction() {
 				var copyText = document.getElementById("myInput");

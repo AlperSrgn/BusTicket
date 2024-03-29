@@ -9,22 +9,22 @@ class Bus extends CI_Controller {
 	}
 	public function index(){
 	$data['title'] = "Bus Management";
-	$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY nama_bus asc")->result_array();
+	$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY bus_name asc")->result_array();
 	// die(print_r($data));
 	$this->load->view('backend/bus', $data);	
 	}
 	public function viewbus($id=''){
 		$data['title'] = "View Bus";
-		$data['bus'] = $this->db->query("SELECT * FROM tbl_bus WHERE kd_bus = '".$id."'")->row_array();
+		$data['bus'] = $this->db->query("SELECT * FROM tbl_bus WHERE bus_id = '".$id."'")->row_array();
 		$this->load->view('backend/view_bus', $data);
 	}
 	public function tambahbus(){
 		$kode = $this->getkod_model->get_kodbus();
 		$data = array(
-			'kd_bus' => $kode,
-			'nama_bus' => $this->input->post('nama_bus'),
-			'plat_bus'		 => $this->input->post('plat_bus'),
-			'kapasitas_bus'		 => $this->input->post('seat'),
+			'bus_id' => $kode,
+			'bus_name' => $this->input->post('bus_name'),
+			'plaka'		 => $this->input->post('plaka'),
+			'kapasite'		 => $this->input->post('seat'),
 			'status_bus'			=> '1'
 			 );
 		$this->db->insert('tbl_bus', $data);

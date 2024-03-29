@@ -60,7 +60,7 @@
 									</td>
 									<td>:</td>
 									<td>
-										<?php $total = $count * $sendmail['harga_jadwal'] ?>
+										<?php $total = $count * $sendmail['ucret'] ?>
 										<strong>$ <?= number_format((float)($total),0,",","."); ?></strong>
 									</td>
 								</tr>
@@ -79,8 +79,8 @@
 									</td>
 									<td>:</td>
 									<td>
-										<strong>Schedule Code <?= $sendmail['kd_jadwal'] ?></strong><br>
-										<strong>Depart <?= hari_indo(date('N',strtotime($sendmail['tgl_berangkat_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$sendmail['tgl_berangkat_order'].''))).', '.date('H:i',strtotime($sendmail['jam_berangkat_jadwal'])); ?></strong><br>
+										<strong>Schedule Code <?= $sendmail['sefer_kodu'] ?></strong><br>
+										<strong>Depart <?= hari_indo(date('N',strtotime($sendmail['hareket_tarihi']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$sendmail['hareket_tarihi'].''))).', '.date('H:i',strtotime($sendmail['kalkis_saat'])); ?></strong><br>
 										<strong><?= $count; ?> Seat</strong>
 									</td>
 								</tr>
@@ -90,7 +90,7 @@
 									</td>
 									<td>:</td>
 									<td>
-										<strong><?= $sendmail['tgl_beli_order']; ?></strong>
+										<strong><?= $sendmail['alim_tarih']; ?></strong>
 									</td>
 								</tr>
 								<tr>
@@ -99,7 +99,7 @@
 									</td>
 									<td>:</td>
 									<td>
-										<strong><?php $expired = hari_indo(date('N',strtotime($sendmail['expired_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$sendmail['expired_order'].''))).', '.date('H:i',strtotime($sendmail['expired_order'])); echo $expired;?></strong>
+										<strong><?php $expired = hari_indo(date('N',strtotime($sendmail['gecerlilik_sure']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$sendmail['gecerlilik_sure'].''))).', '.date('H:i',strtotime($sendmail['gecerlilik_sure'])); echo $expired;?></strong>
 									</td>
 								</tr>
 									</table>

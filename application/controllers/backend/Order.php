@@ -25,7 +25,7 @@ class Order extends CI_Controller {
 	public function vieworder($id=''){
 		// die(print_r($_GET));
 		$cek = $this->input->get('order').$id;
-	 	$sqlcek = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_jadwal on tbl_order.kd_jadwal = tbl_jadwal.kd_jadwal WHERE kd_order ='".$cek."' ")->result_array();
+	 	$sqlcek = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_sefer on tbl_order.sefer_kodu = tbl_sefer.sefer_kodu WHERE kd_order ='".$cek."' ")->result_array();
 	 	if ($sqlcek) {
 	 		$data['tiket'] = $sqlcek;
 			$data['title'] = "View Bookings";
@@ -39,7 +39,7 @@ class Order extends CI_Controller {
 	public function inserttiket($value=''){
 		$id = $this->input->post('kd_order');
 		$asal = $this->input->post('asal_beli');
-		$tiket = $this->input->post('kd_tiket');
+		$tiket = $this->input->post('kd_bilet');
 		$nama = $this->input->post('nama');
 		$kursi = $this->input->post('no_kursi');
 		$umur = $this->input->post('umur_kursi');
@@ -49,9 +49,9 @@ class Order extends CI_Controller {
 		$where = array('kd_order' => $id );
 		$update = array('status_order' => $status );
 		$this->db->update('tbl_order', $update,$where);
-		$data['asal'] = $this->db->query("SELECT * FROM tbl_tujuan WHERE kd_tujuan ='".$asal."'")->row_array();
-		$data['cetak'] = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_jadwal on tbl_order.kd_jadwal = tbl_jadwal.kd_jadwal LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE kd_order ='".$id."'")->result_array();
-		$pelanggan = $this->db->query("SELECT email_pelanggan FROM tbl_pelanggan WHERE kd_pelanggan ='".$data['cetak'][0]['kd_pelanggan']."'")->row_array();
+		$data['asal'] = $this->db->query("SELECT * FROM tbl_seferler WHERE hedef_kod ='".$asal."'")->row_array();
+		$data['cetak'] = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_sefer on tbl_order.sefer_kodu = tbl_sefer.sefer_kodu LEFT JOIN tbl_seferler on tbl_sefer.hedef_kod = tbl_seferler.hedef_kod WHERE kd_order ='".$id."'")->result_array();
+		$pelanggan = $this->db->query("SELECT musteri_email FROM tbl_musteri WHERE kd_musteri ='".$data['cetak'][0]['kd_musteri']."'")->row_array();
 		$pdfFilePath = "assets/backend/upload/etiket/".$id.".pdf";
 		$html = $this->load->view('frontend/cetaktiket', $data, TRUE);
 		$this->load->library('m_pdf');
@@ -59,19 +59,19 @@ class Order extends CI_Controller {
 		$this->m_pdf->pdf->Output($pdfFilePath);
 		for ($i=0; $i < count($nama) ; $i++) { 
 			$simpan = array(
-				'kd_tiket' => $tiket[$i],
+				'kd_bilet' => $tiket[$i],
 				'kd_order' => $id,
-				'nama_tiket' => $nama[$i],
-				'kursi_tiket' => $kursi[$i],
-				'umur_tiket' => $umur[$i],
-				'asal_beli_tiket' => $asal,
-				'harga_tiket' => $harga,
-				'status_tiket' => $status,
-				'etiket_tiket' => $pdfFilePath,
-				'create_tgl_tiket' => date('Y-m-d'),
-				'create_admin_tiket' => $this->session->userdata('username_admin')
+				'bilet_isim' => $nama[$i],
+				'bilet_koltuk' => $kursi[$i],
+				'bilet_yas' => $umur[$i],
+				'bilet_cikis_kod' => $asal,
+				'bilet_fiyat' => $harga,
+				'bilet_durum' => $status,
+				'bilet_path' => $pdfFilePath,
+				'bilet_olstrm_tarih' => date('Y-m-d'),
+				'bilet_admin' => $this->session->userdata('username_admin')
 			);
-		$this->db->insert('tbl_tiket', $simpan);
+		$this->db->insert('tbl_bilet', $simpan);
 		}
 		$this->session->set_flashdata('message', 'swal("Succeed", "Ticket Order Processed Successfully", "success");');
 		redirect('backend/order');
@@ -80,16 +80,16 @@ class Order extends CI_Controller {
 	}
 	/* Log on to codeastro.com for more projects */
 	public function kirimemail($id=''){
-		$data['cetak'] = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_jadwal on tbl_order.kd_jadwal = tbl_jadwal.kd_jadwal LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE kd_order ='".$id."'")->result_array();
-		$asal = $data['cetak'][0]['asal_order'];
-		$kodeplg = $data['cetak'][0]['kd_pelanggan'];
-		$data['asal'] = $this->db->query("SELECT * FROM tbl_tujuan WHERE kd_tujuan ='$asal'")->row_array();
-		$pelanggan = $this->db->query("SELECT email_pelanggan FROM tbl_pelanggan WHERE kd_pelanggan ='$kodeplg'")->row_array();
+		$data['cetak'] = $this->db->query("SELECT * FROM tbl_order LEFT JOIN tbl_sefer on tbl_order.sefer_kodu = tbl_sefer.sefer_kodu LEFT JOIN tbl_seferler on tbl_sefer.hedef_kod = tbl_seferler.hedef_kod WHERE kd_order ='".$id."'")->result_array();
+		$asal = $data['cetak'][0]['cikis_kodu'];
+		$kodeplg = $data['cetak'][0]['kd_musteri'];
+		$data['asal'] = $this->db->query("SELECT * FROM tbl_seferler WHERE hedef_kod ='$asal'")->row_array();
+		$pelanggan = $this->db->query("SELECT musteri_email FROM tbl_musteri WHERE kd_musteri ='$kodeplg'")->row_array();
 		//email
 		$subject = 'E-ticket - Order ID '.$id.' - '.date('dmY');
 		$message = $this->load->view('frontend/cetaktiket', $data ,TRUE);
 		$attach  = base_url("assets/backend/upload/etiket/".$id.".pdf");
-		$to 	= $pelanggan['email_pelanggan'];
+		$to 	= $pelanggan['musteri_email'];
 		$config = array(
 			   'mailtype'  => 'html',
                'charset'   => 'utf-8',

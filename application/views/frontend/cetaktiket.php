@@ -91,13 +91,13 @@
                 <b><span style='font-size:15px'>Ticket Details </span></b>
                 </br>
                 Booking Code : <?php echo $cetak[0]['kd_order'];?></br>
-                Schedule Code : <?php echo $cetak[0]['kd_jadwal'];?></br>
-                Date : <?php echo $cetak[0]['tgl_beli_order'];?></br>
-                Customer : <?php echo $cetak[0]['nama_order'];?></br>
-                Schedule : <?php echo hari_indo(date('N',strtotime($cetak[0]['tgl_berangkat_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$cetak[0]['tgl_berangkat_order'].'')));?><br>
-                Departure DateTime : <?php echo date('H:i',strtotime($cetak[0]['jam_berangkat_jadwal'])).' To '.date('H:i',strtotime($cetak[0]['jam_tiba_jadwal'])) ?>
-                Departing from : <?php echo strtoupper($asal['kota_tujuan']);?></br>
-                Destination to : <?php echo strtoupper($cetak[0]['kota_tujuan']); ?>
+                Schedule Code : <?php echo $cetak[0]['sefer_kodu'];?></br>
+                Date : <?php echo $cetak[0]['alim_tarih'];?></br>
+                Customer : <?php echo $cetak[0]['sahip'];?></br>
+                Schedule : <?php echo hari_indo(date('N',strtotime($cetak[0]['hareket_tarihi']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$cetak[0]['hareket_tarihi'].'')));?><br>
+                Departure DateTime : <?php echo date('H:i',strtotime($cetak[0]['kalkis_saat'])).' To '.date('H:i',strtotime($cetak[0]['varis_saat'])) ?>
+                Departing from : <?php echo strtoupper($asal['yolculuk_sehir']);?></br>
+                Destination to : <?php echo strtoupper($cetak[0]['yolculuk_sehir']); ?>
             </pre>
         </td>
     </tr>
@@ -116,11 +116,11 @@
     <tbody>
       <?php foreach ($cetak as $row) { ?>
         <tr>
-           <td scope="row"><?php echo $row['kd_tiket']; ?></td>
-           <td align="left"><?php echo $row['nama_kursi_order']; ?></td>
-           <td align="center"><?php echo $row['umur_kursi_order']; ?> Years</td>
-            <td align="center"><?php echo $row['no_kursi_order']; ?> </td>
-           <td align="left"><?php echo '$'.number_format(($row['harga_jadwal'])); ?></td>
+           <td scope="row"><?php echo $row['kd_bilet']; ?></td>
+           <td align="left"><?php echo $row['onay_isim']; ?></td>
+           <td align="center"><?php echo $row['yolcu_yas']; ?> Years</td>
+            <td align="center"><?php echo $row['koltuk_no']; ?> </td>
+           <td align="left"><?php echo '$'.number_format(($row['ucret'])); ?></td>
         <tr>
         <?php } ?>
     </tbody>
@@ -128,7 +128,7 @@
         <tr>
             <td colspan="3"></td>
             <td align="right">Total</td>
-            <td align="right" class="gray"><?php $total = count($cetak) * $cetak[0]['harga_jadwal']; echo '$'.number_format(($total));?></td>
+            <td align="right" class="gray"><?php $total = count($cetak) * $cetak[0]['ucret']; echo '$'.number_format(($total));?></td>
         </tr>
     </tfoot>
   </table>

@@ -39,11 +39,11 @@
                 <?php $i=1;foreach ($tiket as $row) { ?>
                   <tr>
                     <td><?= $i++; ?></td>
-                    <td><?= $row['kd_tiket']; ?></td>
-                    <td><?= $row['nama_tiket']; ?></td>
-                    <td><?= $row['kursi_tiket']; ?></td>
-                    <td><?= strtoupper($row['asal_beli_tiket']);  ?></td>
-                    <td><a href="<?= base_url('backend/tiket/viewtiket/'.$row['kd_tiket']) ?>" class="btn btn btn-info">View</a></td>
+                    <td><?= $row['kd_bilet']; ?></td>
+                    <td><?= $row['bilet_isim']; ?></td>
+                    <td><?= $row['bilet_koltuk']; ?></td>
+                    <td><?= strtoupper($row['bilet_cikis_kod']);  ?></td>
+                    <td><a href="<?= base_url('backend/tiket/viewtiket/'.$row['kd_bilet']) ?>" class="btn btn btn-info">View</a></td>
                   </tr>
                 <?php } ?>
             </tbody>

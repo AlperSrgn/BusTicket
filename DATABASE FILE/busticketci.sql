@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 30, 2022 at 06:00 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 29 Mar 2024, 18:58:09
+-- Sunucu sürümü: 10.4.32-MariaDB
+-- PHP Sürümü: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,26 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `busticketci`
+-- Veritabanı: `busticketci`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_access_menu`
+-- Tablo için tablo yapısı `tbl_access_menu`
 --
 
 CREATE TABLE `tbl_access_menu` (
   `kd_access_menu` int(11) DEFAULT NULL,
-  `kd_level` int(11) DEFAULT NULL,
+  `seviye_kod` int(11) DEFAULT NULL,
   `kd_menu` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_access_menu`
+-- Tablo döküm verisi `tbl_access_menu`
 --
 
-INSERT INTO `tbl_access_menu` (`kd_access_menu`, `kd_level`, `kd_menu`) VALUES
+INSERT INTO `tbl_access_menu` (`kd_access_menu`, `seviye_kod`, `kd_menu`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 2, 2),
@@ -47,7 +48,7 @@ INSERT INTO `tbl_access_menu` (`kd_access_menu`, `kd_level`, `kd_menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Tablo için tablo yapısı `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -60,10 +61,10 @@ CREATE TABLE `tbl_admin` (
   `level_admin` varchar(12) DEFAULT NULL,
   `status_admin` int(1) DEFAULT NULL,
   `date_create_admin` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_admin`
+-- Tablo döküm verisi `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`kd_admin`, `nama_admin`, `username_admin`, `password_admin`, `img_admin`, `email_admin`, `level_admin`, `status_admin`, `date_create_admin`) VALUES
@@ -74,7 +75,7 @@ INSERT INTO `tbl_admin` (`kd_admin`, `nama_admin`, `username_admin`, `password_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_bank`
+-- Tablo için tablo yapısı `tbl_bank`
 --
 
 CREATE TABLE `tbl_bank` (
@@ -83,71 +84,71 @@ CREATE TABLE `tbl_bank` (
   `nama_bank` varchar(50) DEFAULT NULL,
   `nomrek_bank` varchar(50) DEFAULT NULL,
   `photo_bank` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_bank`
+-- Tablo döküm verisi `tbl_bank`
 --
 
 INSERT INTO `tbl_bank` (`kd_bank`, `nasabah_bank`, `nama_bank`, `nomrek_bank`, `photo_bank`) VALUES
-('BNK0001', 'DMB', 'Dominion Bank', '600000521', 'assets/frontend/img/bank/dominionbank.png'),
-('BNK0002', 'BVB', 'BlueValley Bank', '107556540', 'assets/frontend/img/bank/bvbank.png'),
-('BNK0003', 'CBK', 'Clover Bank', '800140000', 'assets/frontend/img/bank/cloverbank.png'),
-('BNK0004', 'WVB', 'WestView Bank', '300124589', 'assets/frontend/img/bank/wvbank.png'),
-('BNK0005', 'None', 'Celestial Bank', '100025001', '/assets/frontend/img/bank/celestialsbank.png');
+('BNK0001', 'DMB', 'Deniz Bank', '600000521', 'assets/frontend/img/bank/dominionbank.png'),
+('BNK0002', 'BVB', 'Yapi Kredi Bankasi', '107556540', ''),
+('BNK0003', 'CBK', 'Ziraat Bankasi', '800140000', 'assets/frontend/img/bank/cloverbank.png'),
+('BNK0004', 'WVB', 'Vakifbank', '300124589', 'assets/frontend/img/bank/wvbank.png'),
+('BNK0005', 'None', 'Halkbank', '100025001', '/assets/frontend/img/bank/celestialsbank.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_bus`
+-- Tablo için tablo yapısı `tbl_bus`
 --
 
 CREATE TABLE `tbl_bus` (
-  `kd_bus` varchar(50) NOT NULL,
-  `nama_bus` varchar(50) DEFAULT NULL,
-  `plat_bus` varchar(50) DEFAULT NULL,
-  `kapasitas_bus` int(13) DEFAULT NULL,
+  `bus_id` varchar(50) NOT NULL,
+  `bus_name` varchar(50) DEFAULT NULL,
+  `plaka` varchar(50) DEFAULT NULL,
+  `kapasite` int(13) DEFAULT NULL,
   `status_bus` int(1) DEFAULT NULL,
   `desc_bus` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_bus`
+-- Tablo döküm verisi `tbl_bus`
 --
 
-INSERT INTO `tbl_bus` (`kd_bus`, `nama_bus`, `plat_bus`, `kapasitas_bus`, `status_bus`, `desc_bus`) VALUES
-('B001', 'Nomadic Tours', 'CA1100', 23, 1, '--'),
-('B002', 'Sonic Travels', 'CA5656', 23, 1, '--'),
-('B003', 'Express Planet', 'CA6969', 23, 1, '--'),
-('B004', 'WheelClap Coach\n', 'CA0007', 23, 1, '--'),
-('B005', 'Crystenna Coach\n', 'CA1234', 23, 1, '--'),
-('B006', 'Imperia', 'CA7777', 23, 1, '--'),
-('B007', 'Tricton Express', 'CA8520', 23, 1, NULL),
-('B008', 'Alliance Tours\n', 'CA0258', 23, 1, NULL),
-('B009', 'Zeron Travels', 'CASTR0', 23, 1, NULL);
+INSERT INTO `tbl_bus` (`bus_id`, `bus_name`, `plaka`, `kapasite`, `status_bus`, `desc_bus`) VALUES
+('B001', 'Mercedes-Benz Tourismo 2020', 'CA1100', 23, 1, '--'),
+('B002', 'Mercedes-Benz Travego 2020', 'CA5656', 23, 1, '--'),
+('B003', 'Mercedes-Benz Tourismo 2021', 'CA6969', 23, 1, '--'),
+('B004', 'MAN Lion\'s Coach 2023', 'CA0007', 23, 1, '--'),
+('B005', 'Temsa Safir Plus 2021', 'CA1234', 23, 1, '--'),
+('B006', 'Mercedes-Benz Travego 2018', 'CA7777', 23, 1, '--'),
+('B007', 'Temsa Safir Plus 2021', 'CA8520', 23, 1, NULL),
+('B008', 'MAN Lion\'s Coach 2019', 'CA0258', 23, 1, NULL),
+('B009', 'Temsa LD SB Plus', 'CASTR0', 23, 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_jadwal`
+-- Tablo için tablo yapısı `tbl_sefer`
 --
 
-CREATE TABLE `tbl_jadwal` (
-  `kd_jadwal` varchar(50) NOT NULL,
-  `kd_bus` varchar(50) DEFAULT NULL,
-  `kd_tujuan` varchar(50) DEFAULT NULL,
-  `kd_asal` varchar(50) DEFAULT NULL,
-  `wilayah_jadwal` varchar(50) DEFAULT NULL,
-  `jam_berangkat_jadwal` time DEFAULT NULL,
-  `jam_tiba_jadwal` time DEFAULT NULL,
-  `harga_jadwal` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tbl_sefer` (
+  `sefer_kodu` varchar(50) NOT NULL,
+  `bus_id` varchar(50) DEFAULT NULL,
+  `hedef_kod` varchar(50) DEFAULT NULL,
+  `kalkis_kod` varchar(50) DEFAULT NULL,
+  `sehir` varchar(50) DEFAULT NULL,
+  `kalkis_saat` time DEFAULT NULL,
+  `varis_saat` time DEFAULT NULL,
+  `ucret` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_jadwal`
+-- Tablo döküm verisi `tbl_sefer`
 --
 
-INSERT INTO `tbl_jadwal` (`kd_jadwal`, `kd_bus`, `kd_tujuan`, `kd_asal`, `wilayah_jadwal`, `jam_berangkat_jadwal`, `jam_tiba_jadwal`, `harga_jadwal`) VALUES
+INSERT INTO `tbl_sefer` (`sefer_kodu`, `bus_id`, `hedef_kod`, `kalkis_kod`, `sehir`, `kalkis_saat`, `varis_saat`, `ucret`) VALUES
 ('J0001', 'B001', 'TJ010', 'TJ019', 'Agocaster', '07:00:00', '11:15:00', '68'),
 ('J0002', 'B009', 'TJ008', 'TJ010', 'Crenton', '09:00:00', '01:50:00', '75'),
 ('J0003', 'B002', 'TJ012', 'TJ011', 'Yloumore', '11:30:00', '05:30:00', '89'),
@@ -171,29 +172,30 @@ INSERT INTO `tbl_jadwal` (`kd_jadwal`, `kd_bus`, `kd_tujuan`, `kd_asal`, `wilaya
 ('J0021', 'B008', 'TJ016', 'TJ018', 'Sledmouth', '08:45:00', '01:00:00', '53'),
 ('J0022', 'B006', 'TJ019', 'TJ016', 'Adenabert', '06:30:00', '09:45:00', '38'),
 ('J0023', 'B002', 'TJ010', 'TJ018', 'Agocaster', '07:00:00', '11:55:00', '42'),
-('J0024', 'B002', 'TJ016', 'TJ008', 'Sledmouth', '08:00:00', '10:30:00', '30');
+('J0024', 'B002', 'TJ016', 'TJ008', 'Sledmouth', '08:00:00', '10:30:00', '30'),
+('J0025', 'B008', 'TJ007', 'TJ019', 'Ankara', '00:54:00', '03:54:00', '50');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_konfirmasi`
+-- Tablo için tablo yapısı `tbl_onay`
 --
 
-CREATE TABLE `tbl_konfirmasi` (
-  `kd_konfirmasi` varchar(50) NOT NULL,
+CREATE TABLE `tbl_onay` (
+  `onay_kodu` varchar(50) NOT NULL,
   `kd_order` varchar(50) DEFAULT NULL,
-  `nama_konfirmasi` varchar(50) DEFAULT NULL,
-  `nama_bank_konfirmasi` varchar(50) DEFAULT NULL,
-  `norek_konfirmasi` varchar(50) DEFAULT NULL,
-  `total_konfirmasi` varchar(50) DEFAULT NULL,
-  `photo_konfirmasi` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `musteri_isim` varchar(50) DEFAULT NULL,
+  `banka_adi` varchar(50) DEFAULT NULL,
+  `hesap_no` varchar(50) DEFAULT NULL,
+  `total_fiyat` varchar(50) DEFAULT NULL,
+  `foto_dogrulama` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_konfirmasi`
+-- Tablo döküm verisi `tbl_onay`
 --
 
-INSERT INTO `tbl_konfirmasi` (`kd_konfirmasi`, `kd_order`, `nama_konfirmasi`, `nama_bank_konfirmasi`, `norek_konfirmasi`, `total_konfirmasi`, `photo_konfirmasi`) VALUES
+INSERT INTO `tbl_onay` (`onay_kodu`, `kd_order`, `musteri_isim`, `banka_adi`, `hesap_no`, `total_fiyat`, `foto_dogrulama`) VALUES
 ('KF0001', 'ORD00001', 'Ellen', 'New Leaf Bank', '197777450', '68', '/assets/frontend/upload/payment/sample_image.jpg'),
 ('KF0002', 'ORD00002', 'Andie Sand', 'RoyalCrown Bank', '701111458', '68', '/assets/frontend/upload/payment/sample_image.jpg'),
 ('KF0003', 'ORD00004', 'Delbert', 'New Leaf Bank', '1000008569', '40', '/assets/frontend/upload/payment/sample_image.jpg'),
@@ -204,80 +206,83 @@ INSERT INTO `tbl_konfirmasi` (`kd_konfirmasi`, `kd_order`, `nama_konfirmasi`, `n
 ('KF0008', 'ORD00009', 'Mary Smith', 'Zenith Bank', '0144520', '64', '/assets/frontend/upload/payment/sample_image.jpg'),
 ('KF0009', 'ORD00010', 'Thomas Ford', 'RoyalCrown Bank', '100045802', '82', '/assets/frontend/upload/payment/sample_image.jpg'),
 ('KF0010', 'ORD00012', 'Steven Bast', 'Zenith Bank', '10102257', '75', '/assets/frontend/upload/payment/sample_image.jpg'),
-('KF0011', 'ORD00013', 'Will Williams', 'New Leaf Bank', '1000478', '75', '/assets/frontend/upload/payment/sample_image.jpg');
+('KF0011', 'ORD00013', 'Will Williams', 'New Leaf Bank', '1000478', '75', '/assets/frontend/upload/payment/sample_image.jpg'),
+('KF0012', 'ORD00015', 'ali', NULL, '132456', '50', '/assets/frontend/upload/payment/ORD00015.png'),
+('KF0013', 'ORD00017', '', NULL, '-1', '50', '/assets/frontend/upload/payment/ORD000151.png'),
+('KF0014', 'ORD00018', 'alper', 'New Leaf Bank', '121321', '50', '/assets/frontend/upload/payment/ORD000152.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_level`
+-- Tablo için tablo yapısı `tbl_level`
 --
 
 CREATE TABLE `tbl_level` (
-  `kd_level` int(11) NOT NULL,
-  `nama_level` varchar(50) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `seviye_kod` int(11) NOT NULL,
+  `seviye_ad` varchar(50) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_level`
+-- Tablo döküm verisi `tbl_level`
 --
 
-INSERT INTO `tbl_level` (`kd_level`, `nama_level`) VALUES
+INSERT INTO `tbl_level` (`seviye_kod`, `seviye_ad`) VALUES
 (1, 'owner'),
 (2, 'administrator');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_menu`
+-- Tablo için tablo yapısı `tbl_menu`
 --
 
 CREATE TABLE `tbl_menu` (
   `kd_menu` int(11) NOT NULL,
-  `nama_menu` varchar(50) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `menu_isim` varchar(50) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_menu`
+-- Tablo döküm verisi `tbl_menu`
 --
 
-INSERT INTO `tbl_menu` (`kd_menu`, `nama_menu`) VALUES
+INSERT INTO `tbl_menu` (`kd_menu`, `menu_isim`) VALUES
 (1, 'owner'),
 (2, 'administrator');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_order`
+-- Tablo için tablo yapısı `tbl_order`
 --
 
 CREATE TABLE `tbl_order` (
   `id_order` int(11) NOT NULL,
   `kd_order` varchar(50) DEFAULT NULL,
-  `kd_tiket` varchar(50) DEFAULT NULL,
-  `kd_jadwal` varchar(50) DEFAULT NULL,
-  `kd_pelanggan` varchar(50) DEFAULT NULL,
+  `kd_bilet` varchar(50) DEFAULT NULL,
+  `sefer_kodu` varchar(50) DEFAULT NULL,
+  `kd_musteri` varchar(50) DEFAULT NULL,
   `kd_bank` varchar(50) DEFAULT NULL,
-  `asal_order` varchar(200) DEFAULT NULL,
-  `nama_order` varchar(50) DEFAULT NULL,
-  `tgl_beli_order` varchar(50) DEFAULT NULL,
-  `tgl_berangkat_order` varchar(50) DEFAULT NULL,
-  `nama_kursi_order` varchar(50) DEFAULT NULL,
-  `umur_kursi_order` varchar(50) DEFAULT NULL,
-  `no_kursi_order` varchar(50) DEFAULT NULL,
-  `no_ktp_order` varchar(50) DEFAULT NULL,
-  `no_tlpn_order` varchar(50) DEFAULT NULL,
-  `alamat_order` varchar(100) DEFAULT NULL,
-  `email_order` varchar(100) DEFAULT NULL,
-  `expired_order` varchar(50) DEFAULT NULL,
+  `cikis_kodu` varchar(200) DEFAULT NULL,
+  `sahip` varchar(50) DEFAULT NULL,
+  `alim_tarih` varchar(50) DEFAULT NULL,
+  `hareket_tarihi` varchar(50) DEFAULT NULL,
+  `onay_isim` varchar(50) DEFAULT NULL,
+  `yolcu_yas` varchar(50) DEFAULT NULL,
+  `koltuk_no` varchar(50) DEFAULT NULL,
+  `yolcu_kimlik_no` varchar(50) DEFAULT NULL,
+  `yolcu_tel_no` varchar(50) DEFAULT NULL,
+  `yolcu_adres` varchar(100) DEFAULT NULL,
+  `yolcu_email` varchar(100) DEFAULT NULL,
+  `gecerlilik_sure` varchar(50) DEFAULT NULL,
   `qrcode_order` varchar(100) DEFAULT NULL,
   `status_order` varchar(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_order`
+-- Tablo döküm verisi `tbl_order`
 --
 
-INSERT INTO `tbl_order` (`id_order`, `kd_order`, `kd_tiket`, `kd_jadwal`, `kd_pelanggan`, `kd_bank`, `asal_order`, `nama_order`, `tgl_beli_order`, `tgl_berangkat_order`, `nama_kursi_order`, `umur_kursi_order`, `no_kursi_order`, `no_ktp_order`, `no_tlpn_order`, `alamat_order`, `email_order`, `expired_order`, `qrcode_order`, `status_order`) VALUES
+INSERT INTO `tbl_order` (`id_order`, `kd_order`, `kd_bilet`, `sefer_kodu`, `kd_musteri`, `kd_bank`, `cikis_kodu`, `sahip`, `alim_tarih`, `hareket_tarihi`, `onay_isim`, `yolcu_yas`, `koltuk_no`, `yolcu_kimlik_no`, `yolcu_tel_no`, `yolcu_adres`, `yolcu_email`, `gecerlilik_sure`, `qrcode_order`, `status_order`) VALUES
 (25, 'ORD00001', 'TORD00001J00012022122915', 'J0001', 'PL0011', 'BNK0004', 'TJ019', 'Ellen', 'Wednesday, 28 December 2022, 20:01', '2022-12-29', 'Ellen', '31', '15', '101111458666', '7774545555', '554 Southern Cross St', 'ellen@mail.com', '29-12-2022 20:01:02', 'assets/frontend/upload/qrcode/ORD00001.png', '2'),
 (26, 'ORD00002', 'TORD00002J00012022123018', 'J0001', 'PL0012', 'BNK0004', 'TJ019', 'Andie Sand', 'Wednesday, 28 December 2022, 20:49', '2022-12-30', 'Andie Sand', '30', '18', '201145896969', '7458885454', '114 Allace Avenue', 'andie@mail.com', '29-12-2022 20:49:15', 'assets/frontend/upload/qrcode/ORD00002.png', '2'),
 (27, 'ORD00003', 'TORD00003J00052022123020', 'J0005', 'PL0013', 'BNK0002', 'TJ016', 'Robert C. Frazier', 'Thursday, 29 December 2022, 00:25', '2022-12-30', 'Robert C. Frazier', '26', '20', '60145CASTR02', '7778545699', '11 Haymond Rocks Road', 'robert@mail.com', '30-12-2022 00:25:58', 'assets/frontend/upload/qrcode/ORD00003.png', '1'),
@@ -293,33 +298,39 @@ INSERT INTO `tbl_order` (`id_order`, `kd_order`, `kd_tiket`, `kd_jadwal`, `kd_pe
 (37, 'ORD00012', 'TORD00012J0002202301039', 'J0002', 'CA0022', 'BNK0002', 'TJ010', 'Steven Bast', 'Friday, 30 December 2022, 22:35', '2023-01-03', 'Steven Bast', '39', '9', '12000045', '4501450000', '58 Crestview Terrace', 'basteven@mail.com', '31-12-2022 22:35:57', 'assets/frontend/upload/qrcode/ORD00012.png', '1'),
 (38, 'ORD00013', 'TORD00013J00022022123114', 'J0002', 'CA0023', 'BNK0004', 'TJ010', 'Will Williams', 'Friday, 30 December 2022, 23:40', '2022-12-31', 'Will Williams', '31', '14', '10145007', '7014698500', '47 Wilson Street', 'williams@mail.com', '31-12-2022 23:40:37', 'assets/frontend/upload/qrcode/ORD00013.png', '2'),
 (39, 'ORD00014', 'TORD00014J00132023010420', 'J0013', 'CA0023', 'BNK0005', 'TJ014', 'Will Williams', 'Friday, 30 December 2022, 23:55', '2023-01-04', 'Steeve Williams', '42', '20', '10002584', '7014698500', '47 Wilson Street', 'williams@mail.com', '31-12-2022 23:55:26', 'assets/frontend/upload/qrcode/ORD00014.png', '1'),
-(40, 'ORD00014', 'TORD00014J00132023010421', 'J0013', 'CA0023', 'BNK0005', 'TJ014', 'Will Williams', 'Friday, 30 December 2022, 23:55', '2023-01-04', 'Will Williams', '31', '21', '10002584', '7014698500', '47 Wilson Street', 'williams@mail.com', '31-12-2022 23:55:26', 'assets/frontend/upload/qrcode/ORD00014.png', '1');
+(40, 'ORD00014', 'TORD00014J00132023010421', 'J0013', 'CA0023', 'BNK0005', 'TJ014', 'Will Williams', 'Friday, 30 December 2022, 23:55', '2023-01-04', 'Will Williams', '31', '21', '10002584', '7014698500', '47 Wilson Street', 'williams@mail.com', '31-12-2022 23:55:26', 'assets/frontend/upload/qrcode/ORD00014.png', '1'),
+(41, 'ORD00015', 'TORD00015J0025202403281', 'J0025', 'CA0024', 'BNK0001', 'TJ019', 'mehdi', 'Saturday, 23 March 2024, 17:48', '2024-03-28', 'ali', '16', '1', '123456789', '475645645', 'abc123', 'mehdi@qgmail.com', '24-03-2024 17:48:38', 'assets/frontend/upload/qrcode/ORD00015.png', '1'),
+(42, 'ORD00016', 'TORD00016J0025202403281', 'J0025', 'CA0024', 'BNK0001', 'TJ019', 'mehdi', 'Saturday, 23 March 2024, 18:27', '2024-03-28', 'ali', '17', '1', '123456789', '475645645', 'abc123', 'mehdi@qgmail.com', '24-03-2024 18:27:59', 'assets/frontend/upload/qrcode/ORD00016.png', '1'),
+(43, 'ORD00017', 'TORD00017J0025202403281', 'J0025', 'CA0024', 'BNK0001', 'TJ019', 'mehdi', 'Saturday, 23 March 2024, 18:28', '2024-03-28', 'ali', '17', '1', '123456789', '475645645', 'abc123', 'mehdi@qgmail.com', '24-03-2024 18:28:47', 'assets/frontend/upload/qrcode/ORD00017.png', '1'),
+(44, 'ORD00018', 'TORD00018J0025202403231', 'J0025', 'CA0024', 'BNK0001', 'TJ019', 'mehdi', 'Saturday, 23 March 2024, 19:43', '2024-03-23', 'Alper', '22', '1', '123456789', '475645645', 'abc123', 'mehdi@qgmail.com', '24-03-2024 19:43:51', 'assets/frontend/upload/qrcode/ORD00018.png', '1'),
+(45, 'ORD00019', 'TORD00019J0025202403301', 'J0025', 'CA0024', 'BNK0002', 'TJ019', 'mehdi', 'Saturday, 23 March 2024, 19:47', '2024-03-30', 'vhbn', '100', '1', '12346789', '475645645', 'abc123', 'mehdi@qgmail.com', '24-03-2024 19:47:18', 'assets/frontend/upload/qrcode/ORD00019.png', '1'),
+(52, 'ORD00026', 'TORD00026J00252024032911', 'J0025', 'CA0025', NULL, 'TJ019', 'alper', 'Friday, 29 March 2024, 23:37', '2024-03-29', 'alper', '22', '11', '12345984', '12345678', 'aksdadksladjaskldjsald', 'alper@gmail.com', '30-03-2024 23:37:31', 'assets/frontend/upload/qrcode/ORD00026.png', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pelanggan`
+-- Tablo için tablo yapısı `tbl_musteri`
 --
 
-CREATE TABLE `tbl_pelanggan` (
-  `kd_pelanggan` varchar(50) COLLATE latin1_general_ci NOT NULL,
-  `username_pelanggan` varchar(50) COLLATE latin1_general_ci NOT NULL,
-  `password_pelanggan` varchar(200) COLLATE latin1_general_ci NOT NULL,
-  `no_ktp_pelanggan` varchar(50) COLLATE latin1_general_ci NOT NULL,
-  `nama_pelanggan` varchar(100) COLLATE latin1_general_ci NOT NULL,
-  `alamat_pelanggan` varchar(200) COLLATE latin1_general_ci NOT NULL,
-  `email_pelanggan` varchar(100) COLLATE latin1_general_ci NOT NULL,
-  `telpon_pelanggan` varchar(20) COLLATE latin1_general_ci NOT NULL,
-  `img_pelanggan` varchar(200) COLLATE latin1_general_ci NOT NULL,
-  `status_pelanggan` int(1) DEFAULT NULL,
-  `date_create_pelanggan` varchar(50) COLLATE latin1_general_ci DEFAULT NULL
+CREATE TABLE `tbl_musteri` (
+  `kd_musteri` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `sifre_musteri` varchar(200) NOT NULL,
+  `kimlik_no_musteri` varchar(50) NOT NULL,
+  `muster_adi` varchar(100) NOT NULL,
+  `musteri_adres` varchar(200) NOT NULL,
+  `musteri_email` varchar(100) NOT NULL,
+  `musteri_telefon` varchar(20) NOT NULL,
+  `musteri_foto` varchar(200) NOT NULL,
+  `musteri_durum` int(1) DEFAULT NULL,
+  `musteri_ols_veri` varchar(50) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `tbl_pelanggan`
+-- Tablo döküm verisi `tbl_musteri`
 --
 
-INSERT INTO `tbl_pelanggan` (`kd_pelanggan`, `username_pelanggan`, `password_pelanggan`, `no_ktp_pelanggan`, `nama_pelanggan`, `alamat_pelanggan`, `email_pelanggan`, `telpon_pelanggan`, `img_pelanggan`, `status_pelanggan`, `date_create_pelanggan`) VALUES
+INSERT INTO `tbl_musteri` (`kd_musteri`, `username`, `sifre_musteri`, `kimlik_no_musteri`, `muster_adi`, `musteri_adres`, `musteri_email`, `musteri_telefon`, `musteri_foto`, `musteri_durum`, `musteri_ols_veri`) VALUES
 ('CA0002', 'bettyb', '$2y$10$wzz5.QSqiNfrc2JKuYK5huJHEvry340XZlspPACOJLf0TmU3yu30.', '02564651321564', 'Betty B. McMillan\n', '62 Limer Street', 'bettymcm@mail.com', '7014445450', 'assets/frontend/img/default.png', 1, '1552202266'),
 ('CA0001', 'oscarharrison', '$2y$10$PO4viVqheGgw7HPeozUih.V6qK4aWKbACLMe9UWOoSaJ8pSdaiISG', '021452125', 'Oscar A. Harrison', '59 Pine Tree Lane', 'oscar.harrison69@mail.com', '0455658500', 'assets/frontend/img/default.png', 1, '1552199781'),
 ('CA0003', 'ruffner', '$2y$10$N6imN8KmAhuw9rH.iJxGLeVaRCG.27UmhHVF7MaICMhYlm.TGJ9iy', '346454215172455', 'Pearl R. Ruffner', '93 Steele Street', 'ruffp@mail.com', '9458001455', 'assets/frontend/img/default.png', 1, '1552397128'),
@@ -342,12 +353,14 @@ INSERT INTO `tbl_pelanggan` (`kd_pelanggan`, `username_pelanggan`, `password_pel
 ('CA0020', 'thomas', '$2y$10$qQbkAXlNKDPmAJQQpmxDOOxVpuEZUs/DS.49ukgekOwzXhBwrFS.O', '', 'Thomas Ford', '87 Hudson Street', 'thomasf@mail.com', '7140002569', 'assets/frontend/img/default.png', 1, '1672402730'),
 ('CA0021', 'shane', '$2y$10$ovPI98iJNIbf8XKzPzy3.e7pQKf4OooU/QoAEXlwxC3e8N42ZUWNG', '', 'Shane Gustin', '27 Duff Avenue', 'shane@mail.com', '7410140025', 'assets/frontend/img/default.png', 1, '1672414382'),
 ('CA0022', 'steven', '$2y$10$FNs3qmXmq.fM/lwmCEdnG.dq8FJ2HNnZAFQ6Z9crWGUZYvJ3E3CBG', '', 'Steven Bast', '58 Crestview Terrace', 'basteven@mail.com', '4501450000', 'assets/frontend/img/default.png', 1, '1672414504'),
-('CA0023', 'williams', '$2y$10$oU/PX/oEKmoxbUHJQvtKmOHYktfhyROtQYbwHUJiMVi.nCH49wgfG', '', 'Will Williams', '47 Wilson Street', 'williams@mail.com', '7014698500', 'assets/frontend/img/default.png', 1, '1672417879');
+('CA0023', 'williams', '$2y$10$oU/PX/oEKmoxbUHJQvtKmOHYktfhyROtQYbwHUJiMVi.nCH49wgfG', '', 'Will Williams', '47 Wilson Street', 'williams@mail.com', '7014698500', 'assets/frontend/img/default.png', 1, '1672417879'),
+('CA0024', 'abc123', '$2y$10$Thj3CqKtcaVjPXbDfYMQnOEo.6mEtz/zeUTq1LMEQNgVbPi1to0Eu', '', 'mehdi', 'abc123', 'mehdi@qgmail.com', '475645645', 'assets/frontend/img/default.png', 1, '1711141895'),
+('CA0025', 'alper', '$2y$10$GzPnCwMEWZ3.kAD0DOtmtePn2JizneJsuHBxnhAYR.yzctf8VIRe2', '', 'alper', 'aksdadksladjaskldjsald', 'alper@gmail.com', '12345678', 'assets/frontend/img/default.png', 1, '1711684131');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_sub_menu`
+-- Tablo için tablo yapısı `tbl_sub_menu`
 --
 
 CREATE TABLE `tbl_sub_menu` (
@@ -356,10 +369,10 @@ CREATE TABLE `tbl_sub_menu` (
   `title_sub_menu` varchar(128) DEFAULT NULL,
   `url_sub_menu` varchar(128) DEFAULT NULL,
   `is_active_sub_menu` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_sub_menu`
+-- Tablo döküm verisi `tbl_sub_menu`
 --
 
 INSERT INTO `tbl_sub_menu` (`kd_sub_menu`, `kd_menu`, `title_sub_menu`, `url_sub_menu`, `is_active_sub_menu`) VALUES
@@ -368,28 +381,28 @@ INSERT INTO `tbl_sub_menu` (`kd_sub_menu`, `kd_menu`, `title_sub_menu`, `url_sub
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_tiket`
+-- Tablo için tablo yapısı `tbl_bilet`
 --
 
-CREATE TABLE `tbl_tiket` (
-  `kd_tiket` varchar(50) NOT NULL,
+CREATE TABLE `tbl_bilet` (
+  `kd_bilet` varchar(50) NOT NULL,
   `kd_order` varchar(50) DEFAULT NULL,
-  `nama_tiket` varchar(50) DEFAULT NULL,
-  `kursi_tiket` varchar(50) DEFAULT NULL,
-  `umur_tiket` varchar(50) DEFAULT NULL,
-  `asal_beli_tiket` varchar(50) DEFAULT NULL,
-  `harga_tiket` varchar(50) NOT NULL,
-  `etiket_tiket` varchar(100) DEFAULT NULL,
-  `status_tiket` varchar(50) NOT NULL,
-  `create_tgl_tiket` date DEFAULT NULL,
-  `create_admin_tiket` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `bilet_isim` varchar(50) DEFAULT NULL,
+  `bilet_koltuk` varchar(50) DEFAULT NULL,
+  `bilet_yas` varchar(50) DEFAULT NULL,
+  `bilet_cikis_kod` varchar(50) DEFAULT NULL,
+  `bilet_fiyat` varchar(50) NOT NULL,
+  `bilet_path` varchar(100) DEFAULT NULL,
+  `bilet_durum` varchar(50) NOT NULL,
+  `bilet_olstrm_tarih` date DEFAULT NULL,
+  `bilet_admin` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_tiket`
+-- Tablo döküm verisi `tbl_bilet`
 --
 
-INSERT INTO `tbl_tiket` (`kd_tiket`, `kd_order`, `nama_tiket`, `kursi_tiket`, `umur_tiket`, `asal_beli_tiket`, `harga_tiket`, `etiket_tiket`, `status_tiket`, `create_tgl_tiket`, `create_admin_tiket`) VALUES
+INSERT INTO `tbl_bilet` (`kd_bilet`, `kd_order`, `bilet_isim`, `bilet_koltuk`, `bilet_yas`, `bilet_cikis_kod`, `bilet_fiyat`, `bilet_path`, `bilet_durum`, `bilet_olstrm_tarih`, `bilet_admin`) VALUES
 ('TORD00001J00012022122915', 'ORD00001', 'Ellen', '15', '31 Years', 'TJ019', '68', 'assets/backend/upload/etiket/ORD00001.pdf', '2', '2022-12-28', 'admin'),
 ('TORD00002J00012022123018', 'ORD00002', 'Andie Sand', '18', '30 Years', 'TJ019', '68', 'assets/backend/upload/etiket/ORD00002.pdf', '2', '2022-12-29', 'owner'),
 ('TORD00004J00052022123110', 'ORD00004', 'Delbert Rochelle', '10', '32 Years', 'TJ016', '40', 'assets/backend/upload/etiket/ORD00004.pdf', '2', '2022-12-30', 'admin'),
@@ -404,21 +417,21 @@ INSERT INTO `tbl_tiket` (`kd_tiket`, `kd_order`, `nama_tiket`, `kursi_tiket`, `u
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_token_pelanggan`
+-- Tablo için tablo yapısı `tbl_musteri_token`
 --
 
-CREATE TABLE `tbl_token_pelanggan` (
+CREATE TABLE `tbl_musteri_token` (
   `kd_token` int(11) NOT NULL,
-  `nama_token` varchar(256) DEFAULT NULL,
+  `token_name` varchar(256) DEFAULT NULL,
   `email_token` varchar(50) DEFAULT NULL,
   `date_create_token` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_token_pelanggan`
+-- Tablo döküm verisi `tbl_musteri_token`
 --
 
-INSERT INTO `tbl_token_pelanggan` (`kd_token`, `nama_token`, `email_token`, `date_create_token`) VALUES
+INSERT INTO `tbl_musteri_token` (`kd_token`, `token_name`, `email_token`, `date_create_token`) VALUES
 (1, '65a01b40a0cc44076458f9d00ce94720', 'demo@mail.com', 1634359787),
 (2, 'dd79d52fe9968f73fc66a1d481778655', 'john@mail.com', 1642506186),
 (3, 'cd7b785a63c58898bfed23bab186ee1d', 'christine@mail.com', 1672227893),
@@ -435,155 +448,162 @@ INSERT INTO `tbl_token_pelanggan` (`kd_token`, `nama_token`, `email_token`, `dat
 (14, '3fed0f58dd880c8fa5f606e7a2b878bf', 'thomasf@mail.com', 1672402730),
 (15, 'ca46de539fd1c62fa3614d0b18539233', 'shane@mail.com', 1672414382),
 (16, 'a98db0cf72281841d03067c42ab953ac', 'basteven@mail.com', 1672414504),
-(17, '6a05822bb349381f20ba0b464559879b', 'williams@mail.com', 1672417879);
+(17, '6a05822bb349381f20ba0b464559879b', 'williams@mail.com', 1672417879),
+(18, '8b56297cffe33c36a01c38d3b08aed3c', 'mehdi@qgmail.com', 1711141895),
+(19, '52e028603eb2d8ea8eab957a6cbd7aff', 'alper@gmail.com', 1711684131);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_tujuan`
+-- Tablo için tablo yapısı `tbl_seferler`
 --
 
-CREATE TABLE `tbl_tujuan` (
-  `kd_tujuan` varchar(50) NOT NULL,
-  `kota_tujuan` varchar(50) NOT NULL,
-  `nama_terminal_tujuan` varchar(50) NOT NULL,
-  `terminal_tujuan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tbl_seferler` (
+  `hedef_kod` varchar(50) NOT NULL,
+  `yolculuk_sehir` varchar(50) NOT NULL,
+  `yolculuk_terminal_ad` varchar(50) NOT NULL,
+  `terminal_adi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tbl_tujuan`
+-- Tablo döküm verisi `tbl_sefer`
 --
 
-INSERT INTO `tbl_tujuan` (`kd_tujuan`, `kota_tujuan`, `nama_terminal_tujuan`, `terminal_tujuan`) VALUES
-('TJ007', 'Onabridge', '', 'Neo Terminal'),
-('TJ008', 'Crenton', '', 'MicM Terminal'),
-('TJ009', 'Rocvale', '', 'ZX Terminal'),
-('TJ010', 'Agocaster', '', 'Caster Terminal'),
-('TJ011', 'Yhixport', '', 'Hixport Terminal'),
-('TJ012', 'Yloumore', '', 'Loum Terminal'),
-('TJ013', 'Prifpus', '', 'Pusf Terminal'),
-('TJ014', 'Wromburg', '', 'Wrom Terminal'),
-('TJ015', 'Ofruaswood', '', 'Ofruas Terminal'),
-('TJ016', 'Sledmouth', '', 'Sled Terminal'),
-('TJ017', 'Inasbridge', '', 'IB Terminal'),
-('TJ018', 'Owodon', '', 'OD Terminal'),
-('TJ019', 'Adenabert', '', 'AB Terminal');
+INSERT INTO `tbl_seferler` (`hedef_kod`, `yolculuk_sehir`, `yolculuk_terminal_ad`, `terminal_adi`) VALUES
+('TJ007', 'Ankara', '', 'Ankara (Asti) Otogari\r\n'),
+('TJ008', 'Istanbul', '', 'Istanbul Esenler Otogari'),
+('TJ009', 'Izmir', '', 'Izmir Otogari'),
+('TJ010', 'Antalya', '', 'Antalya Otogari'),
+('TJ011', 'Kars', '', 'Kars Sehir Otogari'),
+('TJ012', 'Konya', '', 'Konya Otogari'),
+('TJ013', 'Sivas', '', 'Sivas Merkez Otogari'),
+('TJ014', 'Eskisehir', '', 'Eskisehir Otogari'),
+('TJ015', 'Mersin', '', 'Mersin Otogari'),
+('TJ016', 'Edirne', '', 'Edirne Otogari'),
+('TJ017', 'Bursa', '', 'Bursa Otogari'),
+('TJ018', 'Kocaeli', '', 'Kocaeli (Izmit) Otogari'),
+('TJ019', 'Adana', '', 'Adana Merkez Otogari');
 
 --
--- Indexes for dumped tables
+-- Dökümü yapılmış tablolar için indeksler
 --
 
 --
--- Indexes for table `tbl_admin`
+-- Tablo için indeksler `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`kd_admin`);
 
 --
--- Indexes for table `tbl_bank`
+-- Tablo için indeksler `tbl_bank`
 --
 ALTER TABLE `tbl_bank`
   ADD PRIMARY KEY (`kd_bank`);
 
 --
--- Indexes for table `tbl_bus`
+-- Tablo için indeksler `tbl_bus`
 --
 ALTER TABLE `tbl_bus`
-  ADD PRIMARY KEY (`kd_bus`);
+  ADD PRIMARY KEY (`bus_id`);
 
 --
--- Indexes for table `tbl_jadwal`
+-- Tablo için indeksler `tbl_sefer`
 --
-ALTER TABLE `tbl_jadwal`
-  ADD PRIMARY KEY (`kd_jadwal`),
-  ADD KEY `kd_bus` (`kd_bus`),
-  ADD KEY `kd_tujuan` (`kd_tujuan`);
+ALTER TABLE `tbl_sefer`
+  ADD PRIMARY KEY (`sefer_kodu`),
+  ADD KEY `bus_id` (`bus_id`),
+  ADD KEY `hedef_kod` (`hedef_kod`);
 
 --
--- Indexes for table `tbl_konfirmasi`
+-- Tablo için indeksler `tbl_onay`
 --
-ALTER TABLE `tbl_konfirmasi`
-  ADD PRIMARY KEY (`kd_konfirmasi`),
+ALTER TABLE `tbl_onay`
+  ADD PRIMARY KEY (`onay_kodu`),
   ADD KEY `kode_order` (`kd_order`);
 
 --
--- Indexes for table `tbl_level`
+-- Tablo için indeksler `tbl_level`
 --
 ALTER TABLE `tbl_level`
-  ADD PRIMARY KEY (`kd_level`);
+  ADD PRIMARY KEY (`seviye_kod`);
 
 --
--- Indexes for table `tbl_menu`
+-- Tablo için indeksler `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
   ADD PRIMARY KEY (`kd_menu`);
 
 --
--- Indexes for table `tbl_order`
+-- Tablo için indeksler `tbl_order`
 --
 ALTER TABLE `tbl_order`
   ADD PRIMARY KEY (`id_order`),
-  ADD KEY `kd_jadwal` (`kd_jadwal`),
-  ADD KEY `kd_kustomer` (`kd_pelanggan`),
-  ADD KEY `kd_tiket` (`kd_tiket`),
+  ADD KEY `sefer_kodu` (`sefer_kodu`),
+  ADD KEY `kd_kustomer` (`kd_musteri`),
+  ADD KEY `kd_bilet` (`kd_bilet`),
   ADD KEY `kd_bank` (`kd_bank`);
 
 --
--- Indexes for table `tbl_pelanggan`
+-- Tablo için indeksler `tbl_musteri`
 --
-ALTER TABLE `tbl_pelanggan`
-  ADD PRIMARY KEY (`kd_pelanggan`);
+ALTER TABLE `tbl_musteri`
+  ADD PRIMARY KEY (`kd_musteri`);
 
 --
--- Indexes for table `tbl_sub_menu`
+-- Tablo için indeksler `tbl_sub_menu`
 --
 ALTER TABLE `tbl_sub_menu`
   ADD PRIMARY KEY (`kd_sub_menu`),
   ADD KEY `kd_menu` (`kd_menu`);
 
 --
--- Indexes for table `tbl_tiket`
+-- Tablo için indeksler `tbl_bilet`
 --
-ALTER TABLE `tbl_tiket`
-  ADD PRIMARY KEY (`kd_tiket`),
+ALTER TABLE `tbl_bilet`
+  ADD PRIMARY KEY (`kd_bilet`),
   ADD KEY `kode_order` (`kd_order`);
 
 --
--- Indexes for table `tbl_token_pelanggan`
+-- Tablo için indeksler `tbl_musteri_token`
 --
-ALTER TABLE `tbl_token_pelanggan`
+ALTER TABLE `tbl_musteri_token`
   ADD PRIMARY KEY (`kd_token`);
 
 --
--- Indexes for table `tbl_tujuan`
+-- Tablo için indeksler `tbl_sefer`
 --
-ALTER TABLE `tbl_tujuan`
-  ADD PRIMARY KEY (`kd_tujuan`);
+ALTER TABLE `tbl_sefer`
+  ADD PRIMARY KEY (`hedef_kod`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
 
 --
--- AUTO_INCREMENT for table `tbl_level`
+-- Tablo için AUTO_INCREMENT değeri `tbl_level`
 --
 ALTER TABLE `tbl_level`
-  MODIFY `kd_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `seviye_kod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `tbl_menu`
+-- Tablo için AUTO_INCREMENT değeri `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
   MODIFY `kd_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `tbl_order`
+-- Tablo için AUTO_INCREMENT değeri `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
 --
--- AUTO_INCREMENT for table `tbl_token_pelanggan`
+-- Tablo için AUTO_INCREMENT değeri `tbl_musteri_token`
 --
-ALTER TABLE `tbl_token_pelanggan`
-  MODIFY `kd_token` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+ALTER TABLE `tbl_musteri_token`
+  MODIFY `kd_token` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

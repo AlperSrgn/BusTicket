@@ -65,7 +65,7 @@
 									    <input type="password" class="form-control" required="" name="new_password2" placeholder="Yeni Şifrenizi Tekrar Giriniz">
 										</div>
 									  </div>
-									<a class="btn btn-danger" href="<?php echo base_url() ?>profile/profilesaya/<?php echo $this->session->userdata('kd_pelanggan') ?>"> Geri Dön</a>
+									<a class="btn btn-danger" href="<?php echo base_url() ?>profile/profilesaya/<?php echo $this->session->userdata('kd_musteri') ?>"> Geri Dön</a>
 									<button type="submit" class="btn btn-primary pull-right" >Şifreni Değiştir</button>
 									</form>
 								</div>

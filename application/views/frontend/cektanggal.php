@@ -49,8 +49,8 @@
 									<select name="asal" class="form-control js-example-basic-single" required>
 										<option value="" selected disabled="">Kalkış Yeri Seçin</option>
 										<?php foreach ($asal as $row ) { ?>
-										<option value="<?php echo $row['kd_tujuan'] ?>">
-											<?php echo strtoupper($row['kota_tujuan']) ?>
+										<option value="<?php echo $row['hedef_kod'] ?>">
+											<?php echo strtoupper($row['yolculuk_sehir']) ?>
 											<br> </option>
 										<?php } ?>
 									</select>
@@ -60,8 +60,8 @@
 									<select name="tujuan" class="form-control js-example-basic-single">
 										<option value="" selected disabled="">Varış Yeri Seçin</option>
 										<?php foreach ($tujuan as $row ) { ?>
-										<option value="<?php echo $row['kota_tujuan'] ?>">
-											<?php echo strtoupper($row['kota_tujuan']); ?></option>
+										<option value="<?php echo $row['yolculuk_sehir'] ?>">
+											<?php echo strtoupper($row['yolculuk_sehir']); ?></option>
 										<?php } ?>
 									</select>
 								</div>
@@ -88,8 +88,8 @@
 									<?php foreach ($list as $value) { ?>
 									<tr>
 										<td style="text-align:center;vertical-align:middle">
-											<?php echo strtoupper($value['kota_tujuan']) ?></td>
-										<td style="vertical-align:middle;"><?php echo $value['terminal_tujuan'] ?></td>
+											<?php echo strtoupper($value['yolculuk_sehir']) ?></td>
+										<td style="vertical-align:middle;"><?php echo $value['terminal_adi'] ?></td>
 									</tr>
 									<?php } ?>
 								</tbody>

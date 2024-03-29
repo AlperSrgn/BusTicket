@@ -18,7 +18,7 @@ class Pelanggan extends CI_Controller {
 	}
 	public function index(){
 		$data['title'] = "Customers List";
-		$data['pelanggan'] = $this->db->query("SELECT * FROM tbl_pelanggan")->result_array();
+		$data['pelanggan'] = $this->db->query("SELECT * FROM tbl_musteri")->result_array();
 		// die(print_r($data));
 		$this->load->view('backend/pelanggan', $data);
 	}

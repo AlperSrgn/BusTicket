@@ -19,25 +19,25 @@ class Laporan extends CI_Controller {
 	/* Log on to codeastro.com for more projects */
 	public function index(){
 		$data['title'] = 'Report';
-		$data['bulan'] = $this->db->query("SELECT DISTINCT DATE_FORMAT(create_tgl_tiket,'%M %Y') AS bulan FROM tbl_tiket")->result_array();
+		$data['bulan'] = $this->db->query("SELECT DISTINCT DATE_FORMAT(bilet_olstrm_tarih,'%M %Y') AS bulan FROM tbl_bilet")->result_array();
 		$this->load->view('backend/laporan', $data);
 	}
 	public function laportanggal($value=''){
 		$data['mulai'] = $this->input->post('mulai');
 		$data['sampai'] = $this->input->post('sampai');
-		$data['laporan'] = $this->db->query("SELECT * FROM tbl_tiket WHERE (create_tgl_tiket BETWEEN '".$data['mulai']."' AND '".$data['sampai']."') AND status_tiket = 2")->result_array();
+		$data['laporan'] = $this->db->query("SELECT * FROM tbl_bilet WHERE (bilet_olstrm_tarih BETWEEN '".$data['mulai']."' AND '".$data['sampai']."') AND bilet_durum = 2")->result_array();
 		for ($i=0; $i < count($data['laporan']) ; $i++) { 
-			$total[$i] = $data['laporan'][$i]['harga_tiket'];
+			$total[$i] = $data['laporan'][$i]['bilet_fiyat'];
 		}
 		$data['total'] = array_sum($total);
 		$this->load->view('backend/laporan/laporan_pertanggal', $data);		
 	}
 	public function laporbulan($value=''){
 		$data['bulan'] = $this->input->post('bln');
-		// $data['laporan'] = $this->db->query("SELECT create_tgl_tiket,DATE_FORMAT(create_tgl_tiket,'%M %Y') AS bulan,DATE_FORMAT(create_tgl_tiket,'%d %M %Y') FROM tbl_tiket  WHERE DATE_FORMAT(jual_tanggal,'%M %Y')='$data['bulan']' ORDER BY kd_tiket DESC");
+		// $data['laporan'] = $this->db->query("SELECT bilet_olstrm_tarih,DATE_FORMAT(bilet_olstrm_tarih,'%M %Y') AS bulan,DATE_FORMAT(bilet_olstrm_tarih,'%d %M %Y') FROM tbl_bilet  WHERE DATE_FORMAT(jual_tanggal,'%M %Y')='$data['bulan']' ORDER BY kd_bilet DESC");
 		die(print_r($data));
 		// for ($i=0; $i < count($data['laporan']) ; $i++) { 
-		// 	$total[$i] = $data['laporan'][$i]['harga_tiket'];
+		// 	$total[$i] = $data['laporan'][$i]['bilet_fiyat'];
 		// }
 		// $data['total'] = array_sum($total);
 		// $this->load->view('backend/laporan/laporan_pertanggal', $data);

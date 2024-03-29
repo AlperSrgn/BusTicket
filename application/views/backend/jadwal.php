@@ -43,14 +43,14 @@
                 <?php $i = 1 ; foreach ($jadwal as $row ) { ?>
                 <tr>
                   <td><?= $i++; ?></td>
-                  <td><?= $row['kd_jadwal']; ?></td>
-                  <td><?= strtoupper($row['kota_tujuan']); ?></td>
-                  <td><?= strtoupper($row['wilayah_jadwal']); ?></td>
-                  <td><?= date('H:i',strtotime($row['jam_berangkat_jadwal'])); ?></td>
-                  <td><?= date('H:i',strtotime($row['jam_tiba_jadwal'])); ?></td>
-                  <!-- <td>$<?= number_format((float)($row['harga_jadwal']),0,",","."); ?>,-</td> -->
-                  <td>$<?= number_format((float)($row['harga_jadwal']),0,",","."); ?></td>
-                  <td><a href="<?= base_url('backend/jadwal/viewjadwal/'.$row['kd_jadwal']) ?>" class="btn btn-info">View</a></td>
+                  <td><?= $row['sefer_kodu']; ?></td>
+                  <td><?= strtoupper($row['yolculuk_sehir']); ?></td>
+                  <td><?= strtoupper($row['sehir']); ?></td>
+                  <td><?= date('H:i',strtotime($row['kalkis_saat'])); ?></td>
+                  <td><?= date('H:i',strtotime($row['varis_saat'])); ?></td>
+                  <!-- <td>$<?= number_format((float)($row['ucret']),0,",","."); ?>,-</td> -->
+                  <td>$<?= number_format((float)($row['ucret']),0,",","."); ?></td>
+                  <td><a href="<?= base_url('backend/jadwal/viewjadwal/'.$row['sefer_kodu']) ?>" class="btn btn-info">View</a></td>
                 </td>
               </tr>
               <?php } ?>

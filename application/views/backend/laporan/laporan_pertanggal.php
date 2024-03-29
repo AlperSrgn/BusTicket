@@ -46,12 +46,12 @@
 <tbody>
     <?php foreach ($laporan as $row) { ?>
     <tr>
-        <td style="text-align:center;"><?php echo $row['kd_tiket'];?></td>
+        <td style="text-align:center;"><?php echo $row['kd_bilet'];?></td>
         <td style="padding-left:5px;"><?php echo $row['kd_order'];?></td>
-        <td style="text-align:center;"><?php echo $row['nama_tiket'];?></td>
-        <td style="text-align:center;"><?php echo $row['umur_tiket'];?></td>
-        <td style="text-align:center;"><?php echo $row['kursi_tiket'];?></td>
-        <td style="text-align:left;"><?php echo '$'.number_format($row['harga_tiket']);?></td>
+        <td style="text-align:center;"><?php echo $row['bilet_isim'];?></td>
+        <td style="text-align:center;"><?php echo $row['bilet_yas'];?></td>
+        <td style="text-align:center;"><?php echo $row['bilet_koltuk'];?></td>
+        <td style="text-align:left;"><?php echo '$'.number_format($row['bilet_fiyat']);?></td>
     </tr>
     <?php } ?>
 </tbody>

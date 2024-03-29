@@ -48,17 +48,17 @@
 									<div class="row">
 										<div class="col-sm-8">
 											
-											<p class="card-text"><?php echo $profile['no_ktp_pelanggan'] ?></p>
+											<p class="card-text"><?php echo $profile['kimlik_no_musteri'] ?></p>
 											<h5 class="card-title">İsim</h5>
-											<p class="card-text"><?php echo $profile['nama_pelanggan'] ?></p>
+											<p class="card-text"><?php echo $profile['muster_adi'] ?></p>
 											<h5 class="card-title">Email</h5>
-											<p class="card-text"><?php echo $profile['email_pelanggan']?></p>
+											<p class="card-text"><?php echo $profile['musteri_email']?></p>
 											<h5 class="card-title">Telefon Numarası</h5>
-											<p class="card-text"><?php echo $profile['telpon_pelanggan'] ?></p>
+											<p class="card-text"><?php echo $profile['musteri_telefon'] ?></p>
 										</div>
 										<div class="col-sm-14">
 											<h5 class="card-title">Adres</h5>
-											<p class="card-text"><?php echo $profile['alamat_pelanggan']?></p>
+											<p class="card-text"><?php echo $profile['musteri_adres']?></p>
 											<p class="btn btn-primary" style="background-color: #fde910; border-color: black; color:black;">Hesabı Düzenle</button></p>
 										</div>
 									</div>
@@ -85,23 +85,23 @@
 												
 												<div class="row form-group">
 													<label for="nama" class="control-label">İsim/label>
-													<input type="text" class="form-control" name="nama" value="<?php echo $profile['nama_pelanggan']?>" >
+													<input type="text" class="form-control" name="nama" value="<?php echo $profile['muster_adi']?>" >
 												</div>
 												<div class="row form-group">
 													<label for="nama" class="control-label">Email</label>
-													<input type="email" class="form-control" name="email" value="<?php echo $profile['email_pelanggan']?>" >
+													<input type="email" class="form-control" name="email" value="<?php echo $profile['musteri_email']?>" >
 												</div>
 												<div class="row form-group">
 													<label for="nama" class="control-label">Cep Telefonu</label>
-													<input type="text" class="form-control" name="hp" value="<?php echo $profile['telpon_pelanggan']?>" >
+													<input type="text" class="form-control" name="hp" value="<?php echo $profile['musteri_telefon']?>" >
 												</div>
 												<div class="row form-group">
 													<label for="nama" class="control-label">Adres</label>
-													<input type="text" class="form-control" name="alamat" value="<?php echo $profile['alamat_pelanggan']?>" >
+													<input type="text" class="form-control" name="alamat" value="<?php echo $profile['musteri_adres']?>" >
 												</div>
 												<div class="row form-group">
 													<label for="" class="control-label">Profil Fotoğrafı</label>
-													<img src="<?php echo base_url($profile['img_pelanggan'])?>" alt="<?php echo $this->session->userdata('ktp') ?>" style="width:150px;height:150px"><input type="file" class="form-control" value="<?php echo base_url($this->session->userdata('nama_lengkap')) ?>" name="img"  >
+													<img src="<?php echo base_url($profile['musteri_foto'])?>" alt="<?php echo $this->session->userdata('ktp') ?>" style="width:150px;height:150px"><input type="file" class="form-control" value="<?php echo base_url($this->session->userdata('nama_lengkap')) ?>" name="img"  >
 												</div>
 											</div>
 										</div>

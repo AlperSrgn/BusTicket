@@ -18,13 +18,13 @@ class Tiket extends CI_Controller {
 	}
 	public function index(){
 	$data['title'] = "Ticket List";
-	$data['tiket'] = $this->db->query("SELECT * FROM tbl_tiket WHERE status_tiket = 2 ")->result_array();
+	$data['tiket'] = $this->db->query("SELECT * FROM tbl_bilet WHERE bilet_durum = 2 ")->result_array();
 	$this->load->view('backend/tiket', $data);	
 	}
 	/* Log on to codeastro.com for more projects */
 	public function viewtiket($tiket){
 		$data['title'] = "Ticket List";
-		$data['tiket'] = $this->db->query("SELECT * FROM tbl_tiket WHERE kd_tiket = '".$tiket."' ")->row_array();
+		$data['tiket'] = $this->db->query("SELECT * FROM tbl_bilet WHERE kd_bilet = '".$tiket."' ")->row_array();
 		if ($data['tiket']) {
 			$this->load->view('backend/view_tiket', $data);
 		}else{

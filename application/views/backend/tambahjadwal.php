@@ -33,7 +33,7 @@
                     <select class="form-control" name="asal" required>
                       <option value="" selected disabled="">-Choose Origin-</option>
                       <?php foreach ($tujuan as $row ) {?>
-                      <option value="<?= $row['kd_tujuan'] ?>" ><?= strtoupper($row['kota_tujuan'])." - ".$row['terminal_tujuan']; ?></option>
+                      <option value="<?= $row['hedef_kod'] ?>" ><?= strtoupper($row['yolculuk_sehir'])." - ".$row['terminal_adi']; ?></option>
                       <?php } ?>
                     </select>
                   </div>
@@ -42,7 +42,7 @@
                     <select class="form-control" name="tujuan" required>
                       <option value="" selected disabled="">-Choose Destination-</option>
                       <?php foreach ($tujuan as $row ) {?>
-                      <option value="<?= $row['kd_tujuan'] ?>" ><?= strtoupper($row['kota_tujuan'])." - ".$row['terminal_tujuan']; ?></option>
+                      <option value="<?= $row['hedef_kod'] ?>" ><?= strtoupper($row['yolculuk_sehir'])." - ".$row['terminal_adi']; ?></option>
                       <?php } ?>
                     </select>
                   </div>
@@ -51,7 +51,7 @@
                     <select class="form-control" name="bus">
                       <option value="" selected disabled="">-Choose Bus-</option>
                       <?php foreach ($bus as $row ) {?>
-                      <option value="<?= $row['kd_bus'] ?>" ><?= strtoupper($row['nama_bus']); ?> -<?php if ($row['status_bus'] == '1') { ?>
+                      <option value="<?= $row['bus_id'] ?>" ><?= strtoupper($row['bus_name']); ?> -<?php if ($row['status_bus'] == '1') { ?>
                         Active
                         <?php } else { ?>
                         InActive

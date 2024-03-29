@@ -42,16 +42,16 @@
                 <?php $i = 1 ; foreach ($bus as $row ) { ?>
                 <tr>
                   <td><?= $i++; ?></td>
-                  <td><?= strtoupper($row['kd_bus']); ?></td>
-                  <td><?= strtoupper($row['nama_bus']); ?></td>
-                  <td><?= strtoupper($row['plat_bus']); ?></td>
-                  <td><?= $row['kapasitas_bus'] ?></td>
+                  <td><?= strtoupper($row['bus_id']); ?></td>
+                  <td><?= strtoupper($row['bus_name']); ?></td>
+                  <td><?= strtoupper($row['plaka']); ?></td>
+                  <td><?= $row['kapasite'] ?></td>
                   <?php if ($row['status_bus'] == '1') { ?>
                     <td class="btn-success"> Aktif</td> 
                     <?php } else { ?>
                     <td class="btn-danger">Aktif Değil</td>
                   <?php } ?>
-                  <td align="center"><a href="<?= base_url('backend/bus/viewbus/'.$row['kd_bus'])?>" class="btn btn btn-info">Görüntüle</a></a>
+                  <td align="center"><a href="<?= base_url('backend/bus/viewbus/'.$row['bus_id'])?>" class="btn btn btn-info">Görüntüle</a></a>
                 </td>
               </tr>
               <?php } ?>
@@ -82,11 +82,11 @@
     <form action="<?= base_url()?>backend/bus/tambahbus" method="post">
       <div class="form-group">
         <label for="platbus" class="">Bus Name</label>
-        <input type="text" class="form-control" name="nama_bus" placeholder="Bus Name">
+        <input type="text" class="form-control" name="bus_name" placeholder="Bus Name">
       </div>
       <div class="form-group">
         <label for="platbus" class="">Bus Number Plate</label>
-        <input type="text" class="form-control" name="plat_bus" placeholder="Bus Plate">
+        <input type="text" class="form-control" name="plaka" placeholder="Bus Plate">
       </div>
       <div class="form-group">
         <label for="seat" class="">Number of Seats (Max.23)</label>

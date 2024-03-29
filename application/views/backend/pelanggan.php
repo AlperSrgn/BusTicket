@@ -40,13 +40,13 @@
                 <?php $i=1;foreach ($pelanggan as $row) { ?>
                   <tr>
                     <td><?= $i++; ?></td>
-                    <td><?= $row['kd_pelanggan']; ?></td>
-                    <td><?= $row['no_ktp_pelanggan']; ?></td>
-                    <td><?= $row['nama_pelanggan']; ?></td>
-                    <td><?= $row['alamat_pelanggan']; ?></td>
-                    <td><?= $row['email_pelanggan']; ?></td>
-                    <td><?= $row['telpon_pelanggan']; ?></td>
-                    <!-- <td><a href="<?= base_url('backend/home/viewpelanggan/'.$row['kd_pelanggan']) ?>" class="btn btn btn-info">View</a></td> -->
+                    <td><?= $row['kd_musteri']; ?></td>
+                    <td><?= $row['kimlik_no_musteri']; ?></td>
+                    <td><?= $row['muster_adi']; ?></td>
+                    <td><?= $row['musteri_adres']; ?></td>
+                    <td><?= $row['musteri_email']; ?></td>
+                    <td><?= $row['musteri_telefon']; ?></td>
+                    <!-- <td><a href="<?= base_url('backend/home/viewpelanggan/'.$row['kd_musteri']) ?>" class="btn btn btn-info">View</a></td> -->
                   </tr>
                 <?php } ?>
             </tbody>

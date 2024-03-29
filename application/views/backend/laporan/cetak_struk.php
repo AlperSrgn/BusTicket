@@ -43,23 +43,23 @@ use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
         foreach ($cetak as $i) {
         $printer -> feed();
         $printer -> setJustification(Printer::JUSTIFY_LEFT);
-        $printer -> text($i['kd_tiket']);
+        $printer -> text($i['kd_bilet']);
         $printer -> feed();
-        $printer -> text($i['kd_jadwal']   );
+        $printer -> text($i['sefer_kodu']   );
         $printer -> text("      ");
-        $printer -> text($i['harga_tiket']);
+        $printer -> text($i['bilet_fiyat']);
         // $printer -> text("      ");        
         // $printer -> text($diskon=$i['d_jual_diskon'])."";
         $printer -> text("      ");
-        $printer -> text($i['harga_tiket']);
+        $printer -> text($i['bilet_fiyat']);
         }
         $printer -> feed();
         $printer -> text("--------------------------------\n");
         // $printer -> setJustification(Printer::JUSTIFY_RIGHT);
         $printer -> setEmphasis(true);
         $printer -> text("Total     :              ");
-        if (count($cetak) == '2') { $total = $cetak[0]['harga_tiket'] + $cetak[0]['harga_tiket'] ;;
-                                            }else{ $total = $cetak[0]['harga_tiket'] ;}
+        if (count($cetak) == '2') { $total = $cetak[0]['bilet_fiyat'] + $cetak[0]['bilet_fiyat'] ;;
+                                            }else{ $total = $cetak[0]['bilet_fiyat'] ;}
         $printer -> text($total);
         $printer -> setEmphasis(false);
         $printer -> feed();
@@ -77,4 +77,4 @@ use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
         $printer -> pulse();
         $printer -> close();
     $printer -> close();
-        redirect('tiket/tiketsaya/'.$cetak[0]['kd_pelanggan']);
+        redirect('tiket/tiketsaya/'.$cetak[0]['kd_musteri']);

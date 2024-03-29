@@ -13,11 +13,11 @@ class Home extends CI_Controller {
 	public function index(){
 		$data['title'] = "Home";
 		$data['order'] = $this->db->query("SELECT count(kd_order) FROM tbl_order WHERE status_order ='1'")->result_array();
-		$data['tiket'] = $this->db->query("SELECT count(kd_tiket) FROM tbl_tiket WHERE status_tiket = '2'")->result_array();
-		$data['konfirmasi'] = $this->db->query("SELECT count(kd_konfirmasi) FROM tbl_konfirmasi ")->result_array();
-		$data['bus'] = $this->db->query("SELECT count(kd_bus) FROM tbl_bus WHERE status_bus = 1 ")->result_array();
-		$data['terminal'] = $this->db->query("SELECT count(kd_tujuan) FROM tbl_tujuan")->result_array();
-		$data['schedules'] = $this->db->query("SELECT count(kd_jadwal) FROM tbl_jadwal")->result_array();
+		$data['tiket'] = $this->db->query("SELECT count(kd_bilet) FROM tbl_bilet WHERE bilet_durum = '2'")->result_array();
+		$data['konfirmasi'] = $this->db->query("SELECT count(onay_kodu) FROM tbl_onay ")->result_array();
+		$data['bus'] = $this->db->query("SELECT count(bus_id) FROM tbl_bus WHERE status_bus = 1 ")->result_array();
+		$data['terminal'] = $this->db->query("SELECT count(hedef_kod) FROM tbl_seferler")->result_array();
+		$data['schedules'] = $this->db->query("SELECT count(sefer_kodu) FROM tbl_sefer")->result_array();
 		// die(print_r($data));
 		$this->load->view('backend/home', $data);
 	}

@@ -22,21 +22,21 @@ class Login extends CI_Controller {
 	public function cekuser(){
 		$username = strtolower($this->input->post('username'));
 		$password = $this->input->post('password');
-		$sqlCheck = $this->db->query('select * from tbl_pelanggan where username_pelanggan = "'.$username.'" OR email_pelanggan = "'.$username.'" ')->row();
+		$sqlCheck = $this->db->query('select * from tbl_musteri where username = "'.$username.'" OR musteri_email = "'.$username.'" ')->row();
 		// die(print_r($sqlCheck));
 		if ($sqlCheck) {
-			if ($sqlCheck->status_pelanggan == 1) { 
-				if (password_verify($password,$sqlCheck->password_pelanggan)) {
+			if ($sqlCheck->musteri_durum == 1) { 
+				if (password_verify($password,$sqlCheck->sifre_musteri)) {
 						$sess = [
-							'kd_pelanggan' => $sqlCheck->kd_pelanggan,
-							'username' => $sqlCheck->username_pelanggan,
-							'password' => $sqlCheck->password_pelanggan,
-							'ktp'     => $sqlCheck->no_ktp_pelanggan,
-							'nama_lengkap'     => $sqlCheck->nama_pelanggan,
-							'img_pelanggan'	=> $sqlCheck->img_pelanggan,
-							'email'   => $sqlCheck->email_pelanggan,
-							'telpon'   => $sqlCheck->telpon_pelanggan,
-							'alamat'	=> $sqlCheck->alamat_pelanggan
+							'kd_musteri' => $sqlCheck->kd_musteri,
+							'username' => $sqlCheck->username,
+							'password' => $sqlCheck->sifre_musteri,
+							'ktp'     => $sqlCheck->kimlik_no_musteri,
+							'nama_lengkap'     => $sqlCheck->muster_adi,
+							'musteri_foto'	=> $sqlCheck->musteri_foto,
+							'email'   => $sqlCheck->musteri_email,
+							'telpon'   => $sqlCheck->musteri_telefon,
+							'alamat'	=> $sqlCheck->musteri_adres
 						];
 						$this->session->set_userdata($sess);
 						if ($this->session->userdata('jadwal') == NULL) {
@@ -65,7 +65,7 @@ class Login extends CI_Controller {
 	}
 
 	public function daftar(){
-		$this->form_validation->set_rules('nomor', 'Nomor', 'trim|required|is_unique[tbl_pelanggan.telpon_pelanggan]',array(
+		$this->form_validation->set_rules('nomor', 'Nomor', 'trim|required|is_unique[tbl_musteri.musteri_telefon]',array(
 			'required' => 'Mobile number is required to be filled in.',
 			'is_unique' => 'Number Already In Use.'
 			 ));
@@ -73,11 +73,11 @@ class Login extends CI_Controller {
 			'required' => 'Name Required.',
 			 ));
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|is_unique[tbl_pelanggan.username_pelanggan]',array(
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|is_unique[tbl_musteri.username]',array(
 			'required' => 'Username Required.',
 			'is_unique' => 'Username Already In Use.'
 			 ));
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[tbl_pelanggan.email_pelanggan]',array(
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[tbl_musteri.musteri_email]',array(
 			'required' => 'Email Required.',
 			'valid_email' => 'Enter Email Correctly',
 			'is_unique' => 'Email Already In Use.'
@@ -93,25 +93,25 @@ class Login extends CI_Controller {
 			// die(print_r($_POST));
 			$this->load->model('getkod_model');
 			$data = array(
-			'kd_pelanggan'	=> $this->getkod_model->get_kodpel(),
-			'nama_pelanggan'  => $this->input->post('name'),
-			'email_pelanggan'	    	=> $this->input->post('email'),
-			'img_pelanggan'		=> 'assets/frontend/img/default.png',
-			'alamat_pelanggan'		=> $this->input->post('alamat'),
-			'telpon_pelanggan'		=> $this->input->post('nomor'),
-			'username_pelanggan'		=> $this->input->post('username'),
-			'status_pelanggan' => 1,
-			'date_create_pelanggan' => time(),
-			'password_pelanggan'		=> password_hash($this->input->post('password1'),PASSWORD_DEFAULT)
+			'kd_musteri'	=> $this->getkod_model->get_kodpel(),
+			'muster_adi'  => $this->input->post('name'),
+			'musteri_email'	    	=> $this->input->post('email'),
+			'musteri_foto'		=> 'assets/frontend/img/default.png',
+			'musteri_adres'		=> $this->input->post('alamat'),
+			'musteri_telefon'		=> $this->input->post('nomor'),
+			'username'		=> $this->input->post('username'),
+			'musteri_durum' => 1,
+			'musteri_ols_veri' => time(),
+			'sifre_musteri'		=> password_hash($this->input->post('password1'),PASSWORD_DEFAULT)
 			);
 			$token = md5($this->input->post('email').date("d-m-Y H:i:s"));
 			$data1 = array(
-				'nama_token' => $token,
+				'token_name' => $token,
 				'email_token' => $this->input->post('email'),
 				'date_create_token' => time()
 				 );
-			$this->db->insert('tbl_pelanggan', $data);
-			$this->db->insert('tbl_token_pelanggan', $data1);
+			$this->db->insert('tbl_musteri', $data);
+			$this->db->insert('tbl_musteri_token', $data1);
 			$this->_sendmail($token,'verify');
 			//$this->session->set_flashdata('message', 'swal("Success", "Successfully Registered. Welcome to BTBS!", "success");');
     		redirect('login');
@@ -152,22 +152,22 @@ class Login extends CI_Controller {
 	public function verify($value=''){
 		$email = $this->input->get('email');
 		$token = $this->input->get('token');
-		$sqlcek = $this->db->get_where('tbl_pelanggan',['email_pelanggan' => $email])->row_array();
+		$sqlcek = $this->db->get_where('tbl_musteri',['musteri_email' => $email])->row_array();
 		if ($sqlcek) {
-			$sqlcek_token = $this->db->get_where('tbl_token_pelanggan',['nama_token' => $token])->row_array();
+			$sqlcek_token = $this->db->get_where('tbl_musteri_token',['token_name' => $token])->row_array();
 			if ($sqlcek_token) {
 				if(time() - $sqlcek_token['date_create_token'] < (60 * 60 * 24)){
-					$update = array('status_pelanggan' => 1, );
-					$where = array('email_pelanggan' => $email );
-					$this->db->update('tbl_pelanggan', $update,$where);
-					$this->db->delete('tbl_token_pelanggan',['email_token' => $email]);
+					$update = array('musteri_durum' => 1, );
+					$where = array('musteri_email' => $email );
+					$this->db->update('tbl_musteri', $update,$where);
+					$this->db->delete('tbl_musteri_token',['email_token' => $email]);
 					$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
 					Successfully Verify Your Account, Login
 					</div>');
 					redirect('login');
 				}else{
-					$this->db->delete('tbl_pelanggan',['email_pelanggan' => $email]);
-					$this->db->delete('tbl_token_pelanggan',['email_token' => $email]);
+					$this->db->delete('tbl_musteri',['musteri_email' => $email]);
+					$this->db->delete('tbl_musteri_token',['email_token' => $email]);
 					$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
 					Token Expired, Please re-register your account
 						</div>');
@@ -196,15 +196,15 @@ class Login extends CI_Controller {
 			$this->load->view('frontend/lupapassword');
 		} else {
 			$email = $this->input->post('email');
-			$sqlcek = $this->db->get_where('tbl_pelanggan',['email_pelanggan' => $email],['status_pelanggan' => 1])->row_array();
+			$sqlcek = $this->db->get_where('tbl_musteri',['musteri_email' => $email],['musteri_durum' => 1])->row_array();
 			if ($sqlcek) {
 				$token = md5($email.date("d-m-Y H:i:s"));
 				$data = array(
-				'nama_token' => $token,
+				'token_name' => $token,
 				'email_token' => $email,
 				'date_create_token' => time()
 				 );
-			$this->db->insert('tbl_token_pelanggan', $data);
+			$this->db->insert('tbl_musteri_token', $data);
 			$this->_sendmail($token,'forgot');
 			$this->session->set_flashdata('message', 'swal("Success", "Successfully Reset Password Please Check Your Email", "success");');
     		redirect('login');
@@ -219,9 +219,9 @@ class Login extends CI_Controller {
 	public function forgot($value=''){
 		$email = $this->input->get('email');
 		$token = $this->input->get('token');
-		$sqlcek = $this->db->get_where('tbl_pelanggan',['email_pelanggan' => $email])->row_array();
+		$sqlcek = $this->db->get_where('tbl_musteri',['musteri_email' => $email])->row_array();
 		if ($sqlcek) {
-			$sqlcek_token = $this->db->get_where('tbl_token_pelanggan',['nama_token' => $token])->row_array();
+			$sqlcek_token = $this->db->get_where('tbl_musteri_token',['token_name' => $token])->row_array();
 			if ($sqlcek_token) {
 				$this->session->set_userdata('resetemail' ,$email);
 				$this->changepassword();
@@ -253,13 +253,13 @@ class Login extends CI_Controller {
 		}else{
 			$email = $this->session->userdata('resetemail');
 			$update = array(
-				'status_pelanggan' => 1,
-				'password_pelanggan' => password_hash($this->input->post('password1'),PASSWORD_DEFAULT)
+				'musteri_durum' => 1,
+				'sifre_musteri' => password_hash($this->input->post('password1'),PASSWORD_DEFAULT)
 			);
-			$where = array('email_pelanggan' => $email );
-			$this->db->update('tbl_pelanggan', $update,$where);
+			$where = array('musteri_email' => $email );
+			$this->db->update('tbl_musteri', $update,$where);
 			$this->session->unset_userdata('resetemail');
-			$this->db->delete('tbl_token_pelanggan',['email_token' => $email]);
+			$this->db->delete('tbl_musteri_token',['email_token' => $email]);
 			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
 					Successfully Reset, Login Your Account Back
 					</div>');

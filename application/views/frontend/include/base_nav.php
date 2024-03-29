@@ -12,8 +12,8 @@
 			          <?php if ($this->session->userdata('username')) { ?>
 				      	<li class="menu-has-children"><a href="#">PROFİLİM</a>
 						<ul>
-							<li><a href="<?php echo base_url() ?>profile/profilesaya/<?php echo $this->session->userdata('kd_pelanggan') ?>"><i class="fas fa-user"></i> Profilim</a></li>
-							<li><a href="<?php echo base_url() ?>profile/tiketsaya/<?php echo $this->session->userdata('kd_pelanggan') ?>"><i class="fas fa-ticket"></i> Biletlerim</a></li>
+							<li><a href="<?php echo base_url() ?>profile/profilesaya/<?php echo $this->session->userdata('kd_musteri') ?>"><i class="fas fa-user"></i> Profilim</a></li>
+							<li><a href="<?php echo base_url() ?>profile/tiketsaya/<?php echo $this->session->userdata('kd_musteri') ?>"><i class="fas fa-ticket"></i> Biletlerim</a></li>
 							<li><a href="<?php echo base_url() ?>login/logout"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
 						</ul>
 						</li>

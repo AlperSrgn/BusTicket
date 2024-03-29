@@ -36,15 +36,15 @@
 							</div>
 							<div class="card-body">
 								<ul>
-									<li><i class="fa-regular fa-circle"></i> Rota: <b><?php echo $asal['kota_tujuan']." - ".$jadwal['kota_tujuan']." [".$jadwal['kd_jadwal']."]"; ?></b></li>
-									<li><i class="fa-regular fa-circle"></i> Otobüs:  <b><?php echo $jadwal['nama_bus'];  ?></b></li>
-									<li><i class="fa-regular fa-circle"></i> Otobüs Numarası:  <b><?php echo $jadwal['plat_bus'];  ?></b></li>
-									<li><i class="fa-regular fa-circle"></i> Kalkış Yeri: <b><?php echo strtoupper($asal['kota_tujuan'])." - ".$asal['terminal_tujuan']; ?></b></li>
-									<li><i class="fa-regular fa-circle"></i> Varış Yeri: <b><?php echo strtoupper($jadwal['kota_tujuan'])." - ".$jadwal['terminal_tujuan']; ?></b></li>
-									<li><i class="fa-regular fa-circle"></i> Ücret: <b>$<?php echo number_format((float)($jadwal['harga_jadwal']),0,",",".") ; ?></b></li>
+									<li><i class="fa-regular fa-circle"></i> Rota: <b><?php echo $asal['yolculuk_sehir']." - ".$jadwal['yolculuk_sehir']." [".$jadwal['sefer_kodu']."]"; ?></b></li>
+									<li><i class="fa-regular fa-circle"></i> Otobüs:  <b><?php echo $jadwal['bus_name'];  ?></b></li>
+									<li><i class="fa-regular fa-circle"></i> Otobüs Numarası:  <b><?php echo $jadwal['plaka'];  ?></b></li>
+									<li><i class="fa-regular fa-circle"></i> Kalkış Yeri: <b><?php echo strtoupper($asal['yolculuk_sehir'])." - ".$asal['terminal_adi']; ?></b></li>
+									<li><i class="fa-regular fa-circle"></i> Varış Yeri: <b><?php echo strtoupper($jadwal['yolculuk_sehir'])." - ".$jadwal['terminal_adi']; ?></b></li>
+									<li><i class="fa-regular fa-circle"></i> Ücret: <b>$<?php echo number_format((float)($jadwal['ucret']),0,",",".") ; ?></b></li>
 									<li><i class="fa-regular fa-circle"></i> Seyehat Tarihi: <b><?php echo nama_hari($tanggal).",".tgl_indo($tanggal) ?></b></li>
-									<li><i class="fa-regular fa-circle"></i> Kalkış Saati: <b>at <?php echo $jadwal['jam_berangkat_jadwal']; ?></b></li>
-									<li><i class="fa-regular fa-circle"></i> Varış Saati: <b>at <?php echo $jadwal['jam_tiba_jadwal']; ?> </b></li>
+									<li><i class="fa-regular fa-circle"></i> Kalkış Saati: <b>at <?php echo $jadwal['kalkis_saat']; ?></b></li>
+									<li><i class="fa-regular fa-circle"></i> Varış Saati: <b>at <?php echo $jadwal['varis_saat']; ?> </b></li>
 									<li><i class="fa-regular fa-circle"></i> En fazla 4 koltuk seçiniz</li>
 								</ul>
 							</div>
@@ -68,11 +68,11 @@
 										<td class='btn-group' width='200'>
 											
 											<label class='btn btn-default'>
-												<input name='kursi[]' value='1' id='1' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '1'), $kursi)) { echo "disabled checked";} ?>>&nbsp;1  <i class="fa-solid fa-couch"></i>
+												<input name='kursi[]' value='1' id='1' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '1'), $kursi)) { echo "disabled checked";} ?>>&nbsp;1  <i class="fa-solid fa-couch"></i>
 											</label>
 											
 											<label class='btn btn-default'>
-												<input name='kursi[]' value='2' id='2' onclick='cer(this)' autocomplete='off' type='checkbox'<?php if (in_array(array('no_kursi_order' => '2'), $kursi)) { echo "disabled checked";} ?>>&nbsp;2  <i class="fa-solid fa-couch"></i>
+												<input name='kursi[]' value='2' id='2' onclick='cer(this)' autocomplete='off' type='checkbox'<?php if (in_array(array('koltuk_no' => '2'), $kursi)) { echo "disabled checked";} ?>>&nbsp;2  <i class="fa-solid fa-couch"></i>
 											</label>
 										</td>
 										<td class='btn-group' width='130'>
@@ -85,16 +85,16 @@
 										<td class='btn-group' width='200'>
 											
 											<label class='btn btn-default'>
-												<input name='kursi[]' value='3' id='3' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '3'), $kursi)) { echo "disabled checked";} ?>>&nbsp;3  <i class="fa-solid fa-couch"></i>
+												<input name='kursi[]' value='3' id='3' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '3'), $kursi)) { echo "disabled checked";} ?>>&nbsp;3  <i class="fa-solid fa-couch"></i>
 												</label>				
 												<label class='btn btn-default'>
-													<input name='kursi[]' value='4' id='4' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '4'), $kursi)) { echo "disabled checked";} ?>>&nbsp;4  <i class="fa-solid fa-couch"></i>
+													<input name='kursi[]' value='4' id='4' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '4'), $kursi)) { echo "disabled checked";} ?>>&nbsp;4  <i class="fa-solid fa-couch"></i>
 												</label>
 											</td>
 											<td class='btn-group' width=''>
 												
 												<label class='btn btn-default'>
-													<input name='kursi[]' value='5' id='5' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '5'), $kursi)) { echo "disabled checked";} ?> >&nbsp;5  <i class="fa-solid fa-couch"></i>
+													<input name='kursi[]' value='5' id='5' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '5'), $kursi)) { echo "disabled checked";} ?> >&nbsp;5  <i class="fa-solid fa-couch"></i>
 												</label>
 											</td>
 										</tr>
@@ -102,19 +102,19 @@
 											<td class='btn-group' width='150' >
 												
 												<label class='btn btn-default'>
-													<input name='kursi[]' value='6' id='6' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '6'), $kursi)) { echo "disabled checked";} ?>>&nbsp;6  <i class="fa-solid fa-couch"></i>
+													<input name='kursi[]' value='6' id='6' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '6'), $kursi)) { echo "disabled checked";} ?>>&nbsp;6  <i class="fa-solid fa-couch"></i>
 													</label>				
 													<label class='btn btn-default'>
-														<input name='kursi[]' value='7' id='7' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '7'), $kursi)) { echo "disabled checked";} ?>>&nbsp;7  <i class="fa-solid fa-couch"></i>
+														<input name='kursi[]' value='7' id='7' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '7'), $kursi)) { echo "disabled checked";} ?>>&nbsp;7  <i class="fa-solid fa-couch"></i>
 													</label>
 												</td>
 												<td class='btn-group' width='200' >
 													
 													<label class='btn btn-default'>
-														<input name='kursi[]' value='8' id='8' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '8'), $kursi)) { echo "disabled checked";} ?>>&nbsp;8  <i class="fa-solid fa-couch"></i>
+														<input name='kursi[]' value='8' id='8' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '8'), $kursi)) { echo "disabled checked";} ?>>&nbsp;8  <i class="fa-solid fa-couch"></i>
 													</label>
 													<label class='btn btn-default'>
-														<input name='kursi[]' value='9' id='9' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '9'), $kursi)) { echo "disabled checked";} ?>>&nbsp;9  <i class="fa-solid fa-couch"></i>  
+														<input name='kursi[]' value='9' id='9' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '9'), $kursi)) { echo "disabled checked";} ?>>&nbsp;9  <i class="fa-solid fa-couch"></i>  
 													</label>
 												</td>
 											</tr>
@@ -122,16 +122,16 @@
 												<td class='btn-group' width='150'>
 													
 													<label class='btn btn-default'>
-														<input name='kursi[]' value='10' id='10' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '10'), $kursi)) { echo "disabled checked";} ?>>&nbsp;10  <i class="fa-solid fa-couch"></i>
+														<input name='kursi[]' value='10' id='10' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '10'), $kursi)) { echo "disabled checked";} ?>>&nbsp;10  <i class="fa-solid fa-couch"></i>
 														</label>				
 														<label class='btn btn-default'>
-															<input name='kursi[]' value='11' id='11' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '11'), $kursi)) { echo "disabled checked";} ?>>&nbsp;11  <i class="fa-solid fa-couch"></i>
+															<input name='kursi[]' value='11' id='11' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '11'), $kursi)) { echo "disabled checked";} ?>>&nbsp;11  <i class="fa-solid fa-couch"></i>
 														</label>
 													</td>
 													<td class='btn-group' width='150' style="float: right;" >
 														
 														<label class='btn btn-default'>
-															<input name='kursi[]' value='12' id='12' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '12'), $kursi)) { echo "disabled checked";} ?>>&nbsp;12  <i class="fa-solid fa-couch"></i>
+															<input name='kursi[]' value='12' id='12' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '12'), $kursi)) { echo "disabled checked";} ?>>&nbsp;12  <i class="fa-solid fa-couch"></i>
 														</label>
 													</td>
 												</tr>
@@ -139,16 +139,16 @@
 													<td class='btn-group' width='150' >
 														
 														<label class='btn btn-default'>
-															<input name='kursi[]' value='13' id='13' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '13'), $kursi)) { echo "disabled checked";} ?>>&nbsp;13  <i class="fa-solid fa-couch"></i>
+															<input name='kursi[]' value='13' id='13' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '13'), $kursi)) { echo "disabled checked";} ?>>&nbsp;13  <i class="fa-solid fa-couch"></i>
 															</label>				
 															<label class='btn btn-default'>
-																<input name='kursi[]' value='14' id='14' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '14'), $kursi)) { echo "disabled checked";} ?>>&nbsp;14  <i class="fa-solid fa-couch"></i>   
+																<input name='kursi[]' value='14' id='14' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '14'), $kursi)) { echo "disabled checked";} ?>>&nbsp;14  <i class="fa-solid fa-couch"></i>   
 															</label>
 														</td>
 														<td class='btn-group' width='150' style="float: right;">
 															
 															<label class='btn btn-default'>
-																<input name='kursi[]' value='15' id='15' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '15'), $kursi)) { echo "disabled checked";} ?>>&nbsp;15  <i class="fa-solid fa-couch"></i>
+																<input name='kursi[]' value='15' id='15' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '15'), $kursi)) { echo "disabled checked";} ?>>&nbsp;15  <i class="fa-solid fa-couch"></i>
 															</label>
 														</td>
 													</tr>
@@ -156,19 +156,19 @@
 														<td class='btn-group' width='200'>
 															
 															<label class='btn btn-default'>
-																<input name='kursi[]' value='16' id='16' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '16'), $kursi)) { echo "disabled checked";} ?>>&nbsp;16  <i class="fa-solid fa-couch"></i>
+																<input name='kursi[]' value='16' id='16' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '16'), $kursi)) { echo "disabled checked";} ?>>&nbsp;16  <i class="fa-solid fa-couch"></i>
 																</label>				
 																<label class='btn btn-default'>
-																	<input name='kursi[]' value='17' id='17' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '17'), $kursi)) { echo "disabled checked";} ?>>&nbsp;17  <i class="fa-solid fa-couch"></i>   
+																	<input name='kursi[]' value='17' id='17' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '17'), $kursi)) { echo "disabled checked";} ?>>&nbsp;17  <i class="fa-solid fa-couch"></i>   
 																</label>
 															</td>
 															<td class='btn-group' width='150'>
 																
 																<label class='btn btn-default'>
-																	<input name='kursi[]' value='18' id='18' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '18'), $kursi)) { echo "disabled checked";} ?>>&nbsp;18  <i class="fa-solid fa-couch"></i>
+																	<input name='kursi[]' value='18' id='18' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '18'), $kursi)) { echo "disabled checked";} ?>>&nbsp;18  <i class="fa-solid fa-couch"></i>
 																</label>
 																<label class='btn btn-default'>
-																	<input name='kursi[]' value='19' id='19' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '19'), $kursi)) { echo "disabled checked";} ?>>&nbsp;19  <i class="fa-solid fa-couch"></i>
+																	<input name='kursi[]' value='19' id='19' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '19'), $kursi)) { echo "disabled checked";} ?>>&nbsp;19  <i class="fa-solid fa-couch"></i>
 																</label>
 															</td>
 														</tr>
@@ -178,19 +178,19 @@
 															<td class='btn-group' width='150'>
 																
 																<label class='btn btn-default'>
-																	<input name='kursi[]' value='20' id='20' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '20'), $kursi)) { echo "disabled checked";} ?>>&nbsp;20  <i class="fa-solid fa-couch"></i>
+																	<input name='kursi[]' value='20' id='20' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '20'), $kursi)) { echo "disabled checked";} ?>>&nbsp;20  <i class="fa-solid fa-couch"></i>
 																	</label>				
 																	<label class='btn btn-default'>
-																		<input name='kursi[]' value='21' id='21' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '21'), $kursi)) { echo "disabled checked";} ?>>&nbsp;21  <i class="fa-solid fa-couch"></i>
+																		<input name='kursi[]' value='21' id='21' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '21'), $kursi)) { echo "disabled checked";} ?>>&nbsp;21  <i class="fa-solid fa-couch"></i>
 																	</label>
 																</td>
 																<td class='btn-group' width='200' >
 																	
 																	<label class='btn btn-default'>
-																		<input name='kursi[]' value='22' id='22' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '22'), $kursi)) { echo "disabled checked";} ?>>&nbsp;22  <i class="fa-solid fa-couch"></i>  
+																		<input name='kursi[]' value='22' id='22' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '22'), $kursi)) { echo "disabled checked";} ?>>&nbsp;22  <i class="fa-solid fa-couch"></i>  
 																	</label>
 																	<label class='btn btn-default'>
-																		<input name='kursi[]' value='23' id='23' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('no_kursi_order' => '23'), $kursi)) { echo "disabled checked";} ?>>&nbsp;23  <i class="fa-solid fa-couch"></i>  
+																		<input name='kursi[]' value='23' id='23' onclick='cer(this)' autocomplete='off' type='checkbox' <?php if (in_array(array('koltuk_no' => '23'), $kursi)) { echo "disabled checked";} ?>>&nbsp;23  <i class="fa-solid fa-couch"></i>  
 																	</label>
 																</td>
 															</tr>
@@ -198,7 +198,7 @@
 													
 													<div class="alert alert-success" role="alert" style="background-color: white; border-color: white">
 														<div class='btn-group' >
-															<a href="<?php echo base_url('tiket/cekjadwal/'.$tanggal.'/'.$asal['kd_tujuan'].'/'.$jadwal['kota_tujuan']) ?>" class='btn btn-danger' style="margin-right: 100px; width:100px; background-color:#f44a40">Geri Dön</a>
+															<a href="<?php echo base_url('tiket/cekjadwal/'.$tanggal.'/'.$asal['hedef_kod'].'/'.$jadwal['yolculuk_sehir']) ?>" class='btn btn-danger' style="margin-right: 100px; width:100px; background-color:#f44a40">Geri Dön</a>
 															<input class="btn btn-info pull-right" disabled="disabled" type="submit" value="Sonraki" style="width:100px; background-color: #40e0d0; border-color: #40e0d0;">
 														</div>
 													</div>

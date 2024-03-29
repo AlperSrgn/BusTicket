@@ -21,12 +21,12 @@ class Konfirmasi extends CI_Controller {
 
 	public function index(){
 		$data['title'] = "Confirmation List";
-		$data['konfirmasi'] = $this->db->query("SELECT * FROM tbl_konfirmasi group by kd_konfirmasi")->result_array();
+		$data['konfirmasi'] = $this->db->query("SELECT * FROM tbl_onay group by onay_kodu")->result_array();
 		$this->load->view('backend/konfirmasi', $data);	
 	}
 
 	public function viewkonfirmasi($id=''){
-	 $sqlcek = $this->db->query("SELECT * FROM tbl_konfirmasi WHERE kd_order ='".$id."'")->result_array();
+	 $sqlcek = $this->db->query("SELECT * FROM tbl_onay WHERE kd_order ='".$id."'")->result_array();
 	 $data['title'] = "View Confirmation";
 	 if ($sqlcek == NULL) {
 	 	$this->session->set_flashdata('message', 'swal("Empty", "Payments info not received yet!", "error");');

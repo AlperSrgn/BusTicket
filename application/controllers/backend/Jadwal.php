@@ -19,13 +19,13 @@ class Jadwal extends CI_Controller {
 	}
 	public function index(){
 		$data['title'] = "Schedule Management";
-		$data['jadwal'] = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_bus on tbl_jadwal.kd_bus = tbl_bus.kd_bus LEFT JOIN tbl_tujuan on tbl_jadwal.kd_asal = tbl_tujuan.kd_tujuan ")->result_array();
+		$data['jadwal'] = $this->db->query("SELECT * FROM tbl_sefer LEFT JOIN tbl_bus on tbl_sefer.bus_id = tbl_bus.bus_id LEFT JOIN tbl_seferler on tbl_sefer.kalkis_kod = tbl_seferler.hedef_kod ")->result_array();
 		$this->load->view('backend/jadwal', $data);
 	}
 	public function viewtambahjadwal($value=''){
 		$data['title'] = "Add Schedule";
-		$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY nama_bus asc")->result_array();
-		$data['tujuan'] = $this->db->query("SELECT * FROM tbl_tujuan ORDER BY kota_tujuan asc")->result_array();
+		$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY bus_name asc")->result_array();
+		$data['tujuan'] = $this->db->query("SELECT * FROM tbl_seferler ORDER BY yolculuk_sehir asc")->result_array();
 		$this->load->view('backend/tambahjadwal', $data);
 	}
 	/* Log on to codeastro.com for more projects */
@@ -33,30 +33,30 @@ class Jadwal extends CI_Controller {
 		$this->form_validation->set_rules('tujuan', 'Tujuan', 'trim|required|min_length[5]|max_length[12]');
 		if ($this->form_validation->run() ==  FALSE) {
 			$data['title'] = "Add Schedule";
-			$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY nama_bus asc")->result_array();
-			$data['tujuan'] = $this->db->query("SELECT * FROM tbl_tujuan ORDER BY kota_tujuan asc")->result_array();
+			$data['bus'] = $this->db->query("SELECT * FROM tbl_bus ORDER BY bus_name asc")->result_array();
+			$data['tujuan'] = $this->db->query("SELECT * FROM tbl_seferler ORDER BY yolculuk_sehir asc")->result_array();
 			$this->load->view('backend/tambahjadwal', $data);
 		} else {
 			$asal = $this->input->post('asal');
-			$tujuan = $this->db->query("SELECT * FROM tbl_tujuan
-               WHERE kd_tujuan ='".$this->input->post('tujuan')."'")->row_array();
-			if ($asal == $tujuan['kd_tujuan']) {
+			$tujuan = $this->db->query("SELECT * FROM tbl_seferler
+               WHERE hedef_kod ='".$this->input->post('tujuan')."'")->row_array();
+			if ($asal == $tujuan['hedef_kod']) {
 				$this->session->set_flashdata('message', 'swal("Succeed", "Schedule Goals Cant Be the Same", "error");');
 			redirect('backend/jadwal');
 			}else{
 			$kode = $this->getkod_model->get_kodjad();
 			$simpan = array(
-					'kd_jadwal' => $kode,
-					'kd_asal' => $asal,
-					'kd_tujuan' => $tujuan['kd_tujuan'],
-					'kd_bus' => $this->input->post('bus'),
-					'wilayah_jadwal' => $tujuan['kota_tujuan'],
-					'jam_berangkat_jadwal' => $this->input->post('berangkat'),
-					'jam_tiba_jadwal' => $this->input->post('tiba'),
-					'harga_jadwal' =>  $this->input->post('harga'),
+					'sefer_kodu' => $kode,
+					'kalkis_kod' => $asal,
+					'hedef_kod' => $tujuan['hedef_kod'],
+					'bus_id' => $this->input->post('bus'),
+					'sehir' => $tujuan['yolculuk_sehir'],
+					'kalkis_saat' => $this->input->post('berangkat'),
+					'varis_saat' => $this->input->post('tiba'),
+					'ucret' =>  $this->input->post('harga'),
 					 );
 			// die(print_r($simpan));
-			$this->db->insert('tbl_jadwal', $simpan);
+			$this->db->insert('tbl_sefer', $simpan);
 			$this->session->set_flashdata('message', 'swal("Succeed", "New schedule has been added", "success");');
 			redirect('backend/jadwal');
 			}
@@ -66,9 +66,9 @@ class Jadwal extends CI_Controller {
 	}
 	public function viewjadwal($id=''){
 		$data['title'] = "Destination List";
-	 	$sqlcek = $this->db->query("SELECT * FROM tbl_jadwal LEFT JOIN tbl_bus on tbl_jadwal.kd_bus = tbl_bus.kd_bus LEFT JOIN tbl_tujuan on tbl_jadwal.kd_tujuan = tbl_tujuan.kd_tujuan WHERE kd_jadwal ='".$id."'")->row_array();
+	 	$sqlcek = $this->db->query("SELECT * FROM tbl_sefer LEFT JOIN tbl_bus on tbl_sefer.bus_id = tbl_bus.bus_id LEFT JOIN tbl_seferler on tbl_sefer.hedef_kod = tbl_seferler.hedef_kod WHERE sefer_kodu ='".$id."'")->row_array();
 	 	if ($sqlcek) {
-	 		$data['asal'] = $this->db->query("SELECT * FROM tbl_tujuan WHERE kd_tujuan = '".$sqlcek['kd_asal']."'")->row_array();
+	 		$data['asal'] = $this->db->query("SELECT * FROM tbl_seferler WHERE hedef_kod = '".$sqlcek['kalkis_kod']."'")->row_array();
 	 		$data['jadwal'] = $sqlcek;
 			$data['title'] = "View Schedule";
 			// die(print_r($data));

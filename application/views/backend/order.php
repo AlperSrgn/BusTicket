@@ -44,10 +44,10 @@
                   <tr>
                     <td><?= $i++; ?></td>
                     <td><?= $row['kd_order']; ?></td>
-                    <td><?= $row['kd_jadwal']; ?></td>
-                    <td><?= hari_indo(date('N',strtotime($row['tgl_berangkat_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$row['tgl_berangkat_order'].'')));?></td>
-                    <td><?= $row['nama_order']; ?></td>
-                    <td><?= $row['tgl_beli_order']; ?></td>
+                    <td><?= $row['sefer_kodu']; ?></td>
+                    <td><?= hari_indo(date('N',strtotime($row['hareket_tarihi']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$row['hareket_tarihi'].'')));?></td>
+                    <td><?= $row['sahip']; ?></td>
+                    <td><?= $row['alim_tarih']; ?></td>
                     <?php $sqlcek = $this->db->query("SELECT * FROM tbl_order WHERE kd_order LIKE '".$row['kd_order']."'")->result_array(); ?>
                     <td><?= count($sqlcek); ?></td>
                     <?php if ($row['status_order'] == '1') { ?>

@@ -10,34 +10,34 @@ class Profile extends CI_Controller {
 		$this->load->view('frontend/profile');
 	}
 	public function profilesaya($id=''){
-		$data['profile'] = $this->db->query("SELECT * FROM tbl_pelanggan WHERE kd_pelanggan LIKE '".$id."'")->row_array();
+		$data['profile'] = $this->db->query("SELECT * FROM tbl_musteri WHERE kd_musteri LIKE '".$id."'")->row_array();
 		// die(print_r($data));
 		$this->load->view('frontend/profile',$data);
 	}
 	public function editprofile($id=''){
 		$id = $this->input->post('kode');
-		$where = array('kd_pelanggan' => $id );
+		$where = array('kd_musteri' => $id );
 		$update = array(
-			'no_ktp_pelanggan'			=> $this->input->post('ktp'),
-			'nama_pelanggan'  => $this->input->post('nama'),
-			'email_pelanggan'	    	=> $this->input->post('email'),
-			'img_pelanggan'		=> 'assets/frontend/img/default.png',
-			'alamat_pelanggan'		=> $this->input->post('alamat'),
-			'telpon_pelanggan'		=> $this->input->post('hp'),
+			'kimlik_no_musteri'			=> $this->input->post('ktp'),
+			'muster_adi'  => $this->input->post('nama'),
+			'musteri_email'	    	=> $this->input->post('email'),
+			'musteri_foto'		=> 'assets/frontend/img/default.png',
+			'musteri_adres'		=> $this->input->post('alamat'),
+			'musteri_telefon'		=> $this->input->post('hp'),
 			 );
-		$this->db->update('tbl_pelanggan', $update,$where);
+		$this->db->update('tbl_musteri', $update,$where);
 		$this->session->set_flashdata('message', 'swal("Success", "Data Edited", "success");');
 		redirect('profile/profilesaya/'.$id);
 	}
 	public function tiketsaya($id=''){
 		$this->getsecurity();
-		$data['tiket'] = $this->db->query("SELECT * FROM tbl_order WHERE kd_pelanggan ='".$id."' group by kd_order ")->result_array();
+		$data['tiket'] = $this->db->query("SELECT * FROM tbl_order WHERE kd_musteri ='".$id."' group by kd_order ")->result_array();
 		// die(print_r($data));
 		$this->load->view('frontend/tiketmu',$data);
 	}
 	public function changepassword($id=''){
 		$this->load->library('form_validation');
-		$pelanggan = $this->db->query("SELECT password_pelanggan FROM tbl_pelanggan where kd_pelanggan ='".$id."'")->row_array();
+		$pelanggan = $this->db->query("SELECT sifre_musteri FROM tbl_musteri where kd_musteri ='".$id."'")->row_array();
 		// die(print_r($pelanggan));
 		$this->form_validation->set_rules('currentpassword', 'currentpassword', 'trim|required|min_length[8]',array(
 			'required' => 'Enter Password',
@@ -57,7 +57,7 @@ class Profile extends CI_Controller {
 		} else {
 			$currentpassword = $this->input->post('currentpassword');
 			$newpassword 	 = $this->input->post('new_password1');
-			if (!password_verify($currentpassword, $pelanggan['password_pelanggan'])) {
+			if (!password_verify($currentpassword, $pelanggan['sifre_musteri'])) {
 				$this->session->set_flashdata('gagal', '<div class="alert alert-danger" role="alert">
 				Previous Password Wrong
 					</div>');
@@ -69,11 +69,11 @@ class Profile extends CI_Controller {
 				redirect('profile/changepassword');
 			}else{
 				$password_hash = password_hash($newpassword, PASSWORD_DEFAULT);
-				$where = array('kd_pelanggan' => $id );
+				$where = array('kd_musteri' => $id );
 				$update = array(
-				'password_pelanggan'			=> $password_hash,
+				'sifre_musteri'			=> $password_hash,
 				 );
-				$this->db->update('tbl_pelanggan', $update,$where);
+				$this->db->update('tbl_musteri', $update,$where);
 				$this->session->set_flashdata('message', 'swal("Success", "Your password has been changed successfully", "success");');
 				redirect('profile/profilesaya/'.$id);
 			}

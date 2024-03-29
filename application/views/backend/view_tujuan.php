@@ -109,14 +109,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <!-- Basic Card Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Destination Code [<?= $rute['kd_tujuan']; ?>]  </h6>
+          <h6 class="m-0 font-weight-bold text-primary">Destination Code [<?= $rute['hedef_kod']; ?>]  </h6>
         </div>
         <div class="card-body">             
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-6">
-                  <p>Destination City     : <b> <?= strtoupper($rute['kota_tujuan']) ?></b></p>
-                  <p>Destination  : <b><?= $rute['terminal_tujuan']; ?></b></p>
+                  <p>Destination City     : <b> <?= strtoupper($rute['yolculuk_sehir']) ?></b></p>
+                  <p>Destination  : <b><?= $rute['terminal_adi']; ?></b></p>
                 </div>
                 <div class="col-sm-6">
                 </div>

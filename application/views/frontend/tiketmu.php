@@ -38,8 +38,8 @@
 								<?php }else {?>
 								<a href="<?php echo base_url().$row['qrcode_order'] ?>" class="card-link" download>Qr Kodu İndir</a><?php }?>
 								<h5 class="card-title">Rezervasyon Kodu : <?php echo $row['kd_order']; ?></h5>
-								<p>İsim : <?php echo $row['nama_order']; ?>
-								 <br>Rezervasyon Tarihi : <?php echo $row['tgl_beli_order']; ?></br>
+								<p>İsim : <?php echo $row['sahip']; ?>
+								 <br>Rezervasyon Tarihi : <?php echo $row['alim_tarih']; ?></br>
 								 Ödeme Durumu : <?php if ($row['status_order'] == '1') { ?>
 									<i class='btn-danger'>Ödenmedi</i>
 									<?php }else if ($row['status_order'] == '3'){ ?>

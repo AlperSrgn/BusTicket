@@ -52,7 +52,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1"><a href="<?= base_url('backend/tiket') ?>">Satılan Toplam Bilet</a></div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $tiket[0]['count(kd_tiket)']; ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $tiket[0]['count(kd_bilet)']; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-qrcode fa-2x text-gray-300"></i>
@@ -71,7 +71,7 @@
                       <div class="text-xs font-weight-bold text-danger text-uppercase mb-1"><a href="<?= base_url('backend/konfirmasi') ?>">Ödeme Listesi</a></div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $konfirmasi[0]['count(kd_konfirmasi)']; ?></div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $konfirmasi[0]['count(onay_kodu)']; ?></div>
                         </div>
                         <div class="col">
                           
@@ -97,7 +97,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="<?= base_url('backend/rute') ?>">Toplam Terminaller</a></div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $terminal[0]['count(kd_tujuan)']; ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $terminal[0]['count(hedef_kod)']; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-road fa-2x text-gray-300"></i>
@@ -113,7 +113,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1"><a href="<?= base_url('backend/jadwal') ?>">Mevcut Programlar</a></div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $schedules[0]['count(kd_jadwal)']; ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $schedules[0]['count(sefer_kodu)']; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
@@ -130,7 +130,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="<?= base_url('backend/bus') ?>">Mevcut Otobüs</a></div>
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $bus[0]['count(kd_bus)']; ?></div>
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $bus[0]['count(bus_id)']; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-bus fa-2x text-gray-300"></i>

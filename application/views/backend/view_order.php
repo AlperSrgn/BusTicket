@@ -28,48 +28,48 @@
             <div class="card-body">
               <div class="row">
                 <?php foreach ($tiket as $row ) { ?>
-                <input type="hidden" class="form-control" name="kd_pelanggan" value="<?= $row['kd_pelanggan'] ?>" readonly>
+                <input type="hidden" class="form-control" name="kd_musteri" value="<?= $row['kd_musteri'] ?>" readonly>
                 <input type="hidden" class="form-control" name="kd_order" value="<?= $row['kd_order'] ?>" readonly>
-                <input type="hidden" class="form-control" name="asal_beli" value="<?= $row['asal_order'] ?>" readonly>
-                <input type="hidden" class="form-control" name="kd_tiket[]" value="<?= $row['kd_tiket'] ?>" readonly>
+                <input type="hidden" class="form-control" name="asal_beli" value="<?= $row['cikis_kodu'] ?>" readonly>
+                <input type="hidden" class="form-control" name="kd_bilet[]" value="<?= $row['kd_bilet'] ?>" readonly>
                 <div class="col-sm-6">
-                  <label >Ticket Code <b><?= $row['kd_tiket'] ?></b></label>
-                  <p>Customer Name <b><?= $row['nama_order']; ?></b></p>
+                  <label >Ticket Code <b><?= $row['kd_bilet'] ?></b></label>
+                  <p>Customer Name <b><?= $row['sahip']; ?></b></p>
                   <hr>
                   <div class="row form-group">
                     <label for="nama" class="col-sm-4 control-label">Schedule Code</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" name="kd_jadwal" value="<?= $row['kd_jadwal'] ?>" readonly>
+                      <input type="text" class="form-control" name="sefer_kodu" value="<?= $row['sefer_kodu'] ?>" readonly>
                     </div>
                   </div>
                   <div class="row form-group">
                     <label for="nama" class="col-sm-4 control-label">Passenger name</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" name="nama[]" value="<?= $row['nama_kursi_order'] ?>" readonly>
+                      <input type="text" class="form-control" name="nama[]" value="<?= $row['onay_isim'] ?>" readonly>
                     </div>
                   </div>
                   <div class="row form-group">
                     <label for="" class="col-sm-4 control-label">Seat Number</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" name="no_kursi[]" value="<?= $row['no_kursi_order'] ?>" readonly>
+                      <input type="text" class="form-control" name="no_kursi[]" value="<?= $row['koltuk_no'] ?>" readonly>
                     </div>
                   </div>
                   <div class="row form-group">
                     <label for="" class="col-sm-4 control-label">Passenger Age</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" name="umur_kursi[]>" value="<?= $row['umur_kursi_order'] ?> Years" readonly>
+                      <input type="text" class="form-control" name="umur_kursi[]>" value="<?= $row['yolcu_yas'] ?> Years" readonly>
                     </div>
                   </div>
                   <div class="row form-group">
                     <label for="" class="col-sm-4 control-label">Ticket price</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" name="harga" value="<?php  echo $row['harga_jadwal']; ?>" readonly>
+                      <input type="text" class="form-control" name="harga" value="<?php  echo $row['ucret']; ?>" readonly>
                     </div>
                   </div>
                   <div class="row form-group">
                     <label for="" class="col-sm-4 control-label">Payment Limit</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" name="tgl_beli" value="<?= hari_indo(date('N',strtotime($row['expired_order']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$row['expired_order'].''))).', '.date('H:i',strtotime($row['expired_order']));  ?>" readonly>
+                      <input type="text" class="form-control" name="tgl_beli" value="<?= hari_indo(date('N',strtotime($row['gecerlilik_sure']))).', '.tanggal_indo(date('Y-m-d',strtotime(''.$row['gecerlilik_sure'].''))).', '.date('H:i',strtotime($row['gecerlilik_sure']));  ?>" readonly>
                     </div>
                   </div>
                 </div>
@@ -109,7 +109,7 @@
                   <div class="row form-group">
                     <label for="" class="col-sm-4 control-label">Total payment</label>
                     <div class="col-sm-8">
-                      <p><b>$<?php $total =  count($tiket) * $tiket[0]['harga_jadwal']; echo number_format($total)?></b></p>
+                      <p><b>$<?php $total =  count($tiket) * $tiket[0]['ucret']; echo number_format($total)?></b></p>
                       </select>
                     </div>
                   </div>
